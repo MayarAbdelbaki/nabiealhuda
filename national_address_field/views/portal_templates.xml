@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--
+        Inject the national address field into the shared address form fields
+        template. This template (`portal.address_form_fields`) is reused by
+        both the portal /my/account form (portal.portal_my_details) and the
+        eCommerce /shop/address form (website_sale.address), so a single
+        inheritance covers both pages.
+
+        The field div is hidden by default and revealed by JavaScript only when
+        the selected country is Saudi Arabia (ISO code "SA").
+    -->
+    <template id="address_form_national_address"
+              inherit_id="portal.address_form_fields"
+              name="National Address Field">
+        <xpath expr="//div[@id='div_country']" position="after">
+            <div id="div_national_address"
+                 class="col-lg-6 mb-2 o_national_address_field"
+                 style="display: none;">
+                <label class="col-form-label" for="o_x_national_address">
+                    العنوان الوطني
+                </label>
+                <input type="text"
+                       name="x_national_address"
+                       id="o_x_national_address"
+                       class="form-control"
+                       t-att-value="partner_sudo.x_national_address"/>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>
