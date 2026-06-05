@@ -146,9 +146,12 @@ class PaymentTransaction(models.Model):
         :rtype: payment.transaction recordset
         :raises ValidationError: If the transaction cannot be found.
         """
-        tx = super()._get_tx_from_notification_data(provider_code, notification_data)
-        if provider_code != 'myfatoorah' or len(tx) == 1:
-            return tx
+        try:
+            tx = super()._get_tx_from_notification_data(provider_code, notification_data)
+            if provider_code != 'myfatoorah' or len(tx) == 1:
+                return tx
+        except Exception:
+            pass
 
         reference = notification_data.get('CustomerReference')
         payment_id = notification_data.get('paymentId')
