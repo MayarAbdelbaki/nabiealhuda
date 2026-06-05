@@ -297,7 +297,7 @@ class PaymentTransaction(models.Model):
         )
 
         # Map MyFatoorah statuses to Odoo states
-        if invoice_status == 'paid' or tx_status == 'succss':
+        if invoice_status == 'paid' or tx_status in ('success', 'succss'):
             self._set_done()
         elif invoice_status in ('pending', 'initiated') or tx_status in ('pending', 'initiated'):
             self._set_pending()
