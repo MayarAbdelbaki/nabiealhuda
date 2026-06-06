@@ -3,7 +3,7 @@
 import logging
 import pprint
 
-from odoo import _, api, models
+from odoo import _, models
 from odoo.exceptions import ValidationError
 from odoo.tools.urls import urljoin as url_join
 
@@ -136,26 +136,23 @@ class PaymentTransaction(models.Model):
 
     # === NOTIFICATION HANDLING === #
 
-    @api.model
-    def _get_tx_from_notification_data(self, provider_code, notification_data):
+    def _search_by_reference(self, provider_code, payment_data):
         """ Override of `payment` to find the transaction based on MyFatoorah data.
 
         :param str provider_code: The provider code.
-        :param dict notification_data: The notification data from callback/webhook.
+        :param dict payment_data: The payment data from callback/webhook.
         :return: The matching transaction.
         :rtype: payment.transaction recordset
         :raises ValidationError: If the transaction cannot be found.
         """
-        try:
-            tx = super()._get_tx_from_notification_data(provider_code, notification_data)
-            if provider_code != 'myfatoorah' or len(tx) == 1:
-                return tx
-        except Exception:
-            pass
+        if provider_code != 'myfatoorah':
+            return super()._search_by_reference(provider_code, payment_data)
 
-        reference = notification_data.get('CustomerReference')
-        payment_id = notification_data.get('paymentId')
-        invoice_id = notification_data.get('InvoiceId')
+        tx = self.env['payment.transaction']
+
+        reference = payment_data.get('CustomerReference')
+        payment_id = payment_data.get('paymentId')
+        invoice_id = payment_data.get('InvoiceId')
 
         _logger.info(
             "MyFatoorah: Looking up transaction — reference: %s, paymentId: %s, invoiceId: %s",
@@ -220,20 +217,21 @@ class PaymentTransaction(models.Model):
             ref=reference, pid=payment_id, iid=invoice_id,
         ))
 
-    def _process_notification_data(self, notification_data):
-        """ Override of `payment` to process MyFatoorah notification data.
+    def _process(self, provider_code, payment_data):
+        """ Override of `payment` to process MyFatoorah payment data.
 
         Calls GetPaymentStatus to get the definitive payment status.
 
-        :param dict notification_data: The notification data from callback/webhook.
+        :param str provider_code: The provider code.
+        :param dict payment_data: The payment data from callback/webhook.
         :return: None
         """
-        super()._process_notification_data(notification_data)
+        super()._process(provider_code, payment_data)
         if self.provider_code != 'myfatoorah':
             return
 
-        payment_id = notification_data.get('paymentId')
-        invoice_id = notification_data.get('InvoiceId') or self.provider_reference
+        payment_id = payment_data.get('paymentId')
+        invoice_id = payment_data.get('InvoiceId') or self.provider_reference
 
         _logger.info(
             "MyFatoorah: Processing notification for tx %s (paymentId: %s, invoiceId: %s)",

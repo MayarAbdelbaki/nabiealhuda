@@ -56,10 +56,10 @@ class MyFatoorahController(http.Controller):
 
         # Find and process the transaction
         try:
-            tx_sudo = request.env['payment.transaction'].sudo()._get_tx_from_notification_data(
+            tx_sudo = request.env['payment.transaction'].sudo()._search_by_reference(
                 'myfatoorah', notification_data
             )
-            tx_sudo._handle_notification_data('myfatoorah', notification_data)
+            tx_sudo._process('myfatoorah', notification_data)
         except Exception as e:
             _logger.exception(
                 "MyFatoorah: Error processing success callback for paymentId %s: %s",
@@ -100,10 +100,10 @@ class MyFatoorahController(http.Controller):
 
         # Find and process the transaction
         try:
-            tx_sudo = request.env['payment.transaction'].sudo()._get_tx_from_notification_data(
+            tx_sudo = request.env['payment.transaction'].sudo()._search_by_reference(
                 'myfatoorah', notification_data
             )
-            tx_sudo._handle_notification_data('myfatoorah', notification_data)
+            tx_sudo._process('myfatoorah', notification_data)
         except Exception as e:
             _logger.exception(
                 "MyFatoorah: Error processing error callback for paymentId %s: %s",
@@ -245,10 +245,10 @@ class MyFatoorahController(http.Controller):
             }
 
             try:
-                tx_sudo = request.env['payment.transaction'].sudo()._get_tx_from_notification_data(
+                tx_sudo = request.env['payment.transaction'].sudo()._search_by_reference(
                     'myfatoorah', notification_data
                 )
-                tx_sudo._handle_notification_data('myfatoorah', notification_data)
+                tx_sudo._process('myfatoorah', notification_data)
                 _logger.info(
                     "MyFatoorah: Webhook — Transaction %s updated for event %s.",
                     tx_sudo.reference, event_type,
