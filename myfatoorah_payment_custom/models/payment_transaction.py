@@ -233,6 +233,7 @@ class PaymentTransaction(models.Model):
         )
 
         # Success: invoice is paid, or the latest transaction succeeded.
+        # The `sale` module auto-confirms the linked order(s) when the tx is done.
         if invoice_status == 'paid' or tx_status in ('success', 'succss'):
             self._set_done()
         # Failure takes priority over the invoice's "pending" — a failed attempt
@@ -240,10 +241,44 @@ class PaymentTransaction(models.Model):
         elif tx_status == 'failed' or invoice_status == 'failed':
             error_msg = (latest_tx.get('Error', '') or latest_tx.get('ErrorCode', '')) if latest_tx else ''
             self._set_error(_("MyFatoorah: Payment failed. %s") % (error_msg or _("The payment was declined.")))
+            self._myfatoorah_cancel_orders_if_no_retry()
         elif invoice_status in ('expired', 'canceled') or tx_status in ('expired', 'canceled'):
             self._set_canceled(state_message=_("MyFatoorah: Payment was %s.") % (invoice_status or tx_status))
+            self._myfatoorah_cancel_orders_if_no_retry()
         # Genuinely still in progress: no failed attempt yet, invoice unpaid.
         elif invoice_status in ('pending', 'initiated') or tx_status in ('pending', 'initiated'):
             self._set_pending()
         else:
             self._set_error(_("MyFatoorah: Unknown payment status: %s") % (invoice_status or tx_status or 'unknown'))
+
+    def _myfatoorah_cancel_orders_if_no_retry(self):
+        """Cancel the linked sale order(s) after a failed/declined payment.
+
+        To avoid cancelling an order the customer is still paying, we only cancel
+        when there is NO other transaction for the same order still in a
+        non-final state (draft/pending/authorized). This lets customers retry; we
+        only cancel once they have truly failed with no pending attempt left.
+        """
+        self.ensure_one()
+        orders = self.sale_order_ids.filtered(lambda o: o.state in ('draft', 'sent'))
+        for order in orders:
+            # Other live transactions for this order (excluding the current one).
+            pending_txs = order.transaction_ids.filtered(
+                lambda t: t.id != self.id and t.state in ('draft', 'pending', 'authorized')
+            )
+            if pending_txs:
+                _logger.info(
+                    "MyFatoorah: Order %s NOT cancelled — %s pending transaction(s) remain.",
+                    order.name, len(pending_txs),
+                )
+                continue
+            try:
+                order._action_cancel()
+                _logger.info(
+                    "MyFatoorah: Order %s cancelled after failed payment (tx %s).",
+                    order.name, self.reference,
+                )
+            except Exception as e:  # noqa: BLE001 - never break the payment flow on cancel
+                _logger.warning(
+                    "MyFatoorah: Could not cancel order %s: %s", order.name, str(e),
+                )
