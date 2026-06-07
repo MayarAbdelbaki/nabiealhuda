@@ -51,13 +51,13 @@ class PaymentTransaction(models.Model):
                         invoice_items.append({
                             'ItemName': line.product_id.name or line.name or 'Product',
                             'Quantity': int(line.product_uom_qty) or 1,
-                            'UnitPrice': round(line.price_unit, 3),
+                            'UnitPrice': round(line.price_unit, 2),
                         })
         if not invoice_items:
             invoice_items.append({
                 'ItemName': self.reference or 'Payment',
                 'Quantity': 1,
-                'UnitPrice': round(self.amount, 3),
+                'UnitPrice': round(self.amount, 2),
             })
 
         # Build the SendPayment payload
