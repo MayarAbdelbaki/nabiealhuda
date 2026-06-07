@@ -3,7 +3,7 @@
 import logging
 import pprint
 
-from odoo import _, models
+from odoo import _, api, models
 from odoo.exceptions import ValidationError
 from odoo.tools.urls import urljoin as url_join
 
@@ -42,37 +42,27 @@ class PaymentTransaction(models.Model):
         # Determine language
         lang = 'ar' if self.partner_lang and 'ar' in self.partner_lang else 'en'
 
-        # Build invoice items from sale order lines if available.
-        # MyFatoorah requires sum(Quantity * UnitPrice) == InvoiceValue, so we
-        # use the line subtotal (incl. tax & discount) as a single-quantity item
-        # and verify the total matches the transaction amount.
-        invoice_value = round(self.amount, 3)
+        # Build invoice items from sale order lines if available
         invoice_items = []
         if self.sale_order_ids:
             for order in self.sale_order_ids:
                 for line in order.order_line:
-                    line_total = round(line.price_total, 3)
-                    if line.product_id and line_total > 0:
+                    if line.product_id and line.price_unit > 0:
                         invoice_items.append({
-                            'ItemName': (line.product_id.name or line.name or 'Product')[:75],
-                            'Quantity': 1,
-                            'UnitPrice': line_total,
+                            'ItemName': line.product_id.name or line.name or 'Product',
+                            'Quantity': int(line.product_uom_qty) or 1,
+                            'UnitPrice': round(line.price_unit, 3),
                         })
-
-        # Verify items sum matches the invoice value; if not, fall back to a
-        # single line equal to the amount to avoid MyFatoorah's
-        # "Invoice total value must be the same total items value" error.
-        items_total = round(sum(i['Quantity'] * i['UnitPrice'] for i in invoice_items), 3)
-        if not invoice_items or items_total != invoice_value:
-            invoice_items = [{
-                'ItemName': (self.reference or 'Payment')[:75],
+        if not invoice_items:
+            invoice_items.append({
+                'ItemName': self.reference or 'Payment',
                 'Quantity': 1,
-                'UnitPrice': invoice_value,
-            }]
+                'UnitPrice': round(self.amount, 3),
+            })
 
         # Build the SendPayment payload
         payload = {
-            'InvoiceValue': invoice_value,
+            'InvoiceValue': round(self.amount, 3),
             'CustomerName': self.partner_name or self.partner_id.name or 'Customer',
             'NotificationOption': 'LNK',
             'CallBackUrl': return_url,
@@ -89,20 +79,9 @@ class PaymentTransaction(models.Model):
             payload['NotificationOption'] = 'ALL'
 
         if self.partner_phone:
-            # MyFatoorah expects CustomerMobile as digits only, max 11 chars,
-            # without the country code (that goes in MobileCountryCode).
-            digits = ''.join(c for c in self.partner_phone if c.isdigit())
-            # Strip a leading country code, e.g. Saudi '966' / Kuwait '965' / Egypt '20'.
-            for cc in ('966', '965', '968', '973', '974', '971', '20'):
-                if digits.startswith(cc) and len(digits) - len(cc) >= 7:
-                    digits = digits[len(cc):]
-                    break
-            # Strip a leading trunk '0' if present (e.g. 0543934560 -> 543934560).
-            digits = digits.lstrip('0')
-            phone = digits[:11]
+            phone = ''.join(c for c in self.partner_phone if c.isdigit() or c == '+')
             if phone:
                 payload['CustomerMobile'] = phone
-                payload['MobileCountryCode'] = '+966'
                 if payload['NotificationOption'] == 'LNK':
                     payload['NotificationOption'] = 'SMS'
 
@@ -157,23 +136,23 @@ class PaymentTransaction(models.Model):
 
     # === NOTIFICATION HANDLING === #
 
-    def _search_by_reference(self, provider_code, payment_data):
+    @api.model
+    def _get_tx_from_notification_data(self, provider_code, notification_data):
         """ Override of `payment` to find the transaction based on MyFatoorah data.
 
         :param str provider_code: The provider code.
-        :param dict payment_data: The payment data from callback/webhook.
+        :param dict notification_data: The notification data from callback/webhook.
         :return: The matching transaction.
         :rtype: payment.transaction recordset
         :raises ValidationError: If the transaction cannot be found.
         """
-        if provider_code != 'myfatoorah':
-            return super()._search_by_reference(provider_code, payment_data)
+        tx = super()._get_tx_from_notification_data(provider_code, notification_data)
+        if provider_code != 'myfatoorah' or len(tx) == 1:
+            return tx
 
-        tx = self.env['payment.transaction']
-
-        reference = payment_data.get('CustomerReference')
-        payment_id = payment_data.get('paymentId')
-        invoice_id = payment_data.get('InvoiceId')
+        reference = notification_data.get('CustomerReference')
+        payment_id = notification_data.get('paymentId')
+        invoice_id = notification_data.get('InvoiceId')
 
         _logger.info(
             "MyFatoorah: Looking up transaction — reference: %s, paymentId: %s, invoiceId: %s",
@@ -238,22 +217,20 @@ class PaymentTransaction(models.Model):
             ref=reference, pid=payment_id, iid=invoice_id,
         ))
 
-    def _apply_updates(self, payment_data):
-        """ Override of `payment` to update the transaction from MyFatoorah data.
+    def _process_notification_data(self, notification_data):
+        """ Override of `payment` to process MyFatoorah notification data.
 
         Calls GetPaymentStatus to get the definitive payment status.
 
-        Note: `self.ensure_one()` from the base implementation.
-
-        :param dict payment_data: The payment data from callback/webhook.
+        :param dict notification_data: The notification data from callback/webhook.
         :return: None
         """
-        super()._apply_updates(payment_data)
+        super()._process_notification_data(notification_data)
         if self.provider_code != 'myfatoorah':
             return
 
-        payment_id = payment_data.get('paymentId')
-        invoice_id = payment_data.get('InvoiceId') or self.provider_reference
+        payment_id = notification_data.get('paymentId')
+        invoice_id = notification_data.get('InvoiceId') or self.provider_reference
 
         _logger.info(
             "MyFatoorah: Processing notification for tx %s (paymentId: %s, invoiceId: %s)",
@@ -320,7 +297,7 @@ class PaymentTransaction(models.Model):
         )
 
         # Map MyFatoorah statuses to Odoo states
-        if invoice_status == 'paid' or tx_status in ('success', 'succss'):
+        if invoice_status == 'paid' or tx_status == 'succss':
             self._set_done()
         elif invoice_status in ('pending', 'initiated') or tx_status in ('pending', 'initiated'):
             self._set_pending()
