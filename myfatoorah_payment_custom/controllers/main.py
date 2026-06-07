@@ -179,7 +179,7 @@ class MyFatoorahController(http.Controller):
         signature_verified = False
         matching_provider = None
         for provider in providers:
-            if provider._myfatoorah_verify_webhook_signature(raw_body, signature):
+            if provider._myfatoorah_verify_webhook_signature(event_data, signature):
                 signature_verified = True
                 matching_provider = provider
                 break

@@ -1,5 +1,6 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
+import base64
 import hashlib
 import hmac
 import logging
@@ -220,11 +221,18 @@ class PaymentProvider(models.Model):
 
         return response_data.get('Data', {})
 
-    def _myfatoorah_verify_webhook_signature(self, raw_body, signature):
-        """Verify the HMAC-SHA256 signature of a webhook event.
+    def _myfatoorah_verify_webhook_signature(self, event_data, signature):
+        """Verify the HMAC-SHA256 signature of a MyFatoorah V2 webhook event.
 
-        :param bytes raw_body: The raw request body bytes.
-        :param str signature: The signature from the header.
+        MyFatoorah does NOT sign the raw JSON body. It builds a string from the
+        fields of the `Data` object as ``key=value`` pairs, ordered alphabetically
+        by key and joined with commas, then signs it with HMAC-SHA256 keyed by the
+        webhook secret, and Base64-encodes the result.
+
+        See: https://docs.myfatoorah.com/docs/webhooks (Signature Validation)
+
+        :param dict event_data: The parsed webhook JSON payload.
+        :param str signature: The signature from the `MyFatoorah-Signature` header.
         :return: True if signature is valid.
         :rtype: bool
         """
@@ -236,11 +244,31 @@ class PaymentProvider(models.Model):
             )
             return False
 
-        expected_signature = hmac.new(
-            key=self.myfatoorah_webhook_secret.encode('utf-8'),
-            msg=raw_body,
-            digestmod=hashlib.sha256,
-        ).hexdigest()
+        if not signature:
+            _logger.warning("MyFatoorah webhook: No signature header provided.")
+            return False
+
+        data = event_data.get('Data', {}) or {}
+        # Build "key=value,key=value" ordered alphabetically by key. Booleans are
+        # lowercased ("true"/"false"); None becomes an empty string.
+        def _fmt(value):
+            if isinstance(value, bool):
+                return 'true' if value else 'false'
+            if value is None:
+                return ''
+            return str(value)
+
+        signing_string = ','.join(
+            f"{key}={_fmt(data[key])}" for key in sorted(data.keys())
+        )
+
+        expected_signature = base64.b64encode(
+            hmac.new(
+                key=self.myfatoorah_webhook_secret.encode('utf-8'),
+                msg=signing_string.encode('utf-8'),
+                digestmod=hashlib.sha256,
+            ).digest()
+        ).decode('utf-8')
 
         is_valid = hmac.compare_digest(expected_signature, signature)
 
@@ -248,9 +276,9 @@ class PaymentProvider(models.Model):
             _logger.info("MyFatoorah webhook: Signature verification PASSED.")
         else:
             _logger.warning(
-                "MyFatoorah webhook: Signature verification FAILED. "
-                "Expected: %s..., Got: %s...",
-                expected_signature[:16], signature[:16] if signature else 'None',
+                "MyFatoorah webhook: Signature verification FAILED.\n"
+                "Signing string: %s\nExpected: %s\nGot: %s",
+                signing_string, expected_signature, signature,
             )
 
         return is_valid

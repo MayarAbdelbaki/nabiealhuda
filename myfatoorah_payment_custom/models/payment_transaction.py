@@ -232,14 +232,18 @@ class PaymentTransaction(models.Model):
             self.reference, invoice_status, tx_status,
         )
 
+        # Success: invoice is paid, or the latest transaction succeeded.
         if invoice_status == 'paid' or tx_status in ('success', 'succss'):
             self._set_done()
-        elif invoice_status in ('pending', 'initiated') or tx_status in ('pending', 'initiated'):
-            self._set_pending()
+        # Failure takes priority over the invoice's "pending" — a failed attempt
+        # leaves the invoice unpaid (pending) but the payment did NOT go through.
+        elif tx_status == 'failed' or invoice_status == 'failed':
+            error_msg = (latest_tx.get('Error', '') or latest_tx.get('ErrorCode', '')) if latest_tx else ''
+            self._set_error(_("MyFatoorah: Payment failed. %s") % (error_msg or _("The payment was declined.")))
         elif invoice_status in ('expired', 'canceled') or tx_status in ('expired', 'canceled'):
             self._set_canceled(state_message=_("MyFatoorah: Payment was %s.") % (invoice_status or tx_status))
-        elif invoice_status == 'failed' or tx_status == 'failed':
-            error_msg = (latest_tx.get('Error', '') or latest_tx.get('ErrorCode', '')) if latest_tx else ''
-            self._set_error(_("MyFatoorah: Payment failed. %s") % error_msg)
+        # Genuinely still in progress: no failed attempt yet, invoice unpaid.
+        elif invoice_status in ('pending', 'initiated') or tx_status in ('pending', 'initiated'):
+            self._set_pending()
         else:
             self._set_error(_("MyFatoorah: Unknown payment status: %s") % (invoice_status or tx_status or 'unknown'))
