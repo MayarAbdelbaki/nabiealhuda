@@ -4,5 +4,6 @@
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/myfatoorah_payment_custom" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/payment-myfatoorah-odoo19" vcs="Git" />
   </component>
 </project>
