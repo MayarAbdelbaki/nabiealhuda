@@ -107,25 +107,38 @@ class PaymentTransaction(models.Model):
         _logger.info("MyFatoorah: Rendering redirect to %s for tx %s", invoice_url, self.reference)
         return {'api_url': invoice_url}
 
+    # === NOTIFICATION / STATUS HANDLING (Odoo 19 API) === #
+
     @api.model
-    def _get_tx_from_payment_data(self, provider_code, payment_data):
+    def _extract_reference(self, provider_code, payment_data):
+        """ Override of `payment` to extract the reference from MyFatoorah data.
+
+        MyFatoorah's redirect only carries `paymentId`. We resolve it to our
+        transaction reference via the GetPaymentStatus API (it returns
+        `CustomerReference`, which we set to `self.reference` when creating the
+        invoice). We also accept a direct `CustomerReference`/`InvoiceId` from
+        webhooks.
+        """
         if provider_code != 'myfatoorah':
-            return super()._get_tx_from_payment_data(provider_code, payment_data)
+            return super()._extract_reference(provider_code, payment_data)
 
-        reference = payment_data.get('CustomerReference')
-        payment_id = payment_data.get('paymentId')
-        invoice_id = payment_data.get('InvoiceId')
-
+        # 1. Direct reference (webhook or stored on payment_data).
+        reference = payment_data.get('CustomerReference') or payment_data.get('reference')
         if reference:
-            tx = self.search([('reference', '=', reference), ('provider_code', '=', 'myfatoorah')], limit=1)
-            if tx:
-                return tx
+            return reference
 
+        # 2. Resolve via InvoiceId stored as provider_reference.
+        invoice_id = payment_data.get('InvoiceId')
         if invoice_id:
-            tx = self.search([('provider_reference', '=', str(invoice_id)), ('provider_code', '=', 'myfatoorah')], limit=1)
+            tx = self.search([
+                ('provider_reference', '=', str(invoice_id)),
+                ('provider_code', '=', 'myfatoorah'),
+            ], limit=1)
             if tx:
-                return tx
+                return tx.reference
 
+        # 3. Resolve a bare paymentId by asking MyFatoorah for the status.
+        payment_id = payment_data.get('paymentId')
         if payment_id:
             providers = self.env['payment.provider'].sudo().search([
                 ('code', '=', 'myfatoorah'),
@@ -135,61 +148,84 @@ class PaymentTransaction(models.Model):
                 try:
                     status_data = provider._myfatoorah_make_request(
                         '/v2/GetPaymentStatus',
-                        {'Key': payment_id, 'KeyType': 'PaymentId'},
+                        {'Key': str(payment_id), 'KeyType': 'PaymentId'},
                     )
-                    ref = status_data.get('CustomerReference')
-                    inv_id = status_data.get('InvoiceId')
-                    if ref:
-                        tx = self.search([('reference', '=', ref), ('provider_code', '=', 'myfatoorah')], limit=1)
-                        if tx:
-                            return tx
-                    if inv_id:
-                        tx = self.search([('provider_reference', '=', str(inv_id)), ('provider_code', '=', 'myfatoorah')], limit=1)
-                        if tx:
-                            return tx
-                except Exception as e:
-                    _logger.warning("MyFatoorah: Error querying payment status: %s", str(e))
+                except Exception as e:  # noqa: BLE001 - try the next provider
+                    _logger.warning("MyFatoorah: status lookup failed: %s", str(e))
                     continue
+                # Cache the status data so _apply_updates doesn't re-fetch it.
+                payment_data['_myfatoorah_status'] = status_data
+                ref = status_data.get('CustomerReference')
+                if ref:
+                    return ref
+                inv_id = status_data.get('InvoiceId')
+                if inv_id:
+                    tx = self.search([
+                        ('provider_reference', '=', str(inv_id)),
+                        ('provider_code', '=', 'myfatoorah'),
+                    ], limit=1)
+                    if tx:
+                        return tx.reference
 
-        raise ValidationError(_("MyFatoorah: No transaction found for notification data."))
+        _logger.warning(
+            "MyFatoorah: could not extract a reference from payment data: %s", payment_data
+        )
+        return None
 
-    def _process(self, provider_code, payment_data):
+    def _extract_amount_data(self, payment_data):
+        """ Override of `payment`: skip amount validation for MyFatoorah.
+
+        MyFatoorah is a redirect gateway; the authoritative amount is the one we
+        sent. Returning `None` tells the core to skip the amount/currency check.
+        """
         if self.provider_code != 'myfatoorah':
-            return super()._process(provider_code, payment_data)
+            return super()._extract_amount_data(payment_data)
+        return None
 
-        payment_id = payment_data.get('paymentId')
-        invoice_id = payment_data.get('InvoiceId') or self.provider_reference
+    def _apply_updates(self, payment_data):
+        """ Override of `payment` to set the MyFatoorah transaction state.
 
-        if payment_id:
-            key, key_type = payment_id, 'PaymentId'
-        elif invoice_id:
-            key, key_type = invoice_id, 'InvoiceId'
-        else:
-            self._set_error(_("MyFatoorah: Missing payment identification."))
-            return
+        Calls GetPaymentStatus to get the definitive status and maps it to the
+        Odoo transaction state. Note: `self.ensure_one()` is guaranteed by
+        `_process`.
+        """
+        if self.provider_code != 'myfatoorah':
+            return super()._apply_updates(payment_data)
 
-        try:
-            status_data = self.provider_id._myfatoorah_make_request(
-                '/v2/GetPaymentStatus',
-                {'Key': str(key), 'KeyType': key_type},
-            )
-        except ValidationError:
-            self._set_error(_("MyFatoorah: Failed to verify payment status."))
-            return
+        # Reuse status data fetched during _extract_reference if available.
+        status_data = payment_data.get('_myfatoorah_status')
+        if not status_data:
+            payment_id = payment_data.get('paymentId')
+            invoice_id = payment_data.get('InvoiceId') or self.provider_reference
+            if payment_id:
+                key, key_type = payment_id, 'PaymentId'
+            elif invoice_id:
+                key, key_type = invoice_id, 'InvoiceId'
+            else:
+                self._set_error(_("MyFatoorah: Missing payment identification."))
+                return
+            try:
+                status_data = self.provider_id._myfatoorah_make_request(
+                    '/v2/GetPaymentStatus',
+                    {'Key': str(key), 'KeyType': key_type},
+                )
+            except ValidationError:
+                self._set_error(_("MyFatoorah: Failed to verify payment status."))
+                return
 
         _logger.info(
             "MyFatoorah: Payment status for tx %s:\n%s",
             self.reference, pprint.pformat(status_data),
         )
 
-        invoice_status = status_data.get('InvoiceStatus', '').lower()
+        invoice_status = (status_data.get('InvoiceStatus') or '').lower()
         invoice_id_resp = status_data.get('InvoiceId')
         if invoice_id_resp and not self.provider_reference:
             self.provider_reference = str(invoice_id_resp)
 
         transactions = status_data.get('InvoiceTransactions', [])
         latest_tx = transactions[-1] if transactions else None
-        tx_status = latest_tx.get('TransactionStatus', '').lower() if latest_tx else invoice_status
+        tx_status = (latest_tx.get('TransactionStatus') or '').lower() if latest_tx else invoice_status
 
         _logger.info(
             "MyFatoorah: tx %s — invoice_status: %s, tx_status: %s",

@@ -48,18 +48,16 @@ class MyFatoorahController(http.Controller):
             _logger.error("MyFatoorah: No paymentId in success callback.")
             return request.redirect('/payment/status')
 
-        # Build notification data
-        notification_data = {
+        # Build payment data
+        payment_data = {
             'paymentId': payment_id,
             'status': 'success',
         }
 
-        # Find and process the transaction
+        # Process the transaction (Odoo 19 API: _process routes through
+        # _search_by_reference -> _extract_reference -> _apply_updates).
         try:
-            tx_sudo = request.env['payment.transaction'].sudo()._get_tx_from_notification_data(
-                'myfatoorah', notification_data
-            )
-            tx_sudo._handle_notification_data('myfatoorah', notification_data)
+            request.env['payment.transaction'].sudo()._process('myfatoorah', payment_data)
         except Exception as e:
             _logger.exception(
                 "MyFatoorah: Error processing success callback for paymentId %s: %s",
@@ -92,18 +90,16 @@ class MyFatoorahController(http.Controller):
             _logger.error("MyFatoorah: No paymentId in error callback.")
             return request.redirect('/payment/status')
 
-        # Build notification data
-        notification_data = {
+        # Build payment data
+        payment_data = {
             'paymentId': payment_id,
             'status': 'error',
         }
 
-        # Find and process the transaction
+        # Process the transaction (Odoo 19 API). Even on the error callback we
+        # query the real status, since the customer may still have paid.
         try:
-            tx_sudo = request.env['payment.transaction'].sudo()._get_tx_from_notification_data(
-                'myfatoorah', notification_data
-            )
-            tx_sudo._handle_notification_data('myfatoorah', notification_data)
+            request.env['payment.transaction'].sudo()._process('myfatoorah', payment_data)
         except Exception as e:
             _logger.exception(
                 "MyFatoorah: Error processing error callback for paymentId %s: %s",
@@ -236,8 +232,8 @@ class MyFatoorahController(http.Controller):
         customer_reference = data.get('CustomerReference')
 
         if event_type in ('PAYMENT_STATUS_CHANGED', 'TransactionStatusChanged'):
-            # Build notification data for transaction processing
-            notification_data = {
+            # Build payment data for transaction processing
+            payment_data = {
                 'InvoiceId': invoice_id,
                 'paymentId': payment_id,
                 'CustomerReference': customer_reference,
@@ -245,13 +241,12 @@ class MyFatoorahController(http.Controller):
             }
 
             try:
-                tx_sudo = request.env['payment.transaction'].sudo()._get_tx_from_notification_data(
-                    'myfatoorah', notification_data
+                tx_sudo = request.env['payment.transaction'].sudo()._process(
+                    'myfatoorah', payment_data
                 )
-                tx_sudo._handle_notification_data('myfatoorah', notification_data)
                 _logger.info(
                     "MyFatoorah: Webhook — Transaction %s updated for event %s.",
-                    tx_sudo.reference, event_type,
+                    tx_sudo.reference if tx_sudo else '(not found)', event_type,
                 )
             except Exception as e:
                 _logger.error(
