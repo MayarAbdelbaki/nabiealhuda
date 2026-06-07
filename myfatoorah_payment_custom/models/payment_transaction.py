@@ -79,8 +79,9 @@ class PaymentTransaction(models.Model):
             payload['NotificationOption'] = 'ALL'
 
         if self.partner_phone:
-            phone = ''.join(c for c in self.partner_phone if c.isdigit() or c == '+')
+            phone = ''.join(c for c in self.partner_phone if c.isdigit())
             if phone:
+                phone = phone[-11:]
                 payload['CustomerMobile'] = phone
                 if payload['NotificationOption'] == 'LNK':
                     payload['NotificationOption'] = 'SMS'
