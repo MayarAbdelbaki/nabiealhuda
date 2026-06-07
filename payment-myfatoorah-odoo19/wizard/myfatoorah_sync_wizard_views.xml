@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="myfatoorah_sync_wizard_form" model="ir.ui.view">
+        <field name="name">myfatoorah.sync.wizard.form</field>
+        <field name="model">myfatoorah.sync.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Sync Payment Status from MyFatoorah">
+                <sheet>
+                    <group>
+                        <field name="transaction_id" readonly="1"/>
+                        <field name="current_status" readonly="1"/>
+                        <field name="current_state" readonly="1"/>
+                    </group>
+                    <div class="alert alert-info">
+                        This will call the MyFatoorah v3 API to get the latest payment status
+                        and update the invoice/sales order accordingly.
+                    </div>
+                </sheet>
+                <footer>
+                    <button name="action_sync" string="🔄 Sync Now" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_myfatoorah_sync_wizard" model="ir.actions.act_window">
+        <field name="name">Sync Status from MyFatoorah</field>
+        <field name="res_model">myfatoorah.sync.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="context">{'active_id': active_id}</field>
+    </record>
+
+</odoo>

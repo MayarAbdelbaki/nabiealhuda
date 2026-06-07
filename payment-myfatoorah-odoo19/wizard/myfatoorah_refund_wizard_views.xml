@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Refund Wizard -->
+    <record id="myfatoorah_refund_wizard_form" model="ir.ui.view">
+        <field name="name">myfatoorah.refund.wizard.form</field>
+        <field name="model">myfatoorah.refund.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Issue MyFatoorah Refund">
+                <sheet>
+                    <group>
+                        <field name="transaction_id" readonly="1"/>
+                        <field name="currency_id" invisible="1"/>
+                        <field name="original_amount" readonly="1"/>
+                        <field name="refund_amount"/>
+                        <field name="reason"/>
+                    </group>
+                    <div class="alert alert-warning">
+                        ⚠️ This issues a real refund via MyFatoorah. It cannot be undone.
+                        Partial refunds are supported.
+                    </div>
+                </sheet>
+                <footer>
+                    <button name="action_refund" string="Confirm Refund" type="object" class="btn-danger"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_myfatoorah_refund_wizard" model="ir.actions.act_window">
+        <field name="name">Refund via MyFatoorah</field>
+        <field name="res_model">myfatoorah.refund.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="context">{'active_id': active_id}</field>
+    </record>
+
+</odoo>

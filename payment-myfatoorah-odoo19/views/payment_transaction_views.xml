@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+        Uses //sheet xpath — works on Community (no extra_info page).
+        Uses 'invisible=' syntax (Odoo 17+/19 compatible).
+    -->
+    <record id="payment_transaction_form_myfatoorah" model="ir.ui.view">
+        <field name="name">payment.transaction.form.myfatoorah</field>
+        <field name="model">payment.transaction</field>
+        <field name="inherit_id" ref="payment.payment_transaction_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="inside">
+                <group string="MyFatoorah Details"
+                       invisible="provider_code != 'myfatoorah'">
+                    <group>
+                        <field name="myfatoorah_invoice_id" readonly="1"/>
+                        <field name="myfatoorah_payment_id" readonly="1"/>
+                        <field name="myfatoorah_invoice_status" readonly="1"/>
+                        <field name="myfatoorah_payment_method" readonly="1"/>
+                    </group>
+                    <group>
+                        <field name="myfatoorah_card_brand" readonly="1"/>
+                        <field name="myfatoorah_card_last4" readonly="1"/>
+                        <field name="myfatoorah_error_code" readonly="1"/>
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

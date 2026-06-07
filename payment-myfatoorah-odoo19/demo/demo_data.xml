@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <!--
+        MyFatoorah PUBLIC TEST TOKEN
+        Source: https://docs.myfatoorah.com/docs/test-cards
+        Valid for: apitest.myfatoorah.com (Test Mode only)
+        DO NOT use in production.
+    -->
+    <record id="payment_provider_myfatoorah" model="payment.provider">
+        <field name="name">MyFatoorah</field>
+        <field name="code">myfatoorah</field>
+        <field name="state">test</field>
+        <field name="sequence">10</field>
+        <field name="myfatoorah_country">kw</field>
+        <field name="myfatoorah_api_token">SK_KWT_vVZlnnAqu8jRByOWaRPNId4ShzEDNt256dvnjebuyzo52dXjAfRx2ixW5umjWSUx</field>
+        <field name="myfatoorah_cron_enabled">True</field>
+        <field name="myfatoorah_show_logos">True</field>
+        <field name="myfatoorah_send_invoice_email">False</field>
+        <field name="myfatoorah_enable_kfast">False</field>
+    </record>
+</odoo>

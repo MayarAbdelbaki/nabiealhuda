@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+        Redirect form template — Odoo calls _get_redirect_form_view() which returns this.
+        The JS submits this form automatically, redirecting the customer to the MF hosted page.
+    -->
+    <template id="redirect_form">
+        <form t-att-action="api_url" method="get" id="mf_redirect_form"></form>
+    </template>
+</odoo>
