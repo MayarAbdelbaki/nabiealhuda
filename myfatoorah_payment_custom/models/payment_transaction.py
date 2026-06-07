@@ -42,27 +42,37 @@ class PaymentTransaction(models.Model):
         # Determine language
         lang = 'ar' if self.partner_lang and 'ar' in self.partner_lang else 'en'
 
-        # Build invoice items from sale order lines if available
+        # Build invoice items from sale order lines if available.
+        # MyFatoorah requires sum(Quantity * UnitPrice) == InvoiceValue, so we
+        # use the line subtotal (incl. tax & discount) as a single-quantity item
+        # and verify the total matches the transaction amount.
+        invoice_value = round(self.amount, 3)
         invoice_items = []
         if self.sale_order_ids:
             for order in self.sale_order_ids:
                 for line in order.order_line:
-                    if line.product_id and line.price_unit > 0:
+                    line_total = round(line.price_total, 3)
+                    if line.product_id and line_total > 0:
                         invoice_items.append({
-                            'ItemName': line.product_id.name or line.name or 'Product',
-                            'Quantity': int(line.product_uom_qty) or 1,
-                            'UnitPrice': round(line.price_unit, 3),
+                            'ItemName': (line.product_id.name or line.name or 'Product')[:75],
+                            'Quantity': 1,
+                            'UnitPrice': line_total,
                         })
-        if not invoice_items:
-            invoice_items.append({
-                'ItemName': self.reference or 'Payment',
+
+        # Verify items sum matches the invoice value; if not, fall back to a
+        # single line equal to the amount to avoid MyFatoorah's
+        # "Invoice total value must be the same total items value" error.
+        items_total = round(sum(i['Quantity'] * i['UnitPrice'] for i in invoice_items), 3)
+        if not invoice_items or items_total != invoice_value:
+            invoice_items = [{
+                'ItemName': (self.reference or 'Payment')[:75],
                 'Quantity': 1,
-                'UnitPrice': round(self.amount, 3),
-            })
+                'UnitPrice': invoice_value,
+            }]
 
         # Build the SendPayment payload
         payload = {
-            'InvoiceValue': round(self.amount, 3),
+            'InvoiceValue': invoice_value,
             'CustomerName': self.partner_name or self.partner_id.name or 'Customer',
             'NotificationOption': 'LNK',
             'CallBackUrl': return_url,
@@ -79,9 +89,20 @@ class PaymentTransaction(models.Model):
             payload['NotificationOption'] = 'ALL'
 
         if self.partner_phone:
-            phone = ''.join(c for c in self.partner_phone if c.isdigit() or c == '+')
+            # MyFatoorah expects CustomerMobile as digits only, max 11 chars,
+            # without the country code (that goes in MobileCountryCode).
+            digits = ''.join(c for c in self.partner_phone if c.isdigit())
+            # Strip a leading country code, e.g. Saudi '966' / Kuwait '965' / Egypt '20'.
+            for cc in ('966', '965', '968', '973', '974', '971', '20'):
+                if digits.startswith(cc) and len(digits) - len(cc) >= 7:
+                    digits = digits[len(cc):]
+                    break
+            # Strip a leading trunk '0' if present (e.g. 0543934560 -> 543934560).
+            digits = digits.lstrip('0')
+            phone = digits[:11]
             if phone:
                 payload['CustomerMobile'] = phone
+                payload['MobileCountryCode'] = '+966'
                 if payload['NotificationOption'] == 'LNK':
                     payload['NotificationOption'] = 'SMS'
 
