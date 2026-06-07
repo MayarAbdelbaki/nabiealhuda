@@ -238,16 +238,17 @@ class PaymentTransaction(models.Model):
             ref=reference, pid=payment_id, iid=invoice_id,
         ))
 
-    def _process(self, provider_code, payment_data):
-        """ Override of `payment` to process MyFatoorah payment data.
+    def _apply_updates(self, payment_data):
+        """ Override of `payment` to update the transaction from MyFatoorah data.
 
         Calls GetPaymentStatus to get the definitive payment status.
 
-        :param str provider_code: The provider code.
+        Note: `self.ensure_one()` from the base implementation.
+
         :param dict payment_data: The payment data from callback/webhook.
         :return: None
         """
-        super()._process(provider_code, payment_data)
+        super()._apply_updates(payment_data)
         if self.provider_code != 'myfatoorah':
             return
 
