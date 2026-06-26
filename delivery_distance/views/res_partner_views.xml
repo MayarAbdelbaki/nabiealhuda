@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_partner_form_distance_location" model="ir.ui.view">
+        <field name="name">res.partner.form.distance.location</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Delivery Location" name="delivery_location">
+                    <group>
+                        <group>
+                            <field name="partner_latitude"/>
+                            <field name="partner_longitude"/>
+                        </group>
+                        <group>
+                            <button name="geo_localize"
+                                    type="object"
+                                    string="Locate from Address"
+                                    icon="fa-map-marker"
+                                    class="btn-primary"/>
+                        </group>
+                        <group colspan="2">
+                            <widget name="osm_map_location"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

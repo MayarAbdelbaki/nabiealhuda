@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="delivery_distance.OsmMapLocation">
+        <div class="o_osm_map_location w-100">
+            <div class="o_osm_search position-relative mb-2">
+                <div class="input-group">
+                    <input type="text"
+                           class="form-control"
+                           placeholder="Search an address..."
+                           t-model="state.query"
+                           t-on-keydown="_onSearchKeydown"/>
+                    <button type="button"
+                            class="btn btn-secondary"
+                            t-on-click="_onSearch">
+                        <i class="fa fa-search" t-if="!state.searching"/>
+                        <i class="fa fa-spinner fa-spin" t-if="state.searching"/>
+                        Search
+                    </button>
+                </div>
+                <div t-if="state.results.length"
+                     class="o_osm_results list-group position-absolute w-100 shadow">
+                    <button type="button"
+                            class="list-group-item list-group-item-action text-truncate"
+                            t-foreach="state.results"
+                            t-as="result"
+                            t-key="result_index"
+                            t-on-click="() => this._selectResult(result)">
+                        <t t-esc="result.label"/>
+                    </button>
+                </div>
+            </div>
+            <div class="text-muted small mb-1">
+                Search an address, click on the map, or drag the marker to set
+                the store location.
+            </div>
+            <div t-ref="map" class="o_osm_map_canvas"/>
+        </div>
+    </t>
+
+</templates>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--
+        Inject a location picker into the shared address form fields template.
+        `portal.address_form_fields` is reused by both the portal
+        /my/account form and the eCommerce /shop/address form, so a single
+        inheritance covers both pages.
+
+        The two coordinate inputs are required, so the customer cannot submit
+        the address without a location (needed to price distance-based
+        delivery). They are auto-filled by the interactive OpenStreetMap map.
+    -->
+    <template id="address_form_delivery_location"
+              inherit_id="portal.address_form_fields"
+              name="Delivery Location Picker">
+        <xpath expr="//div[@id='div_country']" position="after">
+            <div id="div_delivery_location" class="col-12 mb-2 o_delivery_location">
+                <label class="col-form-label">Delivery Location</label>
+                <div class="o_delivery_location_search input-group mb-2">
+                    <input type="text"
+                           id="delivery_location_search"
+                           class="form-control"
+                           placeholder="Search an address..."/>
+                    <button type="button"
+                            id="delivery_location_search_btn"
+                            class="btn btn-secondary">
+                        <i class="fa fa-search"/> Search
+                    </button>
+                </div>
+                <div id="delivery_location_results"
+                     class="o_delivery_location_results list-group position-absolute shadow"/>
+                <button type="button"
+                        id="delivery_location_pin_me"
+                        class="btn btn-outline-primary btn-sm mb-2">
+                    <i class="fa fa-location-arrow"/> حدد موقعي الحالي
+                </button>
+                <div id="delivery_location_map" class="o_osm_map_canvas mb-2"/>
+                <input type="hidden"
+                       name="partner_latitude"
+                       id="partner_latitude"
+                       t-att-value="partner_sudo.partner_latitude or ''"/>
+                <input type="hidden"
+                       name="partner_longitude"
+                       id="partner_longitude"
+                       t-att-value="partner_sudo.partner_longitude or ''"/>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>
