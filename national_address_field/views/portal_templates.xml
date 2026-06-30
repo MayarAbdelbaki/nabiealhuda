@@ -30,4 +30,34 @@
         </xpath>
     </template>
 
+    <!--
+        Slim down the shared address form so both the portal /my/account form
+        and the eCommerce /shop/address form show the same, minimal set of
+        fields. Because `portal.address_form_fields` is reused by both pages
+        (the shop page via the primary `website_sale.address_form_fields`),
+        this single inheritance covers both.
+
+        The unwanted fields (Street and Number, Apartment/suite, Zip Code,
+        Company Name, VAT) are NOT removed from the DOM — other modules inherit
+        this template and target those inputs by xpath (e.g.
+        website_sale_autocomplete patches `input[name='street']`), so deleting
+        them breaks view resolution. Instead they are hidden via CSS with
+        `!important` (see static/src/scss/national_address.scss), which also
+        prevents Odoo's address JS from re-showing them on country change.
+
+        Hidden fields collapse, so the visible order is simply the DOM order of
+        the remaining fields: City -> Country -> National Address -> State -> Map
+        (National Address is injected after Country above; the Map is injected
+        after State by the delivery_distance module).
+    -->
+    <template id="address_form_clean_fields"
+              inherit_id="portal.address_form_fields"
+              name="Slim Address Form">
+        <!-- City now leads the location fields; give it the same half width as
+             Country/State for a tidy layout. -->
+        <xpath expr="//div[@id='div_city']" position="attributes">
+            <attribute name="class">col-lg-6 mb-2</attribute>
+        </xpath>
+    </template>
+
 </odoo>

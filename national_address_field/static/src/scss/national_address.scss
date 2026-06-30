@@ -1,0 +1,22 @@
+// Hide the address fields we don't want to collect on either the portal
+// (/my/account) or the eCommerce (/shop/address) address forms.
+//
+// The inputs are kept in the DOM (so modules that inherit the address form
+// and target these fields by xpath still resolve, and so Odoo's address JS
+// does not crash dereferencing missing inputs). They are hidden with
+// `!important` so the core address interaction cannot re-show them via
+// inline `style.display` on country change.
+//
+// Their wrapping divs all carry stable ids in the base template:
+//   div_street       -> Street and Number
+//   div_street2      -> Apartment, suite, etc.
+//   div_zip          -> Zip Code (present twice in the base arch)
+//   company_name_div -> Company Name
+//   div_vat          -> VAT / Tax ID
+#div_street,
+#div_street2,
+#div_zip,
+#company_name_div,
+#div_vat {
+    display: none !important;
+}

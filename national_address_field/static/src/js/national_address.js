@@ -38,4 +38,45 @@ patch(CustomerAddress.prototype, {
             input.value = "";
         }
     },
+
+    /**
+     * @override
+     * Null-safe: we removed the Street/Zip inputs from the form, but core
+     * `_onChangeCountry` references them unconditionally (to reorder zip/city
+     * and to show/hide street/zip/city). When the input is missing we return a
+     * stub whose `.after()`/`.before()` are no-ops, so the reorder is skipped
+     * and City keeps the position set in the template.
+     */
+    _getInputDiv(name) {
+        const input = this.addressForm[name];
+        if (input) {
+            return input.parentElement;
+        }
+        return { after() {}, before() {}, style: {} };
+    },
+
+    /** @override Null-safe: ignore fields that are not on the form. */
+    _showInput(name) {
+        const input = this.addressForm[name];
+        if (input) {
+            input.parentElement.style.display = "";
+        }
+    },
+
+    /** @override Null-safe: ignore fields that are not on the form. */
+    _hideInput(name) {
+        const input = this.addressForm[name];
+        if (input) {
+            input.parentElement.style.display = "none";
+        }
+    },
+
+    /** @override Null-safe: ignore fields that are not on the form. */
+    _markRequired(name, required) {
+        const input = this.addressForm[name];
+        if (input) {
+            input.required = required;
+        }
+        this._getInputLabel(name)?.classList.toggle("label-optional", !required);
+    },
 });

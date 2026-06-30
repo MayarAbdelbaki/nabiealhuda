@@ -12,6 +12,7 @@
     ],
     'assets': {
         'web.assets_frontend': [
+            'national_address_field/static/src/scss/national_address.scss',
             'national_address_field/static/src/js/national_address.js',
         ],
     },

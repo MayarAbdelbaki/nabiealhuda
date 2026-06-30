@@ -10,11 +10,14 @@
         The two coordinate inputs are required, so the customer cannot submit
         the address without a location (needed to price distance-based
         delivery). They are auto-filled by the interactive OpenStreetMap map.
+
+        Anchored after `div_state` so the map is the last field on the form,
+        below City / Country / National Address / State.
     -->
     <template id="address_form_delivery_location"
               inherit_id="portal.address_form_fields"
               name="Delivery Location Picker">
-        <xpath expr="//div[@id='div_country']" position="after">
+        <xpath expr="//div[@id='div_state']" position="after">
             <div id="div_delivery_location" class="col-12 mb-2 o_delivery_location">
                 <label class="col-form-label">Delivery Location</label>
                 <div class="o_delivery_location_search input-group mb-2">
