@@ -1,6 +1,13 @@
 import { patch } from "@web/core/utils/patch";
 import { CustomerAddress } from "@portal/interactions/address";
 
+// Fields we keep in the DOM but hide (see national_address.scss). They must not
+// drive Odoo's core address reorder logic: `_onChangeCountry` moves the City
+// div next to the (hidden) Zip div on every country change, which would undo
+// the field order set in the template. Returning a stub div for these makes
+// that reorder a no-op.
+const HIDDEN_ADDRESS_FIELDS = new Set(["street", "street2", "zip"]);
+
 /** * Show/hide the Saudi National Address field on the portal (/my/account) and
  * eCommerce (/shop/address) address forms based on the selected country.
  *
@@ -49,10 +56,12 @@ patch(CustomerAddress.prototype, {
      */
     _getInputDiv(name) {
         const input = this.addressForm[name];
-        if (input) {
-            return input.parentElement;
+        if (!input || HIDDEN_ADDRESS_FIELDS.has(name)) {
+            // Missing or hidden field: return a stub whose reorder methods are
+            // no-ops so core `_onChangeCountry` neither crashes nor moves City.
+            return { after() {}, before() {}, style: {} };
         }
-        return { after() {}, before() {}, style: {} };
+        return input.parentElement;
     },
 
     /** @override Null-safe: ignore fields that are not on the form. */
