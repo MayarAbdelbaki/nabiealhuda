@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-inherit="point_of_sale.ReceiptHeader" t-inherit-mode="extension">
+        <xpath expr="//img[@id='qrcode']/.." position="replace"/>
+    </t>
+
+    <t t-inherit="point_of_sale.OrderReceipt" t-inherit-mode="extension">
+        <xpath expr="//div[@t-if='order.company.point_of_sale_use_ticket_qr_code and order.finalized']" position="replace"/>
+
+        <xpath expr="//div[hasclass('pos-receipt-order-data') and hasclass('text-center')]" position="replace"/>
+        <xpath expr="//OrderDisplay" position="replace">
+            <div class="edits-invoice-box">
+                <div class="edits-invoice-heading">SIMPLIFIED TAX INVOICE</div>
+                <div class="edits-kv">
+                    <span class="edits-kv-label">Invoice No:</span>
+                    <span class="edits-invoice-no" t-out="order.pos_reference"/>
+                </div>
+                <div class="edits-kv">
+                    <span class="edits-kv-label">Issue Date:</span>
+                    <span t-out="order.formatDateOrTime('date_order')"/>
+                </div>
+                <div class="edits-kv" t-if="order.company.vat">
+                    <span class="edits-kv-label">VAT No:</span>
+                    <span t-out="order.company.vat"/>
+                </div>
+                <div class="edits-kv" t-if="order.partner_id">
+                    <span class="edits-kv-label">Customer:</span>
+                    <span t-out="order.partner_id.name"/>
+                </div>
+            </div>
+
+            <table class="edits-lines">
+                <thead>
+                    <tr>
+                        <th class="edits-col-item">Item</th>
+                        <th class="edits-col-qty">Qty</th>
+                        <th class="edits-col-num">Unit Price</th>
+                        <th class="edits-col-num">Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr t-foreach="order.lines" t-as="line" t-key="line_index">
+                        <td class="edits-col-item">
+                            <div t-out="line.full_product_name"/>
+                            <div t-if="line.getDiscountStr() and line.getDiscountStr() !== '0'" class="edits-line-note">
+                                <t t-out="line.getDiscountStr()"/>% discount
+                            </div>
+                            <div t-if="line.customer_note" class="edits-line-note" t-out="line.customer_note"/>
+                        </td>
+                        <td class="edits-col-qty" t-out="line.getQuantityStr().unitPart"/>
+                        <td class="edits-col-num" t-out="line.currencyDisplayPriceUnit"/>
+                        <td class="edits-col-num" t-out="line.currencyDisplayPrice"/>
+                    </tr>
+                </tbody>
+            </table>
+        </xpath>
+
+        <!-- Tax summary, in the wording a simplified tax invoice uses. -->
+        <xpath expr="//div[hasclass('pos-receipt-taxes')]" position="replace">
+            <div class="edits-totals">
+                <div class="edits-total-row">
+                    <span>Total Taxable (Excluding VAT)</span>
+                    <span class="edits-amount" t-out="formatCurrency(order.priceExcl)"/>
+                </div>
+                <div class="edits-total-row">
+                    <span>Total VAT</span>
+                    <span class="edits-amount" t-out="formatCurrency(order.amountTaxes)"/>
+                </div>
+            </div>
+        </xpath>
+
+        <!-- Grand total. -->
+        <xpath expr="//div[hasclass('receipt-total')]" position="replace">
+            <div class="edits-rule-dashed"/>
+            <div class="edits-total-row edits-final">
+                <span>Final Amount</span>
+                <span class="edits-amount" t-out="order.currencyDisplayPrice"/>
+            </div>
+        </xpath>
+
+        <xpath expr="//div[hasclass('pos-config-name')]/../.." position="replace">
+            <div class="edits-tail">
+                <div class="edits-company">
+                    <div class="pos-config-name fw-bolder" t-out="order.config.name"/>
+                    <div t-if="company.street">
+                        <t t-out="company.street"/>
+                        <t t-if="company.street2" t-out="', ' + company.street2"/>
+                    </div>
+                    <div>
+                        <t t-if="company.city" t-out="company.city"/>
+                        <t t-if="company.state_id?.code" t-out="', ' + company.state_id.code"/>
+                        <t t-if="company.zip" t-out="', ' + company.zip"/>
+                    </div>
+                    <div t-if="company.country_id" t-out="company.country_id.name"/>
+                    <div t-if="company.vat" t-out="vatText"/>
+                    <div t-if="company.phone">Tel: <t t-out="company.phone"/></div>
+                    <div t-if="company.email" t-out="company.email"/>
+                    <div t-if="company.website" t-out="company.website"/>
+                </div>
+                <t t-if="order.isSACompany() and !order.isSettlement()">
+                    <t t-set="zatcaQrCode" t-value="order.generateQrcode()"/>
+                    <img t-if="zatcaQrCode" id="qrcode" t-att-src="zatcaQrCode" class="pos-receipt-qrcode"/>
+                </t>
+            </div>
+        </xpath>
+    </t>
+
+</templates>

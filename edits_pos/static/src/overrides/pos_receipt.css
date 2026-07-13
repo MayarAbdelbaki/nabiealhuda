@@ -1,0 +1,222 @@
+.pos-receipt .edits-invoice-box {
+    margin: 0.75em 0;
+    padding: 0.4em 0;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    font-size: 85%;
+}
+
+.pos-receipt .edits-invoice-heading {
+    margin-bottom: 0.4em;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid #000;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 0.03em;
+}
+
+.pos-receipt .edits-kv {
+    display: flex;
+    gap: 0.5em;
+}
+
+.pos-receipt .edits-kv-label {
+    flex: 0 0 6.5em;
+    font-weight: bold;
+}
+.pos-receipt .edits-lines {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    font-size: 75%;
+    direction: ltr;
+}
+
+.pos-receipt .edits-lines th {
+    padding: 0.3em 0;
+    border-bottom: 1px solid #000;
+    font-weight: bold;
+}
+
+.pos-receipt .edits-lines td {
+    padding: 0.4em 0;
+    vertical-align: top;
+}
+
+.pos-receipt .edits-lines tbody tr + tr td {
+    border-top: 1px dotted #999;
+}
+
+.pos-receipt .edits-col-item {
+    width: 37%;
+    text-align: start;
+    overflow-wrap: break-word;
+}
+
+.pos-receipt .edits-col-qty {
+    width: 9%;
+    text-align: center;
+}
+
+/* No white-space: nowrap here on purpose. An amount that outgrows its column would
+   otherwise overflow and print straight on top of the neighbouring one; letting it
+   wrap keeps the columns readable whatever the amount. */
+.pos-receipt .edits-col-num {
+    width: 27%;
+    padding-left: 0.4em;
+    text-align: end;
+    font-family: monospace;
+    overflow-wrap: break-word;
+}
+
+.pos-receipt .edits-lines th.edits-col-num {
+    font-family: inherit;
+}
+
+.pos-receipt .edits-line-note {
+    font-size: 85%;
+    font-style: italic;
+    opacity: 0.75;
+}
+
+/* Totals. */
+.pos-receipt .edits-totals {
+    margin-top: 0.6em;
+    padding-top: 0.4em;
+    border-top: 1px solid #000;
+}
+
+.pos-receipt .edits-total-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+    font-size: 90%;
+}
+
+.pos-receipt .edits-amount {
+    font-family: monospace;
+    white-space: nowrap;
+}
+
+.pos-receipt .edits-rule-dashed {
+    margin: 0.4em 0;
+    border-top: 1px dashed #000;
+}
+
+.pos-receipt .edits-final {
+    font-weight: bold;
+    font-size: 105%;
+}
+
+/* Company block + ZATCA QR code, kept together as one unbreakable unit, so a QR that
+   no longer fits can never end up alone on a page of its own. Keep this block lean:
+   every pixel here is a pixel that has to fit in whatever space the last page has
+   left, and once it doesn't fit the whole thing moves to a new page. */
+.pos-receipt .edits-tail {
+    margin-top: 0.5em;
+    padding-top: 0.35em;
+    border-top: 1px solid #000;
+    text-align: center;
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+
+.pos-receipt .edits-company {
+    font-size: 72%;
+    line-height: 1.25;
+}
+
+/* The ZATCA QR is a 200x200 SVG; 90px prints at roughly 24mm, which stays comfortably
+   scannable while keeping the tail block small enough to fit on the last page. */
+.pos-receipt .pos-receipt-qrcode {
+    width: 90px;
+    height: auto;
+    margin: 0.4em auto 0;
+    display: block;
+}
+
+/* ---------------------------------------------------------------------------
+   Printing
+   --------------------------------------------------------------------------- */
+@media print {
+    /* point_of_sale never sets an @page size, so the browser falls back to its default
+       paper (A4/Letter) and the receipt lands on a mostly empty sheet.
+
+       Envelope #10 (4.125in x 9.5in) is the closest thing to a receipt roll that the
+       "Microsoft Print to PDF" driver offers. Asking for exactly those dimensions means
+       the driver uses that form natively instead of scaling the page onto A4, and Chrome
+       preselects it in the print dialog. A long receipt just flows onto another page. */
+    @page {
+        size: 4.125in 9.5in;
+        margin: 0;
+    }
+
+    /* point_of_sale renders the receipt into an off-screen staging area
+       (.render-container-parent carries an inline `position: fixed; left: -1000px`) and
+       positions .render-container absolutely on top of it. That leaves the print layout
+       about 1000px wider than the page, so the browser shrinks everything to fit and
+       crushes the receipt onto a single sheet.
+
+       Flatten the chain to static, full-width boxes: the receipt then sits in normal
+       flow at its true size and paginates properly. The author !important also overrides
+       the inline style on .render-container-parent. */
+    html,
+    body {
+        width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+    }
+
+    .o-main-components-container,
+    .render-container-parent,
+    .render-container {
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Fixed physical size: the receipt must print at one size and paginate when it runs
+       out of room, never be scaled down to fit. The browser only shrinks a page when the
+       layout is WIDER than the paper, so the width is pinned below the page width and
+       nothing inside is allowed to grow past it. Sizes are in mm/pt rather than px so
+       they are independent of the browser's pixel density. */
+    .render-container .pos-receipt {
+        width: 70mm !important;
+        max-width: 70mm !important;
+        font-size: 10pt !important;
+        margin: 0 auto !important;
+        overflow: visible !important;
+    }
+
+    /* A single over-wide child (a long product name, an image) would push the layout
+       past the page and bring the shrink-to-fit back with it. */
+    .render-container .pos-receipt * {
+        max-width: 100% !important;
+        overflow-wrap: break-word;
+    }
+
+    /* Let the receipt fragment across pages: no containment, no forced single block. */
+    .render-container .pos-receipt {
+        contain: none !important;
+        break-inside: auto;
+        page-break-inside: auto;
+    }
+
+    /* Repeat the item table's column headers on every page it spills onto. */
+    .pos-receipt .edits-lines thead {
+        display: table-header-group;
+    }
+
+    .pos-receipt .edits-lines tr {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
