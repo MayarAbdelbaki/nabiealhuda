@@ -1,3 +1,17 @@
+/* Deliberately NOT inside @media print. receipt_page_size.js measures the receipt on
+   screen to decide how tall the printed page has to be, so any rule that changes how
+   text wraps must apply in both places. Confine it to @media print and the print comes
+   out taller than the measurement, which spills the tail onto a second page. */
+.pos-receipt * {
+    /* The item table's four columns are sized in percentages that add up to 100, and the
+       amount columns carry padding. Under content-box that padding is ADDED to the width,
+       so the columns overrun 100% and the Subtotal column prints off the edge of the page.
+       Bootstrap's reset normally supplies border-box; don't depend on it. */
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow-wrap: break-word;
+}
+
 .pos-receipt .edits-invoice-box {
     margin: 0.75em 0;
     padding: 0.4em 0;
@@ -142,13 +156,18 @@
     /* point_of_sale never sets an @page size, so the browser falls back to its default
        paper (A4/Letter) and the receipt lands on a mostly empty sheet.
 
-       Envelope #10 (4.125in x 9.5in) is the closest thing to a receipt roll that the
-       "Microsoft Print to PDF" driver offers. Asking for exactly those dimensions means
-       the driver uses that form natively instead of scaling the page onto A4, and Chrome
-       preselects it in the print dialog. A long receipt just flows onto another page. */
+       receipt_page_size.js replaces this rule at print time with a page exactly as tall
+       as the receipt, so it comes out as one continuous page. Chrome ignores
+       `size: <width> auto`, which is why the height has to be measured rather than left
+       to the browser. This is only the fallback if that script has not run. */
     @page {
-        size: 4.125in 9.5in;
+        size: 80mm 297mm;
         margin: 0;
+        /* point_of_sale sets `@page { padding: 15px }` (receipt_screen.scss) and Chrome
+           honours padding on the page box: it shrinks the printable area by 30px on each
+           axis. That crops the right-hand Subtotal column off the page and steals ~8mm of
+           height, which pushes the company/QR block onto a second sheet. Reset it. */
+        padding: 0;
     }
 
     /* point_of_sale renders the receipt into an off-screen staging area
@@ -189,21 +208,17 @@
        nothing inside is allowed to grow past it. Sizes are in mm/pt rather than px so
        they are independent of the browser's pixel density. */
     .render-container .pos-receipt {
-        width: 70mm !important;
-        max-width: 70mm !important;
+        width: 80mm !important;
+        max-width: 80mm !important;
         font-size: 10pt !important;
         margin: 0 auto !important;
         overflow: visible !important;
     }
 
-    /* A single over-wide child (a long product name, an image) would push the layout
-       past the page and bring the shrink-to-fit back with it. */
-    .render-container .pos-receipt * {
-        max-width: 100% !important;
-        overflow-wrap: break-word;
-    }
-
-    /* Let the receipt fragment across pages: no containment, no forced single block. */
+    /* Let the receipt fragment across pages: no containment, no forced single block.
+       (max-width/overflow-wrap live outside this block on purpose -- see the top of the
+       file: they must apply on screen too, so the measured height matches the printed
+       one. A child cannot overflow the page width because of them.) */
     .render-container .pos-receipt {
         contain: none !important;
         break-inside: auto;
