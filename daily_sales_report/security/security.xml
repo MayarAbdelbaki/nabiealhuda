@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+        Access is enforced with the standard base.group_system (Administrators)
+        and base.group_user (Internal Users) groups directly in
+        ir.model.access.csv:
+          - Configurations: full access for Administrators, read-only for
+            Internal Users.
+          - History: full access for Administrators, read-only for Internal
+            Users (history is meant to be an immutable log).
+        No custom groups are required for this module.
+    -->
+    <record id="module_category_daily_sales_report" model="ir.module.category">
+        <field name="name">Daily Sales Report</field>
+        <field name="sequence">50</field>
+    </record>
+</odoo>

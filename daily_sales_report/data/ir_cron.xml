@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="ir_cron_daily_sales_report" model="ir.cron">
+            <field name="name">Daily Sales Report: Send Scheduled Reports</field>
+            <field name="model_id" ref="model_daily_sales_report_config"/>
+            <field name="state">code</field>
+            <field name="code">model._cron_send_reports()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="active">True</field>
+        </record>
+    </data>
+</odoo>

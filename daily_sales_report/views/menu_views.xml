@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_daily_sales_report_root"
+              name="Daily Sales Report"
+              web_icon="daily_sales_report,static/description/icon.png"
+              sequence="90"/>
+
+    <menuitem id="menu_daily_sales_report_config"
+              name="Configurations"
+              parent="menu_daily_sales_report_root"
+              action="action_daily_sales_report_config"
+              groups="base.group_user"
+              sequence="10"/>
+
+    <menuitem id="menu_daily_sales_report_history"
+              name="Report History"
+              parent="menu_daily_sales_report_root"
+              action="action_daily_sales_report_history"
+              groups="base.group_user"
+              sequence="20"/>
+
+</odoo>

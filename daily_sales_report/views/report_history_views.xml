@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_daily_sales_report_history_list" model="ir.ui.view">
+        <field name="name">daily.sales.report.history.list</field>
+        <field name="model">daily.sales.report.history</field>
+        <field name="arch" type="xml">
+            <list create="false" edit="false" delete="false">
+                <field name="sent_date"/>
+                <field name="config_id"/>
+                <field name="periodicity"/>
+                <field name="date_from"/>
+                <field name="date_to"/>
+                <field name="recipients"/>
+                <field name="pos_orders_count" sum="Total"/>
+                <field name="sales_orders_count" sum="Total"/>
+                <field name="ecommerce_orders_count" sum="Total"/>
+                <field name="status" widget="badge" decoration-success="status == 'sent'" decoration-danger="status == 'failed'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_daily_sales_report_history_form" model="ir.ui.view">
+        <field name="name">daily.sales.report.history.form</field>
+        <field name="model">daily.sales.report.history</field>
+        <field name="arch" type="xml">
+            <form create="false" edit="false" delete="false">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="config_id"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="Run Info">
+                            <field name="sent_date"/>
+                            <field name="periodicity"/>
+                            <field name="date_from"/>
+                            <field name="date_to"/>
+                            <field name="recipients"/>
+                            <field name="status" widget="badge" decoration-success="status == 'sent'" decoration-danger="status == 'failed'"/>
+                        </group>
+                        <group string="Totals">
+                            <field name="currency_id" invisible="1"/>
+                            <field name="pos_orders_count"/>
+                            <field name="pos_total"/>
+                            <field name="sales_orders_count"/>
+                            <field name="sales_total"/>
+                            <field name="ecommerce_orders_count"/>
+                            <field name="ecommerce_total"/>
+                        </group>
+                    </group>
+                    <group string="Error" invisible="status != 'failed'">
+                        <field name="error_message" nolabel="1"/>
+                    </group>
+                    <field name="attachment_ids" widget="many2many_binary" string="Report Files"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_daily_sales_report_history_search" model="ir.ui.view">
+        <field name="name">daily.sales.report.history.search</field>
+        <field name="model">daily.sales.report.history</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="config_id"/>
+                <field name="recipients"/>
+                <field name="sent_date"/>
+                <filter string="Sent" name="filter_sent" domain="[('status', '=', 'sent')]"/>
+                <filter string="Failed" name="filter_failed" domain="[('status', '=', 'failed')]"/>
+                <separator/>
+                <filter string="Daily" name="filter_daily" domain="[('periodicity', '=', 'daily')]"/>
+                <filter string="Weekly" name="filter_weekly" domain="[('periodicity', '=', 'weekly')]"/>
+                <filter string="Monthly" name="filter_monthly" domain="[('periodicity', '=', 'monthly')]"/>
+                <separator/>
+                <filter string="Sent Date" name="filter_sent_date" date="sent_date"/>
+                <group>
+                    <filter string="Configuration" name="groupby_config" context="{'group_by': 'config_id'}"/>
+                    <filter string="Status" name="groupby_status" context="{'group_by': 'status'}"/>
+                    <filter string="Periodicity" name="groupby_periodicity" context="{'group_by': 'periodicity'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_daily_sales_report_history" model="ir.actions.act_window">
+        <field name="name">Report History</field>
+        <field name="res_model">daily.sales.report.history</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_daily_sales_report_history_search"/>
+        <field name="context">{'create': False}</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_daily_sales_report_config_list" model="ir.ui.view">
+        <field name="name">daily.sales.report.config.list</field>
+        <field name="model">daily.sales.report.config</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="periodicity"/>
+                <field name="weekday"/>
+                <field name="email_to"/>
+                <field name="last_run"/>
+                <field name="active" widget="boolean_toggle"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_daily_sales_report_config_form" model="ir.ui.view">
+        <field name="name">daily.sales.report.config.form</field>
+        <field name="model">daily.sales.report.config</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_send_now" type="object" string="Send Now" class="btn-primary"
+                            confirm="This will immediately generate and email the report to all recipients. Continue?"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_history" type="object" class="oe_stat_button" icon="fa-history">
+                            <field name="history_count" widget="statinfo" string="History"/>
+                        </button>
+                    </div>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1>
+                            <field name="name" placeholder="e.g. Weekly Store Summary"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="Recipients &amp; Schedule">
+                            <field name="email_to" placeholder="user1@example.com, user2@example.com"/>
+                            <field name="periodicity"/>
+                            <field name="weekday" invisible="periodicity != 'weekly'" required="periodicity == 'weekly'"/>
+                            <field name="active"/>
+                        </group>
+                        <group string="Report Content">
+                            <field name="include_pos"/>
+                            <field name="include_sales"/>
+                            <field name="include_ecommerce"/>
+                            <field name="last_run"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_daily_sales_report_config_search" model="ir.ui.view">
+        <field name="name">daily.sales.report.config.search</field>
+        <field name="model">daily.sales.report.config</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="email_to"/>
+                <filter string="Archived" name="filter_archived" domain="[('active', '=', False)]"/>
+                <group>
+                    <filter string="Periodicity" name="groupby_periodicity" context="{'group_by': 'periodicity'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_daily_sales_report_config" model="ir.actions.act_window">
+        <field name="name">Configurations</field>
+        <field name="res_model">daily.sales.report.config</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_daily_sales_report_config_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first Daily Sales Report configuration
+            </p>
+            <p>
+                Define who should receive the report, how often, and which
+                order types (POS, Sales, eCommerce) to include.
+            </p>
+        </field>
+    </record>
+
+</odoo>

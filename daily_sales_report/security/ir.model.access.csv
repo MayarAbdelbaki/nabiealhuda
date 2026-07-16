@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_daily_sales_report_config_admin,daily.sales.report.config.admin,model_daily_sales_report_config,base.group_system,1,1,1,1
+access_daily_sales_report_config_user,daily.sales.report.config.user,model_daily_sales_report_config,base.group_user,1,0,0,0
+access_daily_sales_report_history_admin,daily.sales.report.history.admin,model_daily_sales_report_history,base.group_system,1,1,1,1
+access_daily_sales_report_history_user,daily.sales.report.history.user,model_daily_sales_report_history,base.group_user,1,0,0,0
