@@ -12,7 +12,7 @@ from odoo.exceptions import UserError
 _logger = logging.getLogger(__name__)
 
 XLSX_MIMETYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
-XLSX_COLUMNS = ['Order Ref', 'Customer', 'Product', 'Qty', 'Unit Price', 'Line Total', 'Date/Time']
+UNPAID_METHOD_LABEL = 'Not Paid Yet'
 
 WEEKDAY_SELECTION = [
     ('0', 'Monday'),
@@ -198,10 +198,10 @@ class DailySalesReportConfig(models.Model):
         for spec in self._get_report_specs():
             if not self[spec['include_field']]:
                 continue
-            rows, count, total = getattr(self, spec['method'])(date_from, date_to)
+            report_data, count, total = getattr(self, spec['method'])(date_from, date_to)
             counts[spec['key']] = count
             totals[spec['key']] = total
-            xlsx_data = self._build_xlsx(spec['label'], rows)
+            xlsx_data = self._build_xlsx(spec['label'], report_data)
             filename = '%s_%s_%s.xlsx' % (spec['key'], date_from, date_to)
             attachments |= Attachment.create({
                 'name': filename,
@@ -269,38 +269,132 @@ class DailySalesReportConfig(models.Model):
     # ------------------------------------------------------------
     # XLSX building
     # ------------------------------------------------------------
-    def _build_xlsx(self, sheet_name, rows):
-        """Build an XLSX file (as bytes) with the standard report columns
-        from a list of row dicts (order_ref, customer, product, qty,
-        unit_price, line_total, date)."""
+    def _build_xlsx(self, label, report_data):
+        """Build an XLSX file (as bytes) for one report type, as a single
+        sheet with three sections stacked vertically, each separated by a
+        divider bar:
+
+        1. Invoice Details: one row per order/invoice with its customer,
+           total amount, and how much of it was paid through each payment
+           method (one column per method configured in the system, even if
+           unused this period).
+        2. Products: every product sold in the period with the total
+           quantity sold, aggregated across all orders.
+        3. Payment Totals: the grand total collected through each payment
+           method across all orders in the period.
+
+        ``report_data`` is the dict produced by the ``_get_<key>_report_lines``
+        methods: {'invoice_rows': [...], 'product_totals': {...},
+        'payment_totals': {...}}. ``payment_totals`` is pre-seeded with
+        every payment method configured in the system, so it also defines
+        the full set of payment-method columns/rows even for methods with
+        no activity in the period.
+        """
         output = io.BytesIO()
         workbook = xlsxwriter.Workbook(output, {'in_memory': True})
-        sheet = workbook.add_worksheet(sheet_name[:31])
+        sheet = workbook.add_worksheet(label[:31])
 
+        title_format = workbook.add_format({'bold': True, 'font_size': 14})
+        section_format = workbook.add_format(
+            {'bold': True, 'font_size': 12, 'bg_color': '#305496', 'font_color': 'white'})
         header_format = workbook.add_format({'bold': True, 'bg_color': '#D9D9D9', 'border': 1})
         date_format = workbook.add_format({'num_format': 'yyyy-mm-dd hh:mm:ss'})
+        money_format = workbook.add_format({'num_format': '#,##0.00'})
+        divider_format = workbook.add_format({'bg_color': '#000000'})
 
-        for col, header in enumerate(XLSX_COLUMNS):
-            sheet.write(0, col, header, header_format)
+        payment_methods = sorted(report_data['payment_totals'].keys())
+        num_cols = max(4 + len(payment_methods), 2)
 
-        for row_idx, row in enumerate(rows, start=1):
-            sheet.write(row_idx, 0, row.get('order_ref') or '')
-            sheet.write(row_idx, 1, row.get('customer') or '')
-            sheet.write(row_idx, 2, row.get('product') or '')
-            sheet.write(row_idx, 3, row.get('qty') or 0.0)
-            sheet.write(row_idx, 4, row.get('unit_price') or 0.0)
-            sheet.write(row_idx, 5, row.get('line_total') or 0.0)
-            order_date = row.get('date')
-            if order_date:
-                sheet.write_datetime(row_idx, 6, order_date, date_format)
-            else:
-                sheet.write(row_idx, 6, '')
+        sheet.write(0, 0, _('%s - Daily Sales Report') % label, title_format)
 
-        for col, width in enumerate([18, 24, 30, 8, 12, 14, 20]):
+        row = self._write_invoice_details_section(
+            sheet, 2, report_data['invoice_rows'], payment_methods,
+            section_format, header_format, date_format, money_format)
+        row = self._write_section_divider(sheet, row, num_cols, divider_format)
+
+        row = self._write_products_section(
+            sheet, row, report_data['product_totals'], section_format, header_format)
+        row = self._write_section_divider(sheet, row, num_cols, divider_format)
+
+        self._write_payment_totals_section(
+            sheet, row, report_data['payment_totals'], section_format, header_format, money_format)
+
+        widths = [18, 24, 20, 14] + [16] * len(payment_methods)
+        for col, width in enumerate(widths):
             sheet.set_column(col, col, width)
 
         workbook.close()
         return output.getvalue()
+
+    @staticmethod
+    def _write_section_divider(sheet, row, num_cols, divider_format):
+        """Write a solid divider bar across ``num_cols``, one blank row
+        below ``row``, with a blank row of spacing on each side. Returns
+        the next free row."""
+        divider_row = row + 1
+        for col in range(num_cols):
+            sheet.write_blank(divider_row, col, None, divider_format)
+        return divider_row + 2
+
+    @staticmethod
+    def _write_invoice_details_section(sheet, row, invoice_rows, payment_methods,
+                                        section_format, header_format, date_format, money_format):
+        sheet.write(row, 0, _('1. Invoice Details'), section_format)
+        row += 1
+
+        headers = [_('Order Ref'), _('Customer'), _('Date/Time'), _('Amount Total')] + payment_methods
+        for col, header in enumerate(headers):
+            sheet.write(row, col, header, header_format)
+        row += 1
+
+        for data_row in invoice_rows:
+            sheet.write(row, 0, data_row.get('order_ref') or '')
+            sheet.write(row, 1, data_row.get('customer') or '')
+            order_date = data_row.get('date')
+            if order_date:
+                sheet.write_datetime(row, 2, order_date, date_format)
+            else:
+                sheet.write(row, 2, '')
+            sheet.write(row, 3, data_row.get('amount_total') or 0.0, money_format)
+            payments = data_row.get('payments') or {}
+            for col, method in enumerate(payment_methods, start=4):
+                amount = payments.get(method)
+                sheet.write(row, col, amount if amount else '', money_format)
+            row += 1
+
+        return row
+
+    @staticmethod
+    def _write_products_section(sheet, row, product_totals, section_format, header_format):
+        sheet.write(row, 0, _('2. Products Sold'), section_format)
+        row += 1
+
+        sheet.write(row, 0, _('Product'), header_format)
+        sheet.write(row, 1, _('Qty'), header_format)
+        row += 1
+
+        for product, qty in sorted(product_totals.items(), key=lambda item: item[1], reverse=True):
+            sheet.write(row, 0, product)
+            sheet.write(row, 1, qty)
+            row += 1
+
+        return row
+
+    @staticmethod
+    def _write_payment_totals_section(sheet, row, payment_totals, section_format, header_format, money_format):
+        sheet.write(row, 0, _('3. Payment Totals'), section_format)
+        row += 1
+
+        sheet.write(row, 0, _('Payment Method'), header_format)
+        sheet.write(row, 1, _('Total Amount'), header_format)
+        row += 1
+
+        for method, amount in sorted(payment_totals.items(), key=lambda item: item[1], reverse=True):
+            sheet.write(row, 0, method)
+            sheet.write(row, 1, amount, money_format)
+            row += 1
+
+        return row
 
     # ------------------------------------------------------------
     # Data gathering
@@ -314,7 +408,10 @@ class DailySalesReportConfig(models.Model):
         return fields.Datetime.to_string(dt_from), fields.Datetime.to_string(dt_to)
 
     def _get_pos_report_lines(self, date_from, date_to):
-        """Return (rows, order_count, amount_total) for POS orders in the period."""
+        """Return (report_data, order_count, amount_total) for POS orders in
+        the period. report_data has 'invoice_rows' (one per order, with a
+        per-payment-method breakdown), 'product_totals' (qty sold per
+        product) and 'payment_totals' (amount collected per method)."""
         self.ensure_one()
         dt_from, dt_to = self._get_datetime_bounds(date_from, date_to)
         orders = self.env['pos.order'].sudo().search([
@@ -322,23 +419,35 @@ class DailySalesReportConfig(models.Model):
             ('date_order', '<=', dt_to),
             ('state', 'in', ('paid', 'done', 'invoiced')),
         ])
-        rows = []
+
+        invoice_rows = []
+        product_totals = {}
+        payment_totals = {name: 0.0 for name in self._get_all_pos_payment_method_names()}
         for order in orders:
+            payments = self._get_pos_order_payments(order)
+            for method, amount in payments.items():
+                payment_totals[method] = payment_totals.get(method, 0.0) + amount
+            invoice_rows.append({
+                'order_ref': order.pos_reference or order.name,
+                'customer': order.partner_id.name or '',
+                'amount_total': order.amount_total,
+                'date': order.date_order,
+                'payments': payments,
+            })
             for line in order.lines:
-                rows.append({
-                    'order_ref': order.pos_reference or order.name,
-                    'customer': order.partner_id.name or '',
-                    'product': line.product_id.display_name,
-                    'qty': line.qty,
-                    'unit_price': line.price_unit,
-                    'line_total': line.price_subtotal_incl,
-                    'date': order.date_order,
-                })
-        return rows, len(orders), sum(orders.mapped('amount_total'))
+                key = line.product_id.display_name
+                product_totals[key] = product_totals.get(key, 0.0) + line.qty
+
+        report_data = {
+            'invoice_rows': invoice_rows,
+            'product_totals': product_totals,
+            'payment_totals': payment_totals,
+        }
+        return report_data, len(orders), sum(orders.mapped('amount_total'))
 
     def _get_sales_report_lines(self, date_from, date_to):
-        """Return (rows, order_count, amount_total) for confirmed Sales
-        orders (excluding website/eCommerce orders) in the period."""
+        """Return (report_data, order_count, amount_total) for confirmed
+        Sales orders (excluding website/eCommerce orders) in the period."""
         self.ensure_one()
         dt_from, dt_to = self._get_datetime_bounds(date_from, date_to)
         orders = self.env['sale.order'].sudo().search([
@@ -347,12 +456,12 @@ class DailySalesReportConfig(models.Model):
             ('state', '=', 'sale'),
             ('website_id', '=', False),
         ])
-        rows = self._sale_order_lines_to_rows(orders)
-        return rows, len(orders), sum(orders.mapped('amount_total'))
+        report_data = self._get_sale_order_report_data(orders)
+        return report_data, len(orders), sum(orders.mapped('amount_total'))
 
     def _get_ecommerce_report_lines(self, date_from, date_to):
-        """Return (rows, order_count, amount_total) for confirmed website
-        (eCommerce) Sales orders in the period."""
+        """Return (report_data, order_count, amount_total) for confirmed
+        website (eCommerce) Sales orders in the period."""
         self.ensure_one()
         dt_from, dt_to = self._get_datetime_bounds(date_from, date_to)
         orders = self.env['sale.order'].sudo().search([
@@ -361,22 +470,96 @@ class DailySalesReportConfig(models.Model):
             ('state', '=', 'sale'),
             ('website_id', '!=', False),
         ])
-        rows = self._sale_order_lines_to_rows(orders)
-        return rows, len(orders), sum(orders.mapped('amount_total'))
+        report_data = self._get_sale_order_report_data(orders)
+        return report_data, len(orders), sum(orders.mapped('amount_total'))
+
+    def _get_all_pos_payment_method_names(self):
+        """Return every POS payment method configured in the system, so
+        the report always shows a column/row for each even if it saw no
+        activity in the period."""
+        return self.env['pos.payment.method'].sudo().search([]).mapped('name')
 
     @staticmethod
-    def _sale_order_lines_to_rows(orders):
-        """Flatten sale.order lines (skipping section/note lines) into report rows."""
-        rows = []
+    def _get_pos_order_payments(order):
+        """Return {payment_method_name: amount} for a POS order, straight
+        from its pos.payment lines."""
+        payments = {}
+        for payment in order.payment_ids:
+            method = payment.payment_method_id.name or _('Unknown')
+            payments[method] = payments.get(method, 0.0) + payment.amount
+        return payments
+
+    def _get_all_sale_payment_method_names(self):
+        """Return every payment method that could apply to a Sales/
+        eCommerce order: online payment providers (used at checkout) and
+        inbound payment method lines (used when registering a manual
+        payment on an invoice)."""
+        providers = self.env['payment.provider'].sudo().search([]).mapped('name')
+        method_lines = self.env['account.payment.method.line'].sudo().search([
+            ('payment_type', '=', 'inbound'),
+        ]).mapped('name')
+        return list(dict.fromkeys(providers + method_lines))
+
+    def _get_sale_order_report_data(self, orders):
+        """Build the invoice/product/payment breakdown for a set of
+        sale.order records (used for both Sales and eCommerce reports)."""
+        invoice_rows = []
+        product_totals = {}
+        payment_totals = {name: 0.0 for name in self._get_all_sale_payment_method_names()}
         for order in orders:
+            payments = self._get_sale_order_payments(order)
+            for method, amount in payments.items():
+                payment_totals[method] = payment_totals.get(method, 0.0) + amount
+            invoice_rows.append({
+                'order_ref': order.name,
+                'customer': order.partner_id.name or '',
+                'amount_total': order.amount_total,
+                'date': order.date_order,
+                'payments': payments,
+            })
             for line in order.order_line.filtered(lambda l: not l.display_type):
-                rows.append({
-                    'order_ref': order.name,
-                    'customer': order.partner_id.name or '',
-                    'product': line.product_id.display_name,
-                    'qty': line.product_uom_qty,
-                    'unit_price': line.price_unit,
-                    'line_total': line.price_subtotal,
-                    'date': order.date_order,
-                })
-        return rows
+                key = line.product_id.display_name
+                product_totals[key] = product_totals.get(key, 0.0) + line.product_uom_qty
+
+        return {
+            'invoice_rows': invoice_rows,
+            'product_totals': product_totals,
+            'payment_totals': payment_totals,
+        }
+
+    def _get_sale_order_payments(self, order):
+        """Return {payment_method_name: amount} for a sale.order.
+
+        Payment method is resolved in order of preference:
+        1. Online payment transactions linked to the order (eCommerce
+           checkout), grouped by payment provider name.
+        2. Payments reconciled against the order's posted invoices,
+           grouped by the payment method / journal used to record them.
+        3. If neither is found, the full order amount is bucketed under
+           ``UNPAID_METHOD_LABEL`` so the breakdown still adds up to the
+           order total.
+        """
+        transactions = order.transaction_ids.filtered(lambda t: t.state == 'done')
+        if transactions:
+            payments = {}
+            for tx in transactions:
+                method = tx.provider_id.name or _('Unknown')
+                payments[method] = payments.get(method, 0.0) + tx.amount
+            return payments
+
+        payments = {}
+        invoices = order.invoice_ids.filtered(
+            lambda m: m.state == 'posted' and m.move_type == 'out_invoice')
+        receivable_lines = invoices.line_ids.filtered(
+            lambda l: l.account_id.account_type == 'asset_receivable')
+        for partial in receivable_lines.matched_credit_ids:
+            reconcile_payment = partial.credit_move_id.move_id.payment_id
+            if not reconcile_payment:
+                continue
+            method = (reconcile_payment.payment_method_line_id.name
+                      or reconcile_payment.journal_id.name or _('Unknown'))
+            payments[method] = payments.get(method, 0.0) + partial.amount
+
+        if payments:
+            return payments
+        return {UNPAID_METHOD_LABEL: order.amount_total}

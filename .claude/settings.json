@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c \"import odoo; print\\(odoo.__file__\\)\")",
+      "Read(//d//**)",
+      "Bash(python -c \"import ast; ast.parse\\(open\\('daily_sales_report/models/report_config.py', encoding='utf-8'\\).read\\(\\)\\)\")"
+    ]
+  }
+}
