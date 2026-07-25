@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_saleorder_document_delivery_location" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//div[@id='informations']" position="inside">
+            <div t-if="doc.delivery_map_url" class="col" name="informations_delivery_location">
+                <strong>Delivery Location</strong>
+                <div>
+                    <a t-att-href="doc.delivery_map_url" target="_blank">عنوان التوصيل</a>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>

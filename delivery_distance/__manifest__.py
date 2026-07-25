@@ -27,6 +27,7 @@ per country using an optional maximum distance.
         'views/res_partner_views.xml',
         'views/sale_order_views.xml',
         'views/website_address_templates.xml',
+        'report/sale_order_report_templates.xml',
     ],
     'assets': {
         'web.assets_backend': [
