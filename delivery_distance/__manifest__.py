@@ -19,12 +19,13 @@ per country using an optional maximum distance.
 """,
     'author': 'Mayar',
     'license': 'LGPL-3',
-    'depends': ['delivery', 'base_geolocalize', 'website_sale'],
+    'depends': ['delivery', 'base_geolocalize', 'website_sale', 'sale', 'national_address_field'],
     'data': [
         'security/ir.model.access.csv',
         'views/delivery_carrier_views.xml',
         'views/res_company_views.xml',
         'views/res_partner_views.xml',
+        'views/sale_order_views.xml',
         'views/website_address_templates.xml',
     ],
     'assets': {

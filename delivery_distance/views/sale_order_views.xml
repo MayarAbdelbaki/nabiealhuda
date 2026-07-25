@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_order_form_delivery_address" model="ir.ui.view">
+        <field name="name">sale.order.form.delivery.address</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Delivery Address" name="delivery_address">
+                    <group>
+                        <group string="Address">
+                            <field name="partner_shipping_id" readonly="1"/>
+                            <field name="delivery_street" readonly="1"/>
+                            <field name="delivery_street2" readonly="1"/>
+                            <field name="delivery_city" readonly="1"/>
+                            <field name="delivery_state_id" readonly="1"/>
+                            <field name="delivery_zip" readonly="1"/>
+                            <field name="delivery_country_id" readonly="1"/>
+                            <field name="delivery_national_address" readonly="1"/>
+                        </group>
+                        <group string="Contact">
+                            <field name="delivery_phone" readonly="1"/>
+                            <field name="delivery_email" readonly="1"/>
+                        </group>
+                    </group>
+                    <group string="Map">
+                        <field name="delivery_partner_latitude" readonly="1"/>
+                        <field name="delivery_partner_longitude" readonly="1"/>
+                        <field name="delivery_map_url" widget="url" text="View on Map" readonly="1"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
