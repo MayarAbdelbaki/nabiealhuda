@@ -31,50 +31,15 @@
     </template>
 
     <!--
-        Slim down the shared address form so both the portal /my/account form
-        and the eCommerce /shop/address form show the same, minimal set of
-        fields. Because `portal.address_form_fields` is reused by both pages
-        (the shop page via the primary `website_sale.address_form_fields`),
-        this single inheritance covers both.
-
-        The unwanted fields (Street and Number, Apartment/suite, Zip Code,
-        Company Name, VAT) are NOT removed from the DOM — other modules inherit
-        this template and target those inputs by xpath (e.g.
-        website_sale_autocomplete patches `input[name='street']`), so deleting
-        them breaks view resolution. Instead they are hidden via CSS with
-        `!important` (see static/src/scss/national_address.scss), which also
-        prevents Odoo's address JS from re-showing them on country change.
-
-        Hidden fields collapse, so the visible order is simply the DOM order of
-        the remaining fields: City -> Country -> National Address -> State -> Map
-        (National Address is injected after Country above; the Map is injected
-        after State by the delivery_distance module).
+        The "slim down the shared address form" reordering template lives in
+        the ``delivery_distance`` module, not here, even though it also
+        reorders this module's National Address field. It needs both
+        ``div_national_address`` (this module) and ``div_delivery_location``
+        (delivery_distance) to already exist when it runs, which requires it
+        to load after both — and since delivery_distance depends on this
+        module (for the ``x_national_address`` field), only delivery_distance
+        is guaranteed to load last. See
+        ``delivery_distance/views/website_address_templates.xml``.
     -->
-    <template id="address_form_clean_fields"
-              inherit_id="portal.address_form_fields"
-              priority="99"
-              name="Slim Address Form">
-        <!-- Give City a half-width column so it pairs neatly on a row. -->
-        <xpath expr="//div[@id='div_city']" position="attributes">
-            <attribute name="class">col-lg-6 mb-2</attribute>
-        </xpath>
-        <!--
-            Reorder the visible location fields to:
-                Country -> State -> City -> National Address -> Map
-            (which reads, with this DB's labels, as
-                الدولة -> المدينة -> الحي -> العنوان الوطني -> الخريطة).
-
-            priority="99" makes this the last inheritance applied, so the
-            National Address (injected after Country) and the Map (injected by
-            delivery_distance) already exist and can be moved. The moved
-            elements are inserted, in listed order, right after Country.
-        -->
-        <xpath expr="//div[@id='div_country']" position="after">
-            <xpath expr="//div[@id='div_state']" position="move"/>
-            <xpath expr="//div[@id='div_city']" position="move"/>
-            <xpath expr="//div[@id='div_national_address']" position="move"/>
-            <xpath expr="//div[@id='div_delivery_location']" position="move"/>
-        </xpath>
-    </template>
 
 </odoo>

@@ -8,15 +8,24 @@
 // inline `style.display` on country change.
 //
 // Their wrapping divs all carry stable ids in the base template:
-//   div_street       -> Street and Number
-//   div_street2      -> Apartment, suite, etc.
-//   div_zip          -> Zip Code (present twice in the base arch)
-//   company_name_div -> Company Name
-//   div_vat          -> VAT / Tax ID
+//   div_street  -> Street and Number
+//   div_street2 -> Apartment, suite, etc.
+//   div_zip     -> Zip Code (present twice in the base arch)
+//
+// Company Name / VAT (company_name_div / div_vat) are intentionally left
+// visible: this shop has no separate billing address anymore, so they are
+// the only way for a customer to have their company name / tax number show
+// up on the invoice for their (single) delivery address.
 #div_street,
 #div_street2,
-#div_zip,
-#company_name_div,
-#div_vat {
+#div_zip {
+    display: none !important;
+}
+
+// Hide the checkout page's "Billing address" section (see
+// hide_billing_address_templates.xml for why this is CSS-only rather than
+// removed from the arch: Odoo's Checkout interaction dereferences
+// #billing_container unconditionally when an address card is clicked).
+#billing_address_list {
     display: none !important;
 }

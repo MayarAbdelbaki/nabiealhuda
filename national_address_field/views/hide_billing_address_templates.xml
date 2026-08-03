@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--
+        This shop only ever invoices to the delivery address, so the separate
+        billing/invoice address picker is unwanted clutter on both the
+        customer-facing "My Addresses" page and the checkout flow.
+
+        ``sale.order.partner_invoice_id`` still defaults to the shipping
+        partner on its own (the "Same as delivery address" toggle these
+        sections controlled was already checked by default whenever no
+        distinct billing address existed), so hiding the picker doesn't
+        break checkout validation.
+    -->
+
+    <template id="my_addresses_hide_billing" inherit_id="portal.my_addresses">
+        <!--
+            Matched via the (untranslated) "o_add_billing_address_btn" CSS
+            class rather than the "Billing address" heading text: xpath
+            matching runs against the arch already translated to the
+            request's language, so a literal English text() match breaks on
+            any non-English storefront (as happened here on ar_001).
+        -->
+        <xpath expr="//a[contains(@t-attf-class,'o_add_billing_address_btn')]/parent::div" position="replace"/>
+        <xpath expr="//label[@id='use_delivery_as_billing_label']/.." position="replace"/>
+        <xpath expr="//div[@id='billing_container']" position="replace"/>
+    </template>
+
+    <!--
+        The checkout page's billing section is hidden via CSS (see
+        national_address.scss, `#billing_address_list`) rather than removed
+        from the arch like the "My Addresses" page above. Odoo's own
+        `Checkout` interaction (website_sale/static/src/interactions/checkout.js)
+        unconditionally reads `this.billingContainer.dataset...` whenever any
+        address card is clicked; removing `#billing_container` from the DOM
+        made that null and crashed address selection on checkout. Keeping
+        the (now-empty-effect, always-"same as delivery") markup in place and
+        merely hiding it keeps that JS working.
+    -->
+
+    <!--
+        Always show the Company Name / VAT fields (`b2b_fields`) on the
+        address form, not just when editing whichever address happens to be
+        the order's *currently selected* shipping+invoice partner.
+
+        Core gates these fields behind `is_used_as_billing`, which
+        website_sale's checkout controller (`shop_address`) narrows to
+        `partner_sudo == order_sudo.partner_shipping_id == order_sudo.partner_invoice_id`
+        for an existing partner. With no separate billing address left (see
+        above), a customer's second/third saved delivery address would fail
+        that comparison and permanently hide these fields, even though it can
+        equally end up on an invoice once selected. Forcing this inner
+        `t-if` to True removes that dependency; the outer
+        `t-if="display_b2b_fields"` (added by `website_sale.address_form_fields`)
+        still applies, so the site's "Show b2b fields" toggle keeps working.
+    -->
+    <template id="address_form_always_show_b2b" inherit_id="portal.address_form_fields">
+        <xpath expr="//t[@t-if='is_used_as_billing']" position="attributes">
+            <attribute name="t-if">True</attribute>
+        </xpath>
+    </template>
+
+    <!--
+        website_sale.address_form_fields (primary view) additionally wraps
+        `b2b_fields` in `t-if="display_b2b_fields"`, which depends on the
+        "Show b2b fields" website toggle (`website_sale.address_b2b`). That
+        toggle is active in the database but still resolves False on real
+        requests here (environment-specific quirk, not reproducible via
+        shell), so force it true directly rather than depend on it — this
+        shop always wants Company Name / VAT available, unconditionally.
+    -->
+    <template id="address_form_fields_always_show_b2b_shop" inherit_id="website_sale.address_form_fields">
+        <xpath expr="//t[@t-if='display_b2b_fields']" position="attributes">
+            <attribute name="t-if">True</attribute>
+        </xpath>
+    </template>
+
+</odoo>

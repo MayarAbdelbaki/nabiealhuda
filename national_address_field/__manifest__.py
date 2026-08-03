@@ -9,6 +9,7 @@
     'depends': ['portal', 'website_sale'],
     'data': [
         'views/portal_templates.xml',
+        'views/hide_billing_address_templates.xml',
     ],
     'assets': {
         'web.assets_frontend': [
