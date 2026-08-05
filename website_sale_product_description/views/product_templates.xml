@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--
+        Stock Odoo only uses ``product.description_sale`` for the page's SEO
+        meta tags — it's never rendered in the page body. Show it as a short
+        teaser right under the price (before the variant/quantity options),
+        matching where merchants usually expect a short product description.
+    -->
+    <template id="product_description_after_price" inherit_id="website_sale.product">
+        <xpath expr="//div[hasclass('o_wsale_product_details_content_section_price')]" position="after">
+            <p t-if="product.description_sale"
+               class="o_wsale_product_description_sale text-muted mb-4"
+               t-field="product.description_sale"/>
+        </xpath>
+    </template>
+
+</odoo>
