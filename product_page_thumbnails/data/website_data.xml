@@ -9,11 +9,22 @@
 
         Equivalent to opening a product page in the website builder, clicking
         the main image block, and setting Images > Display to "Carousel" in
-        the sidebar (see also the "Thumbnails: Left/Bottom" option there —
-        left is Odoo's own default and is left untouched here).
+        the sidebar.
     -->
     <record id="website.default_website" model="website">
         <field name="product_page_image_layout">carousel</field>
+    </record>
+
+    <!--
+        Deactivate Odoo's own carousel thumbnail indicators (the small image
+        column next to the main image — on the right on this RTL site, since
+        the "left" in this view's name is a logical/LTR position that RTL
+        flips). The thumbnail strip this module adds under the Add to Cart
+        section replaces it, wired to the same carousel (see
+        product_page_templates.xml).
+    -->
+    <record id="website_sale.carousel_product_indicators_left" model="ir.ui.view">
+        <field name="active">False</field>
     </record>
 
 </odoo>

@@ -24,7 +24,21 @@
                     <i class="oi oi-chevron-left" role="img"/>
                 </button>
                 <div class="o_product_page_thumbnails_track d-flex gap-2">
-                    <div t-foreach="thumbnail_images" t-as="thumbnail_image" class="o_product_page_thumbnail_box">
+                    <!--
+                        data-bs-target/data-bs-slide-to are the same attributes
+                        Odoo's own carousel indicators use — Bootstrap's
+                        carousel picks up clicks on any element carrying them
+                        (delegated at the document level), so no custom JS is
+                        needed to switch the main image.
+                    -->
+                    <div
+                        t-foreach="thumbnail_images" t-as="thumbnail_image"
+                        t-attf-class="o_product_page_thumbnail_box {{'active' if thumbnail_image_first else ''}}"
+                        role="button"
+                        tabindex="0"
+                        data-bs-target="#o-carousel-product"
+                        t-att-data-bs-slide-to="thumbnail_image_index"
+                    >
                         <div
                             t-field="thumbnail_image.image_128"
                             t-options="{
