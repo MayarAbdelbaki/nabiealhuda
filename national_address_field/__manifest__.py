@@ -2,12 +2,15 @@
 
 {
     'name': 'National Address Field',
-    'version': '19.0.1.0.0',
+    'version': '19.0.1.1.0',
     'category': 'Website/Website',
     'summary': "Adds a Saudi National Address field to portal and eCommerce address forms.",
     'description': " ",  # Non-empty string to avoid loading the README file.
     'depends': ['portal', 'website_sale'],
     'data': [
+        'security/ir.model.access.csv',
+        'data/res.country.state.csv',
+        'data/res.city.ksa.csv',
         'views/portal_templates.xml',
         'views/hide_billing_address_templates.xml',
     ],

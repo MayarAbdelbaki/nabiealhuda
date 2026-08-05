@@ -31,6 +31,37 @@
     </template>
 
     <!--
+        Turn the "city" field (labeled "الحي" via a translation override on
+        the base view) into a dropdown of real Saudi cities, cascading from
+        the region picked in "state_id" (labeled "المدينة"). The dataset is
+        embedded as JSON so the JS side (national_address.js) can rebuild
+        the option list on every state_id change without an RPC round trip.
+
+        The submitted value stays a plain city-name string (option value =
+        city name), so ``res.partner.city`` keeps working as the same plain
+        Char field it always was — no controller whitelist change needed.
+    -->
+    <template id="address_form_ksa_city_select"
+              inherit_id="portal.address_form_fields"
+              priority="20"
+              name="KSA City Select">
+        <xpath expr="//div[@id='div_city']/input[@name='city']" position="replace">
+            <select id="o_city" name="city" class="form-control">
+                <option value="" t-att-selected="not partner_sudo.city">اختر الحي...</option>
+                <option t-if="partner_sudo.city"
+                        t-att-value="partner_sudo.city"
+                        selected="selected"
+                        t-out="partner_sudo.city"/>
+            </select>
+        </xpath>
+        <xpath expr="//div[@id='div_city']" position="after">
+            <!-- A plain <script> tag here gets stripped by the website
+                 editable-content sanitizer; a hidden input survives it. -->
+            <input type="hidden" id="o_ksa_cities_data" t-att-value="ksa_cities_by_state"/>
+        </xpath>
+    </template>
+
+    <!--
         The "slim down the shared address form" reordering template lives in
         the ``delivery_distance`` module, not here, even though it also
         reorders this module's National Address field. It needs both

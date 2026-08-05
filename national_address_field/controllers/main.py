@@ -13,6 +13,8 @@
 # below if you later need custom server-side handling (e.g. validating the
 # national address format) for the national address field.
 
+import json
+
 from odoo.http import request
 
 from odoo.addons.portal.controllers.portal import CustomerPortal
@@ -36,6 +38,15 @@ class NationalAddressPortal(CustomerPortal):
     def _get_default_country(self, *args, **kwargs):
         saudi_arabia = request.env.ref('base.sa', raise_if_not_found=False)
         return saudi_arabia or super()._get_default_country(*args, **kwargs)
+
+    def _prepare_address_form_values(self, *args, **kwargs):
+        """Embed the Saudi city-per-region dataset so the "الحي" dropdown
+        (see views/portal_templates.xml) can be filtered client-side by the
+        selected "المدينة" (state_id) without an extra RPC call."""
+        values = super()._prepare_address_form_values(*args, **kwargs)
+        values['ksa_cities_by_state'] = json.dumps(
+            request.env['res.city.ksa'].sudo()._get_cities_by_state_json())
+        return values
 
     def _prepare_my_account_rendering_values(self, *args, **kwargs):
         """Hide the e-invoicing fields ("Receive invoices" / "Electronic
@@ -68,3 +79,12 @@ class NationalAddressWebsiteSale(WebsiteSale):
     def _get_default_country(self, *args, **kwargs):
         saudi_arabia = request.env.ref('base.sa', raise_if_not_found=False)
         return saudi_arabia or super()._get_default_country(*args, **kwargs)
+
+    def _prepare_address_form_values(self, *args, **kwargs):
+        """Embed the Saudi city-per-region dataset so the "الحي" dropdown
+        (see views/portal_templates.xml) can be filtered client-side by the
+        selected "المدينة" (state_id) without an extra RPC call."""
+        values = super()._prepare_address_form_values(*args, **kwargs)
+        values['ksa_cities_by_state'] = json.dumps(
+            request.env['res.city.ksa'].sudo()._get_cities_by_state_json())
+        return values

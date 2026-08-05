@@ -1,0 +1,3078 @@
+id,name,name_en,state_id/id
+city_1,الرياض,RIYADH,region_1
+city_2,جدة,JEDDAH,region_3
+city_3,تاروت,TARUT,region_2
+city_4,سيهات,SAYHAT,region_2
+city_5,الظهران,DHAHRAN,region_2
+city_16,الدمام,AD DAMMAM,region_2
+city_17,مكة المكرمة,MAKKAH AL MUKARRAMAH,region_3
+city_18,الخبر,AL KHUBAR,region_2
+city_20,الجبيل,AL JUBAIL,region_2
+city_21,القطيف,AL QATIF,region_2
+city_23,المدينة المنورة,AL MADINAH AL MUNAWWARAH,region_8
+city_24,بريدة,BURAYDAH,region_9
+city_25,ابها,ABHA,region_10
+city_26,تبوك,TABUK,region_11
+city_27,حائل,HAIL,region_12
+city_29,جازان,JAZAN,region_14
+city_30,نجران,NAJRAN,region_15
+city_31,الباحة,AL BAHA,region_16
+city_32,سكاكا,SAKAKA,region_17
+city_37,خميس مشيط,KHAMIS MUSHAYT,region_10
+city_38,بيشة,BISHAH,region_10
+city_39,النماص,An Namas,region_10
+city_40,محايل,MUHAYIL,region_10
+city_41,ظهران الجنوب,DHAHRAN AL JANUB,region_10
+city_42,سراة عبيدة,SARAT ABIDAH,region_10
+city_43,احد رفيده,AHAD RIFAYDAH,region_10
+city_44,بلقرن,BALQARN,region_10
+city_45,رجال المع,Rijal Alma,region_10
+city_46,المجاردة,AL MAJARDAH,region_10
+city_47,تثليث,TATHLITH,region_10
+city_48,تنومة,TANOUMA,region_10
+city_49,بللسمر,BILLASMAR,region_10
+city_50,بللحمر,BILLAHMAR,region_10
+city_51,بلجرشي,Biljurashi,region_16
+city_52,العقيق,Al Aqiq,region_16
+city_53,القرى,ALQURA,region_16
+city_54,قلوة,QILWAH,region_16
+city_55,المخواة,MEKHWA,region_16
+city_56,المندق,AL MANDAQ,region_16
+city_57,عنيزة,UNAYZAH,region_9
+city_58,الرس,AR RASS,region_9
+city_59,المذنب,AL MIDHNAB,region_9
+city_60,البكيرية,AL BUKAYRIYAH,region_9
+city_61,البدائع,AL BADAI',region_9
+city_62,رياض الخبراء,RIYAD AL KHABRA,region_9
+city_63,بريد الخبراء,BARID AL KHABRA,region_9
+city_64,الاسياح,ALASYIAH,region_9
+city_66,النبهانية,AN NABHANIYAH,region_9
+city_67,الشماسية,ASH SHIMASIYAH,region_9
+city_68,دخنة,dukhnah,region_9
+city_69,الذيبية,ADH DHIBIYAH,region_9
+city_70,مركز الدليمية,ALDULYIMIYA,region_9
+city_71,مركز القرين,ALQREEN,region_9
+city_72,مركز صبيح,SEBEH,region_9
+city_73,مركزالهمجة,ALHAMJA,region_9
+city_74,مركزابانات,ABANAT,region_9
+city_75,مركزعطي,ATI,region_9
+city_76,ضرية,dariyah,region_9
+city_77,مركزالغماس,GHAMAS,region_9
+city_78,مركزالبصر,ALBASR,region_9
+city_79,مركز الشيحية,ALSHEHIYA,region_9
+city_80,مركز الربيعية,ALRABIEIYA,region_9
+city_81,مركز الفوارة,ALFAWARA,region_9
+city_82,مركز عقلة الصقور,AQLAT ALSOUQOOR,region_9
+city_83,قبة,QUBA,region_9
+city_84,مركزأبا الورود,ABA AL WOROUD,region_9
+city_85,مركز العمار,ALAMAR,region_9
+city_86,مركز القوارة,ALQAWARA,region_9
+city_87,مركز قصيباء,QUSAIBA,region_9
+city_89,مركز الصمعورية,ALSAMAOURIYA,region_9
+city_90,تيماء,TAYMA',region_11
+city_91,املج,UMLUJ,region_11
+city_92,الوجه,AL WAJH,region_11
+city_93,حقل,haql,region_11
+city_94,البدع,AL BAD',region_11
+city_95,حالة عمار,HALAT AMMAR,region_11
+city_97,القليبة,AL QALIBAH,region_11
+city_98,مركز البئر,ALBEI'R,region_11
+city_102,ضبا,DUBA,region_11
+city_103,صبيا,SABYA,region_14
+city_104,ابو عريش,ABU ARISH,region_14
+city_105,بيش,BAYSH,region_14
+city_106,العارضة,AL 'ARIDAH,region_14
+city_107,الدائر,ALDAIER BANI MALEK,region_14
+city_108,مدينة فيفا الشرقية,VIVA ALSHARQIYA,region_14
+city_109,مدينة فيفا الغربية,VIVA ALGHARBIYA,region_14
+city_110,عيبان,'AIBAN,region_14
+city_111,فرسان,FARASAN,region_14
+city_113,الريث,AR RAYTH,region_14
+city_114,الحقو,AL HAQU,region_14
+city_116,الدرب ( القياس ),ALDARB (ALQYAS),region_14
+city_117,العالية,AL 'ALIYAH,region_14
+city_122,الريان,AR RAYYAN,region_14
+city_124,الشقيق,AL SHUQAYQ,region_14
+city_125,صامطة,SAMTAH,region_14
+city_126,احد المسارحة,AHAD AL MUSARIHAH,region_14
+city_129,الموسم,AL MUWASSAM,region_14
+city_130,ضمد,Damad,region_14
+city_131,الشقيري,ASH SHUQAIRI,region_14
+city_132,شرورة,SHARURAH,region_15
+city_133,يدمة,YADAMAH,region_15
+city_134,ثار,THAR,region_15
+city_135,حبونا,HUBUNA,region_15
+city_136,بدر الجنوب,BADR AL JANUB,region_15
+city_138,القريات,AL QURAYYAT,region_17
+city_139,طبرجل,TABARJJAL,region_17
+city_140,دومة الجندل,DAWMAT AL JANDAL,region_17
+city_141,عرعر,AR'AR,region_13
+city_142,رفحاء,RAFHA',region_13
+city_143,طريف,TURAIF,region_13
+city_144,العويقلية,AL UWAYQILAH,region_13
+city_145,منفذ جديدة عرعر,MANFAZ JADEDAT ARAR,region_13
+city_146,روضة ابن هباس,RAWDAT IBN HABAS,region_13
+city_149,شعبة نصاب,SHOU'ABT NESSAB,region_13
+city_159,الدرعية,ad diriyah,region_1
+city_160,الدوادمي,AD DUWADIMI,region_1
+city_161,القويعية,AL QUWAYI'YAH,region_1
+city_162,ثادق,THADIQ,region_1
+city_163,المجمعة,AL MAJMA'AH,region_1
+city_164,الخرج,AL KHARJ,region_1
+city_165,شقراء,SHAQRA',region_1
+city_166,مرات,MARAT,region_1
+city_167,حريملاء,HURAYMILA,region_1
+city_168,الزلفي,AZ ZULFI,region_1
+city_169,حوطة بني تميم,HAWTAT BANI TAMIM,region_1
+city_170,المزاحمية,AL MUZAHIMIYAH,region_1
+city_171,السليل,AS SULAYYIL,region_1
+city_172,الأفلاج,ALAFLAAJ,region_1
+city_173,رماح,RUMAH,region_1
+city_174,عفيف,AFIF,region_1
+city_175,وادي الدواسر,Wadi Ad Dawasir,region_1
+city_176,الحريق,AL HARIQ,region_1
+city_177,ساجر,SAGER,region_1
+city_178,ضرما,DURUMA,region_1
+city_179,الغاط,AL GHAT,region_1
+city_180,عرقة,'IRQAH,region_1
+city_181,الحائر,AL HAIR,region_1
+city_182,الرين,AR RAYN,region_1
+city_183,الطائف,AT TAIF,region_3
+city_184,القنفذة,AL QUNFIDHAH,region_3
+city_185,الليث,AL LITH,region_3
+city_186,رابغ,RABIGH,region_3
+city_187,الجموم,AL JUMUM,region_3
+city_188,رنية,RANYAH,region_3
+city_189,تربة,TURBAH,region_3
+city_190,الخرمة,AL KHURMAH,region_3
+city_191,خليص,KHULAYS,region_3
+city_192,الكامل,AL KAMEL,region_3
+city_193,الاحساء,Al Hasa,region_2
+city_194,النعيرية,AN NU'AYRIYAH,region_2
+city_195,حفر الباطن,HAFAR AL BATIN,region_2
+city_196,ينبع,YANBU,region_8
+city_197,العلا,AL ULA,region_8
+city_198,بدر,BADR,region_8
+city_199,المهد,AL MAHD,region_8
+city_200,الحناكية,AL HINAKIYAH,region_8
+city_206,راس تنورة,RAS TANNURAH,region_2
+city_207,بقيق,BUQAYQ,region_2
+city_208,الخفجي,AL KHAFJI,region_2
+city_209,الرقعي,AL RUQA'A,region_2
+city_210,قرية العليا,QARYAT AL 'ULYA,region_2
+city_211,صفوى,SAFWA,region_2
+city_212,تمير,Tumair,region_1
+city_213,الدلم,AD DILAM,region_1
+city_214,مركز العيينة والجبيلة,ALOyynah,region_1
+city_215,ثول,THUWAL,region_3
+city_217,مركز الزبما,Zubma,region_3
+city_218,الجبيل الصناعية,Jubail Industry,region_2
+city_219,العيساوية,AL ISAWIYAH,region_17
+city_220,منفذ الحديثة,haditha,region_17
+city_221,ام الساهك,UMM AS SAHIK,region_2
+city_222,مركز بريد الحلوة,Helwa,region_1
+city_223,عيون الجواء,UYUN AL JAWA',region_9
+city_224,النبك ابو القصر,nabak abo kasur,region_17
+city_226,مركز تبراك والجله,TEBRAK AND EL JULA CENTER,region_1
+city_227,الغزالة,AL GHAZALAH,region_12
+city_228,جلاجل,Jalajil,region_1
+city_229,مركز جنوبية سدير,JANOUBIYAT SODEIR,region_1
+city_230,روضة سدير,Rawdhat Sudair,region_1
+city_231,الارطاوية,AL ARTAWIYAH,region_1
+city_232,حوطة سدير,Hawtat Sudair,region_1
+city_233,الخطة,AL KHUTTAH,region_12
+city_234,مركز خيران السليل,KHAIRAN AL SOLEIL,region_1
+city_235,مركز تمره السليل,TAMRAT AL SOLEIL,region_1
+city_236,النويعمة,AN NUWAY'MAH,region_1
+city_237,مركز الفيضة ساجر,ALFAIDAT SAGER,region_1
+city_238,سميراء,SIMIRA',region_12
+city_239,الروضة,AR RAWDAH,region_12
+city_240,موقق,MAWQAQ,region_12
+city_241,الشملي,ASH SHAMLI,region_12
+city_242,مدينة جبة,JUBA CITY,region_12
+city_247,مركز السحن ببني سعد,ALSAHEN CENTER IN BANI SA'AD,region_3
+city_248,السيل الكبير,AS SAYL AL KABIR,region_3
+city_249,مركز قيا بالحارث,QIYABELHARTH,region_3
+city_250,مركز المحاني,ALMAHANI,region_3
+city_251,مركز ترعة ثقيف,TERA'AT THAQEEF,region_3
+city_252,مركز الهدا,ALHADA CENTER,region_3
+city_254,حداد,haddad,region_3
+city_255,مركز الحوية,ALHAWIYA,region_3
+city_257,السيل الصغير,AS SAYL AS SAGHIR,region_3
+city_258,الحائط,AL HAIT,region_12
+city_259,بقعاء,BAQ'A,region_12
+city_260,الشنان,ASH SHINAN,region_12
+city_261,تربه,TURUBAH,region_12
+city_262,بني ظبيان,BANI DHABYAN,region_16
+city_263,زلوم,ZALLUM,region_17
+city_264,صوير,SUWAYR,region_17
+city_265,قارا,QARA,region_17
+city_266,يعرى,YAARA,region_10
+city_267,خيبر الجنوب,KHAYBAR AL JANUB,region_10
+city_268,المضه,المضه,region_10
+city_269,تندحه,تندحه,region_10
+city_270,وادي بن هشبل,وادي بن هشبل,region_10
+city_271,الــثــنيــــه,الــثــنيــــه,region_10
+city_272,تباله,تباله,region_10
+city_273,عطف الجبره,عطف الجبره,region_10
+city_274,صـــمــخ,SAMAKH,region_10
+city_275,الــنقيـــــع,AN NAQI',region_10
+city_276,قــــنــــــــا,قــــنــــــــا,region_10
+city_278,خــميس مــطيـر,KHAMIS MUTAIR,region_10
+city_279,علب,ALB,region_10
+city_280,الفيض,AL FAYD,region_10
+city_281,الربوعه,الربوعه,region_10
+city_282,الحرجه,AL HARAJAH,region_10
+city_283,الفرشـه,الفرشـه,region_10
+city_284,الجــــوه,الجــــوه,region_10
+city_285,العرين,AL 'ARIN,region_10
+city_286,طريب,طريب,region_10
+city_287,آل سلمه,آل سلمه,region_10
+city_288,البشائر,AL BASHAIR,region_10
+city_289,الحريضه,الحريضه,region_10
+city_290,القحمه,القحمه,region_10
+city_291,البرك,Al Birk,region_10
+city_292,بريد عبس,بريد عبس,region_10
+city_293,مركز العريضية الجنوبية,مركز العريضية الجنوبية,region_3
+city_294,مركز العريضية الشمالية,مركز العريضية الشمالية,region_3
+city_295,مركز المظليف,مركز المظليف,region_3
+city_296,مركز حلي,مركز حلي,region_3
+city_297,القوز,AL QAWZ,region_3
+city_298,بريد جاش,بريد جاش,region_10
+city_299,الصبيخه,الصبيخه,region_10
+city_300,الأمواه,الأمواه,region_10
+city_301,مركز الحائرة,مركز الحائرة,region_3
+city_302,اضم,ADHAM,region_3
+city_303,ســـــدوان,SADWAN,region_10
+city_304,بني كبير,BANI KABIR,region_16
+city_305,مركز حجر,مركز حجر,region_3
+city_306,مركز مستورة,مركز مستورة,region_3
+city_307,هدى الشام,هدى الشام,region_3
+city_308,عسفان,Isfan,region_3
+city_309,مركز مدركة,مركز مدركة,region_3
+city_310,مركز بريد الخوار,مركز بريد الخوار,region_3
+city_311,بيده,بيده,region_16
+city_312,الشعراء,ASH SHA'ARA',region_16
+city_313,الحجره,الحجره,region_16
+city_314,غامد الزناد,GHAMID AZ ZINAD,region_16
+city_315,الصغره,الصغره,region_16
+city_316,مركز البرزة,مركز البرزة,region_3
+city_317,مركز ام الجرم,مركز ام الجرم,region_3
+city_319,مركز غران,مركز غران,region_3
+city_320,سلوى,SALWA,region_2
+city_321,حرض,HARAD,region_2
+city_322,السعيره,السعيره,region_2
+city_324,القيصومة,AL QAYSUMAH,region_2
+city_325,العيص,AL 'IS,region_8
+city_326,خيبر,khaybar,region_8
+city_327,البجادية,AL BIJADIYAH,region_1
+city_330,بريد مركز الظبية والجمعة,بريد مركز الظبية والجمعة,region_3
+city_331,قاعدة الملك عبدالعزيز الجوية - الخبر,قاعدة الملك عبدالعزيز الجوية - الخبر,region_2
+city_332,بريد ميسان,بريد ميسان,region_3
+city_333,الخشل,AL KHASHAL,region_14
+city_334,مركز المويه,مركز المويه,region_3
+city_335,مركز البتراء,مركز البتراء,region_9
+city_338,الناصفة,AN NASIFAH,region_17
+city_340,العيدابي,AL 'AYDABI,region_14
+city_341,الهفوف والمبرز,Al Hafoof Wal Mubarraz,region_2
+city_342,عنك,'INAK,region_2
+city_343,خباش,خباش,region_15
+city_344,الحزم,AL HAZIM,region_1
+city_345,الخوبة,AL KHAWBAH,region_14
+city_346,مدينة الملك عبدالله الاقتصادية,KING ABDULLAH ECONOMIC CITY,region_3
+city_347,الخرخير,AL KHARKHIR,region_15
+city_348,الهياثم,AL HAYATHIM,region_1
+city_349,نعجان,NA'JAN,region_1
+city_350,لينة,LINAH,region_13
+city_351,التمياط,TIMIAT,region_13
+city_352,لوقة,LAWQAH,region_13
+city_353,السليمانية,السليمانية,region_13
+city_354,العمال الشمالية,العمال الشمالية,region_2
+city_355,صلاصل,SALASIL,region_2
+city_356,الرفيعه,الرفيعه,region_2
+city_357,الفريدة,AL FARRIDAH,region_2
+city_358,ام عقلا,ام عقلا,region_2
+city_359,الشيحية,ASH SHIHIYAH,region_2
+city_362,مركز نظاع,مركز نظاع,region_2
+city_363,حنيذ,HANIDH,region_2
+city_364,مركز غنوه,مركز غنوه,region_2
+city_365,الصحاف,AS SAHAF,region_2
+city_366,مركز الزغيين,مركز الزغيين,region_2
+city_367,مقنا,MAQNA,region_11
+city_369,الزيتة,AZ ZAYTAH,region_11
+city_370,العسافية,AL ASSAFIYAH,region_11
+city_371,الوديعة,AL WADI'AH,region_15
+city_372,ملهم,MALHAM,region_1
+city_373,ليلى,layla,region_1
+city_374,الحصمة,AL HASAMAH,region_14
+city_375,الخارش,AL KHARISH,region_14
+city_376,السهي,AS SAHI,region_14
+city_377,رمادا,RAMADA,region_14
+city_378,روان,RAWAN,region_14
+city_379,مهد الذهب,MAHD ADH DHAHAB,region_8
+city_380,المفيجر,almufaijir,region_1
+city_381,نعام,An Naam,region_1
+city_382,القصب,Al Qasab,region_1
+city_383,بارق,Bariq,region_10
+city_385,فيفاء,Fayfa,region_14
+city_386,حرمة,harmah,region_1
+city_387,التويم,At Tuwaym,region_1
+city_388,عودة سدير,Awdat Sudayr,region_1
+city_389,عشيرة سدير,Asharat Sudair,region_1
+city_390,الخطامة,Al Khutamah,region_1
+city_391,مبايض,Mubayid,region_1
+city_392,الشعب,Ash Shib,region_1
+city_393,ينبع النخل,Yanbu An Nakhil,region_8
+city_394,الهفوف,alhufufalmubarraz,region_2
+city_395,المبرز,alhufufalmubarraz,region_2
+city_396,بني حسن,BANI HASAN,region_16
+city_397,الفقير,AL FAQIR,region_8
+city_398,بحرة,BAHRAH,region_3
+city_399,حرث,HARTH,region_14
+city_400,العرضيات,ARDIYAT,region_3
+city_401,السليمي,AS SULAYMI,region_12
+city_402,ال بي ثور,AL BI THAWR,region_10
+city_403,الطوال,AT TUWAL,region_14
+city_404,الكاسب,AL KASIB,region_13
+city_405,العديد,AL 'ADID,region_2
+city_406,غضي,GHUDAYY,region_9
+city_407,ترعة,TIR'AH,region_3
+city_408,الفقعلي,AL FUQ'ALI,region_8
+city_409,البريدي,AL BARIDI,region_8
+city_411,الجابرية,AL JABIRIYAH,region_8
+city_412,المربع,AL MURABBA',region_8
+city_413,القرائن,AL QARAIN,region_1
+city_414,القرفاء,AL QARFA,region_12
+city_415,الجرعاء,AL JAR'A,region_12
+city_416,الروق,AR RUWAQ,region_12
+city_417,سبيعة,SIBI'AH,region_12
+city_418,الرشاوية,AR RISHAWIYAH,region_12
+city_419,الميركة,AL MIRAKAH,region_12
+city_420,الشلالة,ASH SHALLALAH,region_12
+city_421,أم العماير,UMM AL 'AMAYIR,region_12
+city_422,مزارع تخاييل,MAZARI TAKHAYIL,region_12
+city_423,بدائع إبضة,BADAI' IBDAH,region_12
+city_424,الحورا,AL HAWRA,region_12
+city_425,بدائع علقة,BADAI' 'ILQIH,region_12
+city_426,إبضة,IBDAH,region_12
+city_427,ثرال,THIRAL,region_12
+city_428,زيخين,ZIKHIN,region_12
+city_429,الخيط,AL KHAYT,region_12
+city_430,الصلبية,AS SULUBIYAH,region_12
+city_431,المعازل,AL MA'AZIL,region_12
+city_432,المضابيع,AL MADABI',region_12
+city_433,الساقية,AS SAQIYAH,region_12
+city_434,العدوة,AL 'IDWAH,region_12
+city_435,السعيرة,AS SI'AYYIRAH,region_12
+city_436,رك,RAKK,region_12
+city_437,الفويلق / الرشاوية,AL FUWAILEQ / AR RISHAWIYAH,region_12
+city_438,الابيتر,AL UBAITIR,region_12
+city_439,الكهيفية,AL KIHAYFIYAH,region_12
+city_440,العظيم,AL 'UDHAIM,region_12
+city_441,الشعبة,ASH SHU'BAH,region_10
+city_442,القذال,AL QADHAL,region_10
+city_443,شواحط,SHAWAHIT,region_10
+city_444,عدمن,'ADAMAN,region_10
+city_445,المنيظر,AL MUNAYDHIR,region_10
+city_446,محبة,MAHABBAH,region_10
+city_447,الفصعيلة,AL FAS'ILAH,region_10
+city_448,المسلمة,AL MASLAMAH,region_10
+city_449,الخوش,AL KHAWSH,region_10
+city_450,الكنبي,AL KANABI,region_10
+city_451,القيوار,AL QIWAR,region_10
+city_452,القنعات,AL QANA'AT,region_10
+city_453,الميفاء,AL MIFA,region_10
+city_454,صعابان,SA'ABAN,region_10
+city_455,مكهاف,MAKHAF,region_10
+city_456,المنظر,AL MANDHAR,region_10
+city_457,أم فرع,UMM FURA',region_10
+city_458,القريحة,AL QURAYHAH,region_10
+city_459,الفرعة,AL FAR'AH,region_10
+city_460,أم شعبين,UMM SH'BAYN,region_10
+city_461,مشرف,MISHRIF,region_10
+city_462,قزة,QUZZAH,region_10
+city_463,سيالة,SAYALAH,region_10
+city_464,الأحسر,AL AHSAR,region_10
+city_465,الفاضية,AL FADIYAH,region_10
+city_466,نعص,NA'S,region_10
+city_467,الضحي,AD DAHI,region_10
+city_468,الحيد عبس,AL HAYD 'ABS,region_10
+city_469,الطرقة,AT TARAQAH,region_10
+city_470,الحمة,AL HIMAH,region_10
+city_471,العقيقة,AL AQIQAH,region_10
+city_472,الهرير الشرقي - الجازي,AL HURAYR ASH SHARQI (AL JAZI),region_10
+city_475,المزارقة,AL MAZARQAH,region_10
+city_476,آل غيثان,AL GHAYTHAN,region_10
+city_477,آل الشريفي,AL ASH SHIRAYFI,region_10
+city_479,آل سويد,AL SUWAYD,region_10
+city_480,الصمدة,AS SIMIDAH,region_10
+city_482,آل مريح,AL MIRAYYIH,region_10
+city_483,صفوان,SAFWAN,region_10
+city_484,الرونة,AR RUNAH,region_10
+city_485,آل الذيب,AL ADH DHIB,region_10
+city_486,روضان,RAWDAN,region_10
+city_487,جرير,JARIR,region_1
+city_488,الفائزية,AL FAIZIYAH,region_1
+city_489,المصارير,AL MASARIR,region_1
+city_491,ابرق النعام,ABRAQ AN NA 'AM,region_1
+city_492,كمدة,KAMDAH,region_1
+city_493,الفاو,AL FAW,region_1
+city_494,حرجة الزفر,HIRJAT AZ ZUFUR,region_1
+city_495,حجلة السواد,HAJLAT AS SUWAD,region_1
+city_496,الكواكب,AL KAWAKIB,region_1
+city_497,الدلعبي,AD DHALA'ABY,region_1
+city_498,بني لبيب,BANI LABIB,region_1
+city_499,خشم البازوم,KHASHM AL BAZUM,region_1
+city_500,خيران,KHAYRAN,region_1
+city_501,تمرة,TAMRAH,region_1
+city_502,حمام,HIMAM,region_1
+city_503,ريدا,RAYDA,region_1
+city_504,بدائع الفقي,BDAI' AL FUQAYY,region_12
+city_506,خفيج أم هشيم,KHUFAYJ UMM HASHIM,region_12
+city_507,العمائر,AL 'AMAIR,region_12
+city_508,الصور,AS SUR,region_12
+city_509,قرية عشيرة,QARYAT 'ISHAYRAH,region_12
+city_510,عقلة المخروق,'UQLAT AL MAKHRUQ,region_12
+city_511,أم هشيم,UMM HSHIM,region_12
+city_512,مصدة,MASADAH,region_12
+city_513,أبلة,ABLAH,region_12
+city_514,القصيلة,AL QUSAILAH,region_12
+city_515,الحماد,AL HAMAD,region_12
+city_516,الوهيبيات,AL WUHAYBIYAT,region_12
+city_517,أرينبة,URAYNIBAH,region_12
+city_518,فرتاج,FIRTAJ,region_12
+city_519,الشبرية الصفراء,ASH SHIBRIYAH AS SAFRA,region_12
+city_520,الشبرية الحمراء,ASH SHIBRIYAH AL HAMRA,region_12
+city_521,الوسيطي,AL WUSAYTI,region_12
+city_522,الصخنة,AS SIKHINAH,region_12
+city_523,أفيعية,AFAY'IYAH,region_12
+city_524,الهمجة,AL HAMJAH,region_12
+city_525,المعاذب,AL MA'ADHIB,region_12
+city_526,الهدية,AL HUDAYYAH,region_12
+city_527,الغريسة,AL GHARISAH,region_12
+city_528,المجيصة,AL MIJAYSSAH,region_12
+city_529,البركة,AL BIRKAH,region_12
+city_530,طلوح,TULUH,region_12
+city_531,الحليفة السفلى,AL HULAYFAH AS SUFLAH,region_12
+city_534,قاع حجلا,QA' HAJLA,region_12
+city_535,الخفج,AL KHUFJ,region_12
+city_536,الفقي,AL FUQAY,region_12
+city_537,النبوان,AN NABUWAN,region_12
+city_538,العقلة,AL 'UQLAH,region_12
+city_539,العوشري,AL AWSHARI,region_12
+city_540,مرغان,MARAGHAN,region_12
+city_541,الهويدي,AL HUWAIDI,region_12
+city_542,القصيصة,AL QUSAYSAH,region_12
+city_543,المسجد,AL MASJID,region_12
+city_544,سقف,SAQF,region_12
+city_545,بدع ابن حويط,BID' BIN HUWAYYIT,region_12
+city_546,بدائع الصداعية,BADAI' AS SUDA'IYAH,region_12
+city_547,ريع البكر,RI' AL BAKR,region_12
+city_548,الكلابية,AL KILABIYAH,region_2
+city_549,المنيزلة,AL MUNAIZLAH,region_2
+city_550,القارة,AL QARAH,region_2
+city_551,المنصورة,AL MANSURAH,region_2
+city_552,المزاوي,AL MAZAWI,region_2
+city_553,الحوطة,AL HAWTAH,region_2
+city_554,المركز,AL MARKAZ,region_2
+city_555,الفضول,AL FUDUL,region_2
+city_556,الرميلة,AR RUMAYLAH,region_2
+city_557,الجشة,AL JISHSHAH,region_2
+city_558,الشعبة,ASH SHI'BAH,region_2
+city_559,الجليجلة,AL JULIJLAH,region_2
+city_560,المطيرفي,AL MUTAIRIFI,region_2
+city_561,العضيلية,AL 'UDHAILIYYAH,region_2
+city_562,بني معن,BANI MU'N,region_2
+city_563,الحفيرة,AL HAFIRAH,region_2
+city_564,الخن,AL KHINN,region_2
+city_565,ام اثلة,UMM ATHLAH,region_2
+city_566,خريص,KHURAYS,region_2
+city_567,عريعرة,URAY'IRAH,region_2
+city_568,متالع / ام تالع,MATALI' / UMM TALI',region_2
+city_569,التويثير,AT TUWAYTHIR,region_2
+city_570,الدالوة,AD DALWAH,region_2
+city_571,الشهادين,ASH SHAHADIN,region_2
+city_572,الحليلة,AL HALILAH,region_2
+city_573,الطرف,AT TARAF,region_2
+city_574,الجفر,AL JAFR,region_2
+city_575,الحني,AL HUNAYY,region_2
+city_576,القصيبي,AL QUSAYBI,region_2
+city_577,الحبل,AL HABL,region_2
+city_578,الحرملية,AL HARMALIYAH,region_2
+city_579,نباك,NIBAK,region_2
+city_580,بني فروة,BANI FARWAH,region_16
+city_581,خدعة,KHID'AH,region_16
+city_582,الحضيري,AL HUDAYRI,region_16
+city_583,النعرة,AN NA'ARAH,region_16
+city_584,الثودة,ATH THUDAH,region_16
+city_585,جعبة,JI'ABAH,region_16
+city_586,بني سار,BANI SAR,region_16
+city_587,الربوة,AR RABWAH,region_16
+city_588,الحشرج,AL HASHRAJ,region_16
+city_589,مرازيق,MARAZIQ,region_16
+city_590,المطرية,AL MUTARIYAH,region_16
+city_591,معشوقة,MA'SHUQAH,region_16
+city_592,وراخ,WURAKH,region_16
+city_593,جرب,JARAB,region_16
+city_594,كرا الحائط,KARA AL HAIT,region_16
+city_595,النصباء,AN NASBA,region_16
+city_596,بالحكم,BALHAKAM,region_16
+city_597,آل صقاعة,AL SUQA'AH,region_16
+city_598,المغثة,AL MAGHTHAH,region_16
+city_599,حظوة,HADHWAH,region_16
+city_600,العقب,AL 'AQIB,region_16
+city_601,عمضان,'AMDAN,region_16
+city_602,آل حبيبة,AL HABIBAH,region_16
+city_603,مراوة,MARAWAH,region_16
+city_604,الصفح,AS SAFH,region_16
+city_605,بالخزمر,BAL KHAZMAR,region_16
+city_607,ال نعمة,AL NA'MAH,region_16
+city_608,دوس,DAWS,region_16
+city_609,الطرف,AT TARAF,region_16
+city_610,الخليف,AL KHALIF,region_16
+city_611,أبو غبار,ABU GHUBAR,region_16
+city_612,زور العقارب,ZUR AL 'AQARIB,region_15
+city_613,الغافية,AL GHAFIYAH,region_15
+city_614,صفاه,SUFAH,region_15
+city_615,العضبات,AL 'ADABAT,region_15
+city_616,قطان,QATAN,region_15
+city_617,حمى,HIMA,region_15
+city_618,الشرفات,ASH SHURAFAT,region_10
+city_619,الرعي,AR RA'Y,region_10
+city_620,الطرق,AT TIRQ,region_10
+city_621,الجرمة,AL JIRMAH,region_10
+city_622,الحشافة,AL HASHAFAH,region_10
+city_623,حمضة,HAMADAH,region_10
+city_624,المطعن,AL MAT'AN,region_10
+city_625,المنجحة,AL MANJAHAH,region_10
+city_627,غالب,GHALIB,region_10
+city_628,سعيدة,SA'IDAH,region_10
+city_629,الأجرع الشمالي,AL AJRA' ASH SHAMALI,region_10
+city_630,ذهبان,DHAHBAN,region_10
+city_631,دبساء,DABSA,region_10
+city_632,القحمة,AL QAHMAH,region_10
+city_633,شقري,SHIQRI,region_11
+city_634,نعمي,NA'MI,region_11
+city_635,عيينة,'UYAYNAH,region_11
+city_636,حميط,HUMAYT,region_11
+city_637,العنبة,AL 'ANABAH,region_11
+city_638,الشرف,ASH SHARAF,region_11
+city_639,رجم الطيارة,RAJM AT TAYARAH,region_11
+city_640,الثميد,ATH THUMAYD,region_11
+city_641,عسيلة,'ASILLAH,region_11
+city_642,كلوة,KILWAH,region_11
+city_643,المريشدية,AL MURAYSHDIYAH,region_11
+city_644,عمرات,'AMRAT,region_11
+city_645,الخشة,AL KHASHAH,region_11
+city_646,بجدة,BAJDAH,region_11
+city_649,بئر بن هرماس,BIR IBN HERMAS,region_11
+city_650,الشايب,ASH SHAYIB,region_11
+city_651,الفوهة,AL FAWHAH,region_11
+city_652,اللوز,AL LAWZ,region_11
+city_653,عين الأخضر,'AYN AL AKHDAR,region_11
+city_654,ذات الحاج,DHAT AL HAJJ,region_11
+city_655,المعظم,AL MA'DHAM,region_11
+city_656,قيال,QIYAL,region_11
+city_657,الاخضر,AL AKHDAR,region_11
+city_658,البديعة,AL BADI'AH,region_11
+city_659,مغيرة,MUGHAYRAH,region_11
+city_660,الهوجاء,AL HAWJA',region_11
+city_662,الخريطة,AL KHURAYTAH,region_11
+city_663,ابار قنا,ABAR QANA,region_11
+city_664,الجبعاوية,AL JAB'AWIYAH,region_11
+city_665,الحميضة,AL HUMAYDAH,region_11
+city_666,البيانة,AL BAYYANAH,region_11
+city_667,الدرة,AD DURRAH,region_11
+city_669,علقان,'ALAQAN,region_11
+city_670,الوادي الجديد,AL WADI AL JADID,region_11
+city_671,مليح,MULAYH,region_11
+city_672,ابو الحنشان,ABU AL HINSHAN,region_11
+city_674,ابو قعر,ABU QA'AR,region_2
+city_675,مركز العوجاء,MARKAZ AL 'AWJA,region_2
+city_676,مركز العليمة,MARKAZ AL 'ULAYYIMAH,region_2
+city_677,القلت,AL QALT,region_2
+city_678,النظيم,AN NADHIM,region_2
+city_679,ابن طوالة,IBN TUWALAH,region_2
+city_680,الصداوي,AS SIDAWI,region_2
+city_681,ام قليب,UMM QULAIB,region_2
+city_682,عريفج,URAYFIJ,region_2
+city_683,ابن شرار,IBN SHARAR,region_2
+city_684,الرقعي الجديدة,AR RUQ'I AL JADIDAH,region_2
+city_685,ذبحة,DHABHAH,region_2
+city_686,الصفيري,AS SUFAIRY,region_2
+city_687,الوايلية,AL WAYLIYAH,region_2
+city_688,الفيوان,AL FIWAN,region_2
+city_689,الحماطيات,AL HAMATIYAT,region_2
+city_690,هدباء,HADBA',region_2
+city_691,الجبو,AL JABU,region_2
+city_692,المسناة,AL MASNAH,region_2
+city_693,سامودة,SAMUDAH,region_2
+city_694,ام عشر الشرقية,UMM ISHAR ASH SHARQIYYAH,region_2
+city_695,بئر ابن رشدان,BIR IBN RASHDAN,region_11
+city_696,بوهان,BUHAN,region_11
+city_697,السنانيات,AS SANANIYAT,region_11
+city_698,حزايا,HAZAYA,region_11
+city_699,أكباد,AKBAD,region_11
+city_700,بئر الحيز,BIR AL HAYZ,region_11
+city_701,جريداء,JURAYDA,region_11
+city_703,عردة,'ARDAH,region_11
+city_704,الكتيب,AL KUTAIB,region_11
+city_705,بئر فجر,BI'R FAJR,region_11
+city_707,الرافعية,AR RAF'IYAH,region_2
+city_708,الكبريت,AL KABARIT,region_2
+city_709,رغوة,RAGHWAH,region_2
+city_710,حمى,HAMMA,region_2
+city_711,الزبر,AZ ZABR,region_2
+city_712,السفانية,AS SAFFANIYAH,region_2
+city_713,المحوى,AL MAHAWA,region_2
+city_714,أم غور,UMM GHAWR,region_2
+city_715,الرفيعة,AR RAFI'AH,region_2
+city_716,جرارة,JARRARAH,region_2
+city_717,قرية,QURAYYAH,region_2
+city_718,البويبيات,AL BUWAYBIYAT,region_2
+city_719,السعيرة,AS SU'AYYIRAH,region_2
+city_720,مناخ,MANAKH,region_2
+city_721,الحيرا,AL HAYRA,region_2
+city_722,ام الشفلح,UMM ASH SHIFALLAH,region_2
+city_723,اللهابة,AL LAHABAH,region_2
+city_725,الشامية,ASH SHAMIYAH,region_2
+city_726,العيطلية,AL 'AYTALIYAH,region_2
+city_727,سحمة,SIHMAH,region_2
+city_728,الشملول / ام عقلا,ASH SHAMLUL (UMM AQLA),region_2
+city_729,ام الهوشات,UMM AL HAWSHAT,region_2
+city_730,الشيط,ASH SHAYYIT,region_2
+city_731,العاذرية,AL 'ADHIRIYAH,region_2
+city_733,حزوة / العمانية,HIZWAH (AL UMANIYAH),region_2
+city_734,القرعاء,AL QAR'A',region_2
+city_735,اللصافة,AL LISAFAH,region_2
+city_736,النقيرة,AN NUQAYRAH,region_2
+city_737,هجرة أولاد حثلين,HIJRAT AWLAD HITHLIN,region_2
+city_738,الحليسية,AL HULAYSIYAH,region_2
+city_739,فرزان,FARZAN,region_2
+city_740,ام ضليع,UMM DULAY',region_2
+city_741,مليجة,MULAYJAH,region_2
+city_742,الصرار,AS SARRAR,region_2
+city_744,مغطي,MUGHATI,region_2
+city_745,شفية,SHIFIYAH,region_2
+city_746,عتيق,UTAYYIQ,region_2
+city_747,الحسي,AL HUSAYY,region_2
+city_748,ثاج,THAJ,region_2
+city_749,الحناة,AL HINNAH,region_2
+city_750,الكهفة,AL KAHAFAH,region_2
+city_752,العيينة,AL 'UYAYNAH,region_2
+city_753,القليب,AL QULAYYIB,region_2
+city_754,الونان,AL WANNAN,region_2
+city_755,غنوى,GHANWA,region_2
+city_756,الزغين,AZ ZUGHAYN,region_2
+city_757,نطاع,NITA',region_2
+city_758,ام الحمام,UMM AL HAMAM,region_2
+city_759,ام ربيعة,UMM RUBAY'AH,region_2
+city_760,ابو حدرية,ABU HADRIYAH,region_2
+city_761,منيفة,MUNIFAH,region_2
+city_762,الوسيعة,AL WASI'AH,region_1
+city_763,تمرية,TAMRIYAH,region_1
+city_764,ابو خسيفاء,ABU KHUSAYFA,region_1
+city_765,النخيل,AN NAKHIL,region_1
+city_766,السحيمي,AS SUHAYMI,region_1
+city_769,التنهاة,AT TANHAH,region_1
+city_770,قري التويم,QIRI AT TUWAYM,region_1
+city_771,الشحمة,ASH SHAHMAH,region_1
+city_773,جوي,JUWAYY,region_1
+city_774,مقبلة,MUQBILAH,region_1
+city_775,جراب,JIRAB,region_1
+city_777,النغيق,AN NUGHAYQ,region_1
+city_778,حويمضة,HUWAIMIDAH,region_1
+city_779,البتيراء,AL BUTAIRA',region_1
+city_781,الفروثي,AL FURUTHI,region_1
+city_782,الدخيلة,AD DAKHILAH,region_1
+city_783,الحصون,AL HUSUN,region_1
+city_785,العمار,AL 'AMAR,region_1
+city_787,المعشبة,AL MA'ASHBAH,region_1
+city_789,الجنيفي,AL JUNAYFI,region_1
+city_790,العطار,AL 'ATTAR,region_1
+city_791,ام الجماجم,UMM AL JAMAJIM,region_1
+city_792,مشلح,MISHLAH,region_1
+city_793,ام رجوم,UMM RUJUM,region_1
+city_794,الرويضة,AR RUWAIDAH,region_1
+city_796,بوضاء,BAWDA',region_1
+city_798,وشي,WUSHAYY,region_1
+city_800,دبدبة فضلاء,DIBDIBBAT FUDALA,region_8
+city_801,الحجب,AL HAJAB,region_8
+city_802,الضلفة,ADH DHALFAH,region_8
+city_804,العين الجديدة,AL 'AYN AL JADIDAH,region_8
+city_806,أم زرب,UMM ZARB,region_8
+city_807,هدية,HADIYAH,region_8
+city_808,القعرة,AL QA'RAH,region_8
+city_809,الجهراء,AL JAHARA,region_8
+city_810,رحيب,RUHAYB,region_8
+city_811,شلال,SHALAL,region_8
+city_812,ضاعا,DA'A,region_8
+city_813,جيدة,JAYDAH,region_8
+city_814,قلبان عشرة,QULBAN 'ISHARAH,region_8
+city_815,النجيل,AN NAJIL,region_8
+city_816,الرزيقية,AR RUZAYQIYAH,region_8
+city_817,الحميدية,AL HAMIDIYAH,region_8
+city_818,قدرين,QUDRAYN,region_10
+city_821,مملح,MAMLAH,region_10
+city_822,آل جودة,AL JAWDAH,region_10
+city_823,بني زهير,BANI ZUHAYR,region_10
+city_826,تلاء,TALA,region_10
+city_827,القيسة,AL QAYSAH,region_10
+city_828,آل فارس,AL FARIS,region_10
+city_829,الذفراء,ADH DHAFRA,region_10
+city_830,بطحة,BATHAH,region_10
+city_831,بني قيس,BANI QAYS,region_10
+city_832,القضوى,AL QADWA,region_10
+city_833,الحميطة,AL HUMAYYITAH,region_10
+city_834,الرشداء,AR RASHDA,region_10
+city_835,لبوة,LABWAH,region_10
+city_836,آل حضينان,AL HIDAYNAN,region_10
+city_837,المجرا,AL MUJRA,region_10
+city_838,الخرب,AL KHARB,region_10
+city_839,آل صقر,AL SAQR,region_10
+city_840,جليلة,JILAYYIAH,region_10
+city_841,طعمة,TI'MAH,region_10
+city_842,المعاملة,AL MU'AMALAH,region_10
+city_843,الحيمة,AL HAYMAH,region_10
+city_844,البطنة,AL BATNAH,region_10
+city_845,الحيفة,AL HIFAH,region_10
+city_846,الطريف الأعلى,AT TURAYF AL A'LA,region_10
+city_848,عرقة,'IRQAH,region_10
+city_849,ثفرة,THAFRAH,region_10
+city_850,فرعة قواء,FAR'AT QUWA,region_10
+city_851,البرقاء,AL BARQA,region_10
+city_852,لسس,LASAS,region_10
+city_853,القوز,AL QAWZ,region_10
+city_854,الصفا الملبد,AS SAFA AL MULABAD,region_10
+city_855,الثعيلبة,ATH THU'AYLIBAH,region_10
+city_857,بادية,BADIYAH,region_10
+city_859,البغث,AL BAGHATH,region_10
+city_860,المريفق,AL MURAYFIQ,region_10
+city_862,القضة,AL QADDAH,region_10
+city_863,الحامض,AL HAMID,region_10
+city_864,الطلاح,AT TILAH,region_10
+city_865,واسط,WASIT,region_10
+city_866,خشم شاع,KHASHM SHA',region_10
+city_867,الخضاير,AL KHADAYIR,region_10
+city_868,مشحذ,MASHHIDH,region_10
+city_869,بريم السليل,BURAYM AS SILIL,region_10
+city_870,البردان,AL BURDAN,region_10
+city_871,رغوة,RIGHWAH,region_10
+city_872,آل سعيد,AL SA'ID,region_10
+city_874,آل الهايلة,AL AL HAYILAH,region_10
+city_875,آل جرمان,AL JARMAN,region_10
+city_877,الحواويش,AL HAWAWISH,region_10
+city_878,المري,AL MARRI,region_10
+city_879,آل شويل,AL SHUWAYL,region_10
+city_880,كدمان,KIDMAN,region_10
+city_881,الصفية,AS SUFAYYAH,region_10
+city_882,إبن نجم,IBN NIJAM,region_10
+city_884,وادي ابن هشبل,WADI IBN HASHBAL,region_10
+city_885,السلع,AS SILA,region_10
+city_886,المضة,AL MADDAH,region_10
+city_887,الروضة,AR RAWDAH,region_10
+city_888,الحثدة,AL HITHADAH,region_10
+city_889,الباعق,AL BA'IQ,region_10
+city_890,العرض,AL 'ARD,region_10
+city_891,أم ضحي,UMM DAHI,region_10
+city_892,آل ثوبان,AL THAWBAN,region_10
+city_893,الحيلة,AL HAYLAH,region_10
+city_894,مراتخ,MURATIKH,region_10
+city_895,أم ظهور الرفود,UMM DHUHUR AR RAFUD,region_10
+city_896,مجزوعة,MAJZU'AH,region_10
+city_897,القرونة,AL QURUNAH,region_10
+city_898,الريع,AR RI',region_10
+city_899,قنيفد,QINAYFID,region_10
+city_900,الفاهمة,AL FAHMAH,region_10
+city_902,النصب,AN NUSUB,region_10
+city_903,المسلم,AL MUSLIM,region_10
+city_904,الريش,AR RAYSH,region_10
+city_905,الحاجب,AL HAJIB,region_10
+city_906,آل علين,AL 'ILLIN,region_10
+city_907,الحضن,AL HUDN,region_10
+city_909,المكثر,AL MUKATHTHIR,region_10
+city_911,المغمر,AL MAGHMAR,region_10
+city_912,العيدة,AL 'IDAH,region_10
+city_913,الحجف,AL HAJF,region_10
+city_914,المقاعد,AL MAQA'ID,region_10
+city_915,شعب دريب,SHI'B DURAYB,region_10
+city_916,الكديد,AL KADID,region_10
+city_917,السحر,AS SAHAR,region_10
+city_918,إبن عبيدي,IBN 'ABIDI,region_10
+city_919,الجبهة,AL JABHAH,region_10
+city_920,الحرة,AL HARRAH,region_10
+city_921,معصم,MA'SAM,region_10
+city_922,الحدبات,AL HADABAT,region_10
+city_923,المعشور,AL MA'SHUR,region_10
+city_925,بين الجبلين,BAYN AL JABLAYN,region_10
+city_926,الحشف,AL HASHAF,region_10
+city_927,ريمان,RAYMAN,region_10
+city_928,الخليف,AL KHALIF,region_10
+city_930,العفارة,AL 'AFARAH,region_10
+city_931,البجيلي,AL BAJILI,region_10
+city_932,العقل,AL 'AQL,region_10
+city_933,سيال,SAYYAL,region_10
+city_934,آل معلوي,AL MA'LAWI,region_10
+city_935,الخطيم,AL KHUTAYM,region_10
+city_936,الفي,AL FAYY,region_10
+city_937,الجردان,AL JARDAN,region_10
+city_938,خارف,KHARIF,region_10
+city_940,سارة,SARAH,region_10
+city_941,سقامة,SIQAMAH,region_10
+city_942,الخبارة,AL KHABARAH,region_10
+city_943,حبث,HABATH,region_10
+city_944,آل ناهية,AL NAHIYAH,region_10
+city_946,فتاح,FUTAH,region_10
+city_947,مسلت,MASLAT,region_10
+city_949,آل عاصمي,AL 'ASIMI,region_10
+city_950,ذي حصيمو,DHI HUSAYMU,region_10
+city_951,وسانب,WUSANIB,region_10
+city_952,الزهراء,AZ ZAHA,region_10
+city_953,المسقوي,AL MASQAWI,region_10
+city_954,هدة,HIDAH,region_10
+city_955,الغال,AL GHAL,region_10
+city_956,قنا البحر,QANA & AL BAHR,region_10
+city_957,خميس البحر,KHAMIS AL BAHR,region_10
+city_958,قشيعة,QUSHAY'AH,region_10
+city_959,دالج,DALAJ,region_10
+city_960,شط إبن جازعة,SHATT IBN JAZI'AH,region_10
+city_961,منقش,MANQASH,region_10
+city_962,الدماغ,AD DIMAGH,region_10
+city_963,ثلوث ريم,THULUTH RIM,region_10
+city_965,الضاجع,AD DAJI',region_10
+city_966,الرصعة,AR RAS'AH,region_10
+city_967,سنومة,SANUMAH,region_10
+city_969,السرو,AS SARW,region_10
+city_970,العشة,AL 'ASHSHAH,region_10
+city_971,آل مجم,AL MAJAM,region_10
+city_972,الحصون,AL HUSUN,region_10
+city_973,القارية,AL QARIYAH,region_10
+city_974,الذروة,ADH DHURWAH,region_10
+city_975,الشعبين,ASH SHI'BAYN,region_10
+city_976,آل عيسى,AL 'ISA,region_10
+city_977,مرجومة,MARJUMAH,region_10
+city_978,بيغ,BAYYAGH,region_10
+city_979,الجزوة,AL JAZWAH,region_10
+city_980,فقوة,FAQWAH,region_10
+city_981,آل متعالي,AL MUT'ALI,region_10
+city_982,دبلاء,DABLA,region_10
+city_983,القرن,AL QURUN,region_10
+city_984,كلمة,KALMAH,region_10
+city_985,آل مصم,AL MASAM,region_10
+city_986,يسراة,YASRAH,region_10
+city_987,الأثل,AL ATHL,region_10
+city_988,لصناي,LASNAY,region_10
+city_989,عكية,'UKYAH,region_10
+city_990,القرار,AL QARAR,region_10
+city_991,الجرف,AL JARF,region_10
+city_992,فيشان,FAYSHAN,region_10
+city_994,حافظ,HAFIDH,region_10
+city_995,العلوبي,AL 'ULUBI,region_10
+city_996,الرمضة,AR RUMADAH,region_10
+city_997,فرعة طريب,TURAIB,region_10
+city_998,الزهرة,AZ ZAHRAH,region_10
+city_999,آل معدي,AL MA'ADDI,region_10
+city_1000,الغلقة,AL GHILIQAH,region_10
+city_1001,الجلدة,AL JILDAH,region_10
+city_1002,آل قنبة,AL QUNBAH,region_10
+city_1003,الربعة,AR RIBA'AH,region_10
+city_1004,الوهابة,AL WAHABAH,region_10
+city_1005,آل سعيدة,AL SA'IDAH,region_10
+city_1006,آل كولت,AL KULAT,region_10
+city_1008,آل محي,AL MIHI,region_10
+city_1009,الحدباء,AL HADBA,region_10
+city_1010,الحنجور,AL HUNJUR,region_10
+city_1011,الحنو,AL HINU,region_10
+city_1012,المنابية,AL MANABIYAH,region_10
+city_1013,الزهيد,AZ ZUHAYD,region_10
+city_1014,المحزمة,AL MUHAZMAH,region_10
+city_1015,الدربين,AD DARBAYN,region_10
+city_1016,الشعاقة,ASH SHA'AQAH,region_10
+city_1017,عدن,'IDIN,region_10
+city_1018,الغول,AL GHAWL,region_10
+city_1019,درامة,DIRAMAH,region_10
+city_1020,آل الخلف,AL AL KHALAF,region_10
+city_1021,آل مانع,AL MANI',region_10
+city_1022,نقعة,NAQ'AH,region_10
+city_1023,آل غبران,AL GHUBRAN,region_10
+city_1024,الفقاعيس,AL FUQA'IS,region_10
+city_1025,الحريقة,AL HARIQAH,region_10
+city_1026,العطفة,AL 'UTFAH,region_10
+city_1027,الفرشة,AL FARSHAH,region_10
+city_1028,الربوعة,AR RABUAH,region_10
+city_1029,الجوة,AL JAWWAH,region_10
+city_1030,عرضين,ARDAYN,region_10
+city_1031,ام الوهط,UMM AL WHAHT,region_15
+city_1032,المنخلي,AL MINKHALI,region_15
+city_1033,خد قيس,KHAD QAYS,region_15
+city_1034,الحمضة,AL HAMDAH,region_15
+city_1035,تريمة,TIRIMAH,region_15
+city_1036,الظاهرة,ADH DHAHIRAH,region_15
+city_1037,رضية,RUDAYYAH,region_15
+city_1038,حزامة,HAZAMAH,region_15
+city_1039,الحرشف,AL HARSHAF,region_15
+city_1040,هدادة,HADADAH,region_15
+city_1041,الخانق,AL KHANIQ,region_15
+city_1042,الجفة,AL JIFAH,region_15
+city_1043,شقة الكناور,SHIQQAT AL KANAWIR,region_15
+city_1044,التماني,AT TAMANI,region_15
+city_1045,المجمع,AL MAJMA',region_10
+city_1046,شيبة مسورة,SHAYBAT MISWARAH,region_10
+city_1047,آل ثابت,AL THABIT,region_10
+city_1048,الجربة,AL JIRBAH,region_10
+city_1049,الغيل,AL GHAYL,region_10
+city_1050,المجزعة,AL MAJZA'AH,region_10
+city_1051,آل عليا,AL 'ALYA,region_10
+city_1052,آل بيضاء,AL BAYDA,region_10
+city_1053,آل معمر,AL MU'AMMAR,region_10
+city_1054,الملحة,AL MALHAH,region_10
+city_1055,الحاجر,AL HAJIR,region_10
+city_1056,الملطاء,AL MALTA,region_10
+city_1058,المجازة,AL MIJAZAH,region_10
+city_1059,بن لكرم,BIN LAKRAM,region_10
+city_1060,السلاطين,AS SALATIN,region_10
+city_1061,المحجر,AL MAHJAR,region_10
+city_1062,الوسط,AL WASAT,region_10
+city_1063,العقدة,AL 'UQDAH,region_10
+city_1064,آل الأشعث,AL AL ASH'ATH,region_10
+city_1065,العنثري,AL 'ANTHARI,region_10
+city_1066,آل عمران,AL 'IMRAN,region_10
+city_1067,آل جحالي,AL JIHALI,region_10
+city_1068,العرف,AL 'ARAF,region_10
+city_1069,دهر,DIHIR,region_10
+city_1071,الخضراء,AL KHADRA,region_10
+city_1072,علاف,'ALLAF,region_10
+city_1073,آل يعلى,AL YA'LA,region_10
+city_1075,الكولة,AL KULAH,region_10
+city_1076,حمران,HUMRAN,region_10
+city_1077,آل لهوة,AL LAHWAH,region_10
+city_1078,الهويمل,AL HUWAYMIL,region_15
+city_1079,بئر خباش,BIR KHUBASH,region_15
+city_1080,الخضراء,AL KHADRA',region_15
+city_1081,قابل منيف,QABIL MINIF,region_15
+city_1082,الهويد,AL HAWID,region_15
+city_1083,الحجف,AL HIJF,region_15
+city_1084,الدواس,AD DAWAS,region_15
+city_1085,لاهومة,LAHUMAH,region_15
+city_1086,الحصينية,AL HUSAYNIYAH,region_15
+city_1087,قرار,QARAR,region_14
+city_1088,الكدارة,AL KADARAH,region_14
+city_1091,الدرب,AD DARB,region_14
+city_1092,ابو السداد,ABU AS SADAD,region_14
+city_1094,الحروف,AL HURUF,region_14
+city_1095,عتود,'ITWAD,region_14
+city_1096,رملان,RAMLAN,region_14
+city_1097,المنجارة,AL MINJARAH,region_14
+city_1098,الدولة,AD DAWLAH,region_14
+city_1099,مسلية,MISLIYAH,region_14
+city_1100,الفطيحة,AL FATIHAH,region_14
+city_1101,الفيصلية,AL FAYSALIYAH,region_15
+city_1102,معمر ريمان,MA'MAR RIMAN,region_15
+city_1103,دوح,DAWWAH,region_15
+city_1105,النقعاء,AN NAQ'A,region_15
+city_1106,بئر عسكر,BI'R 'ASKAR,region_15
+city_1107,نهوقة,NAHUQAH,region_15
+city_1108,ال شهي,AL SHAHI,region_15
+city_1109,رجلاء,RIJLA',region_15
+city_1110,آل سوار,ALSUWAR,region_15
+city_1111,المجمع,AL MAJMA,region_15
+city_1112,العريسة,AL 'ARAYYISAH,region_15
+city_1113,رخية,RAKHYAH,region_14
+city_1115,الرهوة,AL RAHWAH,region_14
+city_1116,عثوان,'ATHWAN,region_14
+city_1117,القعقاع,AL QA'QA',region_14
+city_1118,الشملاة,ASH SHAMLAH,region_14
+city_1119,السهية,AS SUHAYYAH,region_14
+city_1120,عراب,'URAB,region_14
+city_1121,الخطوة,AL KHUTWAH,region_14
+city_1122,الحناية,AL HINNAYAH,region_14
+city_1123,النفيعة,AN NAFI'AH,region_14
+city_1124,زوزاء,ZAWZA,region_14
+city_1125,الركبة,AR RUKBAH,region_14
+city_1126,العزة,AL 'IZZAH,region_14
+city_1127,خويعمة,KHUWAY'IMAH,region_14
+city_1128,الدخرة,AD DIKARAH,region_14
+city_1129,الخشعة,AL KHASHAH,region_14
+city_1130,الكوابسة,AL KAWABISAR,region_14
+city_1131,الهيجاء,AL HAYJA,region_14
+city_1132,اليمانية,AL YAMANIYAH,region_14
+city_1134,الطرف,AL TARAF,region_14
+city_1135,ظاهرة الصفا,DHAHIRAT AS SAFA,region_14
+city_1136,القاع,AL QA',region_14
+city_1137,القتب,AL QATAB,region_14
+city_1138,الهياج,AL HIYAJ,region_14
+city_1139,العقدة,AL 'UQDAH,region_14
+city_1141,مقزع,MUQZA',region_14
+city_1142,هروب,HARUB,region_14
+city_1143,الشريعة,ASH SHARI'AH,region_14
+city_1144,الحجروف,AL HAJRUF,region_14
+city_1145,نورة,NURAH,region_14
+city_1146,الأثلة,AL ATHLAH,region_14
+city_1147,الحضن,AL HADAN,region_14
+city_1148,القوز,AL QAWZ,region_14
+city_1150,القوام,AL QUWAM,region_14
+city_1151,المطعن,AL MAT'AN,region_14
+city_1152,العداية,AL 'ADDAYAH,region_14
+city_1153,الباحر,AL BAHIR,region_14
+city_1154,المعترض,AL MU'TARID,region_14
+city_1155,نخلان,NAKHLAN,region_14
+city_1156,الغرا,AL GHARA,region_14
+city_1157,العبادلة,AL 'ABADILAH,region_14
+city_1158,العريش,AL 'ARISH,region_14
+city_1159,مشلحة,MUSHALLAHAH,region_14
+city_1160,الرايغة,AR RAYIGHAH,region_14
+city_1161,الملحاة,AL MALHA,region_14
+city_1162,الدهنا,AD DAHNA,region_14
+city_1163,قائم الدش,QA'IM AD DASHSH,region_14
+city_1164,صبيا الجديدة,SABYA AL JADIDAH,region_14
+city_1165,الكدمي,AL KUDMI,region_14
+city_1166,العشة,AL ASHAH,region_14
+city_1167,السلام العليا,AS SALAM AL 'ULYA,region_14
+city_1168,ابو القعايد,ABU ALQA'AYID,region_14
+city_1169,ابو السلع,ABU AS SALA',region_14
+city_1171,غوان,GHAWWAN,region_14
+city_1172,الحسيني,AL HUSAYNI,region_14
+city_1173,الظبية,AL DHABYAH,region_14
+city_1174,الجمالة,AL JAMMALAH,region_14
+city_1175,السبخة,AL SABAKHAH,region_14
+city_1176,الفقرة,AL FIQARAH,region_14
+city_1177,خبت سعيدة,KHABT SA'IDAH,region_14
+city_1178,الحمي,AL HIMA,region_14
+city_1179,الجهو,AL JAHW,region_14
+city_1180,القمري,AL QUMRI / AMRI /OMRI,region_14
+city_1181,الخضيرة,AL KHUDAYRAH,region_14
+city_1183,زبارة رشيد,ZABARAT RASHID,region_14
+city_1184,قنبورة,QANBURA,region_14
+city_1185,صدر,SADR,region_8
+city_1186,مغيراء,MUGHAYRA',region_8
+city_1187,قصيب ابو سيال,QUSAYB ABU SIYAL,region_8
+city_1188,ابو اراكة,ABU ARAKAH,region_8
+city_1189,مدائن الصالح,MADAIN AS SALIH,region_8
+city_1190,عورش,AWARSH,region_8
+city_1191,النشيفة,AN NUSHAYFAH,region_8
+city_1192,الزباير,AZ ZUBAYIR,region_8
+city_1193,الضليعة,AD DULAY'AH,region_8
+city_1194,متان العريقة,MITAN AL 'URAYQAH,region_8
+city_1195,الابرق,AL ABRAQ,region_8
+city_1196,اميرة,AMIRAH,region_8
+city_1197,الجديدة,AL JADIDAH,region_8
+city_1198,كتيفة مصادر,KUTAYFAT MASADIR,region_8
+city_1199,الراس,AR RAS,region_11
+city_1200,البيت,AL BAYT,region_11
+city_1201,بئر بحار,BIR BAHAR,region_11
+city_1202,سبحان,SABHAN,region_11
+city_1203,شدوا,SHADWA,region_11
+city_1204,أم الريح,UMM AR RIH,region_11
+city_1205,حرم,HARAM,region_11
+city_1206,عكوز,'AKUZ,region_11
+city_1207,السديد,AS SUDAYD,region_11
+city_1208,الحفيرة,AL HUFAYRAH,region_11
+city_1209,النابع,AN NABI',region_11
+city_1210,عنتر,'ANTAR,region_11
+city_1211,المنجور,AL MANJUR,region_11
+city_1212,ابا القزاز,ABA AL QIZAZ,region_11
+city_1213,بداء,BADA',region_11
+city_1214,خرباء,KHURBA',region_11
+city_1215,الكر,AL KURR,region_11
+city_1216,برق الأسيدية,BURQ AL USAYDIYAH,region_2
+city_1217,الفاضلي,AL FADILI,region_2
+city_1219,ظلوم,DHULUM,region_2
+city_1220,عين دار,AYN DAR,region_2
+city_1221,عين دار القديمة,OLD AIN DAR,region_2
+city_1222,علاة,ALLAT,region_2
+city_1223,فودة,FUDAH,region_2
+city_1224,الكدادية,AL KIDADIYAH,region_2
+city_1225,يكرب,YAKRUB,region_2
+city_1227,شهيلاء,SHUHAYLA',region_2
+city_1228,عصيفرات,USAYFIRAT,region_2
+city_1229,الدغيمية,AD DUGHAYMIYAH,region_2
+city_1231,المنسف,AL MANSAF,region_1
+city_1232,منسية الغربية,MANSIYAH AL GHARBIYAH,region_1
+city_1233,عشيرة,'USHAYRAH,region_1
+city_1235,الثوير,ATH THUWAYR,region_1
+city_1236,زليغف,ZULAYGHIF,region_1
+city_1237,مزارع الاثلة,MAZARI' AL ATHLAH,region_1
+city_1238,مزارع الرحية,MAZARI' AR RUHAYYAH,region_1
+city_1239,قصيباء,QUSAYBA,region_1
+city_1240,مزرعة بيضاء نثيل,MAZRA'AT BAYDA NUTHAYL,region_1
+city_1241,امارة المستوي,IMARAT AL MISTAWI,region_1
+city_1242,سمنان,SAMNAN,region_1
+city_1243,علقة,'ILIQAH,region_1
+city_1244,العين,AL 'AYN,region_8
+city_1245,المضاويح,AL MUDHAWIH,region_8
+city_1246,ابا البقر,ABA AL BAQAR,region_8
+city_1247,الحرضة,AL HARDHAH,region_8
+city_1248,الضرس,ADH DHARS,region_8
+city_1249,الخريبة,AL KHORAIBAH,region_8
+city_1250,العرائد,AL 'ARAID,region_8
+city_1251,غمرة,GHAMRAH,region_8
+city_1252,العقيلة,AL 'UQILAH,region_8
+city_1253,العدلة,AL 'ADLAH,region_8
+city_1254,الديسة,AD DISAH,region_8
+city_1256,الهذلولي,AL HADHLULI,region_8
+city_1257,جدعاء,JAD'A,region_8
+city_1258,اللحن,AL LIHIN,region_8
+city_1259,العشاش,AL 'ISHASH,region_8
+city_1260,الصلصلة,AS SILSILAH,region_8
+city_1261,الثمد,AL THAMAD,region_8
+city_1262,العينية,AL UYAYNAH,region_8
+city_1263,حفر العتك,HAFR AL ATK,region_1
+city_1264,المزيرع,AL MUZAYRI',region_1
+city_1265,شوية,SHAWYAH,region_1
+city_1267,الغيلانة,AL GHAYLANAH,region_1
+city_1268,الرمحية,AR RUMHIYAH,region_1
+city_1269,الراكة,AR RAKAH,region_2
+city_1270,الثقبة,ATH THUQBAH,region_2
+city_1271,العزيزية,AL 'AZIZIYAH,region_2
+city_1272,مليح,MULAYH,region_1
+city_1273,الشبعان,ASH SHABAN,region_11
+city_1274,الدقم,AD DUQUM,region_11
+city_1275,القرص,AL QARS,region_11
+city_1276,حراض,HIRAD,region_11
+city_1277,الشبحة,ASH SHIBAHAH,region_11
+city_1278,روضة الاغيدرات,RAWDAT AL AGHAYDIRAT,region_11
+city_1279,الخضراء الجديدة,AL KHADRA AL JADIDAH,region_11
+city_1280,سمور,SAMUR,region_11
+city_1281,الرويضات,AL RUWAYDAT,region_11
+city_1282,المهدرة,AL MAHADRAH,region_11
+city_1283,بقيلة,BUQAYLAH,region_11
+city_1284,النعيلة,AN NU'AYLAH,region_11
+city_1285,الزغلية,AZ ZAGHLIYAH,region_11
+city_1286,توله,TUWALAH,region_11
+city_1287,العين,AL 'AYN,region_11
+city_1288,فم شثاث,FAMM SHITHATH,region_11
+city_1289,الحرة,AL HARRAH,region_11
+city_1290,العمبجة,AL 'AMBIJAH,region_11
+city_1291,الشدخ,ASH SHIDAKH,region_11
+city_1292,المرامية,AL MARAMIYAH,region_11
+city_1293,مزارع البدائع,MAZARI' AL BADAI',region_1
+city_1294,الخاتلة,AL KHATILAH,region_1
+city_1295,البلاد الوسطى,AL BILAD AL WUSTA,region_1
+city_1296,العليا,AL 'ULYA,region_1
+city_1297,الحسيان,AL HISYAN,region_1
+city_1298,الضلعي,AD DUL 'AYI,region_1
+city_1299,تنيبيكة,TUNAIBIKAH,region_1
+city_1300,عبلة,'ABLA,region_1
+city_1301,عبلية,'ABLIYAH,region_1
+city_1302,هجرة السلات,HIJRAT AS SILAT,region_1
+city_1304,معرج قليشة,MUA'RIJ QULAISHAH,region_1
+city_1305,داغان,DAGHAN,region_1
+city_1306,الجرفية,AL JURFIYAH,region_1
+city_1307,حشاشة,HASHASHAH,region_1
+city_1308,دار المردمة,DAR AL MARUDUMAH,region_1
+city_1309,لهدة الصياهد,LAHDAT AS SAYAHID,region_1
+city_1310,البرزاء,AL BARZA,region_1
+city_1312,الخالدية,AL KHALDIYAH,region_1
+city_1313,الحمادة,AL HAMADAH,region_1
+city_1314,القرارة,AL QARARAH,region_1
+city_1315,الحمنة,AL HAMNAH,region_8
+city_1316,أم الغيران,UMM AL GHIRAN,region_8
+city_1318,السليمية,AS SILAYMIYAH,region_8
+city_1319,البراقية,AL BARRAQIYAH,region_8
+city_1320,السراقي,AS SIRAQI,region_8
+city_1321,آبار دحمولة,ABAR DAHMULAH,region_8
+city_1322,بدائع الهراسين,BADAI' AL HARASIN,region_8
+city_1323,صفينة,SUFAYNAH,region_8
+city_1324,الرقابية,ar riqabiyah,region_8
+city_1325,الصلحانية,AS SULHANIYAH,region_8
+city_1326,الغاشية,AL GHASHIYAH,region_8
+city_1327,الاصيحر,AL ASAYHIR,region_8
+city_1328,السويرقية,AS SUWAYRIQIYAH,region_8
+city_1329,ثرب,THARB,region_8
+city_1330,حاذة,HADHAH,region_8
+city_1331,العمق,AL 'UMAQ,region_8
+city_1332,الصعبية,AS SA'BIYAH,region_8
+city_1333,بئر الفيضة,BIR AL FAYDAH,region_1
+city_1334,الهميج,AL HUMAYJ,region_1
+city_1336,خضراء,KHADRA,region_1
+city_1337,البدايع,AL BADAYI',region_1
+city_1338,بطاحة,BATTAHAH,region_1
+city_1339,الصقرة,AS SAQRAH,region_1
+city_1340,وبرة,WABRAH,region_1
+city_1341,أبو عشرة,ABU 'ISHARAH,region_1
+city_1342,المعلق,AL MU'ALLAQ,region_1
+city_1343,الرميثي,AR RUMAYTHI,region_1
+city_1344,الهرانية,AL HIRANIYAH,region_1
+city_1345,الرضم,AR RADUM,region_1
+city_1346,الثعل,ATH THA'AL,region_1
+city_1347,الانسيات,AL UNSIYAT,region_1
+city_1348,فرعة الرميثي,FAR'AT AR RUMAYTHI,region_1
+city_1349,البطين,AL BUTIN,region_1
+city_1351,بديدة,BIDAYDAH,region_1
+city_1352,المجهلية,AL MIJHILIYAH,region_1
+city_1353,البحرة,AL BAHARAH,region_1
+city_1354,بديعة,BUDAY'AH,region_1
+city_1355,الجثوم,AL JUTHUM,region_1
+city_1356,الشويطن,ASH SHUWAYTIN,region_1
+city_1357,المحامة,AL MAHAMAH,region_1
+city_1358,ابرقية,ABRAQIYAH,region_1
+city_1359,الجمانية,AL JAMMANIYAH,region_1
+city_1360,الاشعرية,AL ASHARIYAH,region_1
+city_1361,الخضارة,AL KHADARAH,region_1
+city_1363,بدائع العضيان,BIDAI' AL IDYAN,region_1
+city_1364,أم أرطى,UMM ARTA,region_1
+city_1365,المكلاة,AL MAKLAH,region_1
+city_1366,عشيران,'USHAYRAN,region_1
+city_1368,الراحة,AR RAHAH,region_10
+city_1369,اللصبة,AL LASBAH,region_10
+city_1370,جو جيبة,JAWW JIBAH,region_10
+city_1371,لهد,LUHUD,region_10
+city_1372,الهدانة,AL HADANAH,region_10
+city_1373,أبو ذراع,ABU DHIRA',region_10
+city_1374,السودة,AS SUDAH,region_10
+city_1375,الحريضة,AL HURAYDAH,region_10
+city_1376,الخطوة,AL KHUTWAH,region_10
+city_1377,الحبيل,AL HABIL,region_10
+city_1378,آل قفيع,AL QIFAY',region_10
+city_1379,المضيق,AL MADIQ,region_10
+city_1380,آل لغر,AL LAGHIR,region_10
+city_1381,الهضبة,AL HADABAH,region_10
+city_1383,عنقرة,'UNQARAH,region_10
+city_1387,سرايم,SARAYIM,region_10
+city_1388,لزمة,LAZMAH,region_10
+city_1389,الدرب,AD DARB,region_10
+city_1390,بني تميم,BANI TAMIM,region_10
+city_1391,القرحاء,AL QARHA,region_10
+city_1392,آل عمرة,AL 'AMRAH,region_10
+city_1395,عراب,'IRAB,region_10
+city_1396,آل مشهور,AL MASHHUR,region_10
+city_1397,آل عامر,AL 'AMIR,region_10
+city_1398,آل حديلة,AL HIDAYLAH,region_10
+city_1399,آل حلامي,AL HILAMI,region_10
+city_1400,صفحان,SAFHAN,region_10
+city_1401,الهامة,AL HAMAH,region_11
+city_1402,بئر ابو العجاج,BIR ABU AL 'AJJAJ,region_11
+city_1403,بئر السادي,BIR AS SADI,region_11
+city_1404,قلعة الاذنم,QAL'AT AL ADHNUM,region_11
+city_1405,سلوى,SALWA,region_11
+city_1406,وادي ابو طينة,WADI ABU TINAH,region_11
+city_1407,الصورة,AS SURAH,region_11
+city_1408,تريم,TIRAYM,region_11
+city_1409,بئر فحيمان,BIR FHAYMAN,region_11
+city_1410,قاصرة,QASRAH,region_11
+city_1411,هداج,HADDAJ,region_11
+city_1412,الحواويط,AL HAWAWIT,region_11
+city_1413,جبة,JUBBAH,region_11
+city_1414,المهارش,AL MHARISH,region_11
+city_1415,ضوجي,DUJI,region_11
+city_1416,المرير,AL MURAYR,region_11
+city_1417,شواق,SHUWAQ,region_11
+city_1418,آمدان,AMDAN,region_11
+city_1419,رواقا,RUWAQA,region_11
+city_1420,الخريبة,AL KHURAYBAH,region_11
+city_1421,صر,SURR,region_11
+city_1422,صدر,SADR,region_11
+city_1423,نابع داما,NABI' DAMA,region_11
+city_1424,قبقاب,QABQAB,region_11
+city_1425,شرماء,SHARMA,region_11
+city_1426,شغب,SHAGHAB,region_11
+city_1427,الجلف,AL JILF,region_12
+city_1428,الهرير,AL HURAYR,region_12
+city_1429,طوية,TUWAYYAH,region_12
+city_1430,البدع,AL BID',region_12
+city_1431,الجديدة,AL JUDAYYIDAH,region_12
+city_1432,الرويع,AR RUWAY',region_12
+city_1433,العضدي,AL 'IDDI,region_12
+city_1434,المرمى,AL MARMA,region_12
+city_1435,المندسة الشرقية,AL MINDASSAH ASH SHARQIYAH,region_12
+city_1436,التيم,AT TIM,region_12
+city_1437,القليبين,AL QULAYBAYN,region_12
+city_1438,رينبة,RAYNIBAH,region_12
+city_1440,الحميراء,AL HUMAYRA,region_12
+city_1441,الغار,AL GHAR,region_12
+city_1442,المعيقلات,AL MU'AYQILAT,region_12
+city_1443,المويكر,AL MUWAYKIR,region_12
+city_1444,المكظم,AL MAKDHAM,region_12
+city_1445,الدارة,AL DARAH,region_12
+city_1446,الشبيكة,ASH SHUBAYKAH,region_12
+city_1447,المبعوثة,AL MAB'UTHAH,region_12
+city_1448,الجفر,AL JAFUR,region_12
+city_1449,المعترضة,AL MU'TARIDAH,region_12
+city_1450,اللقيطه,AL LIQITAH,region_12
+city_1451,منشار,MINSHAR,region_12
+city_1452,سهلة بدنة,SAHLAT BADANAH,region_12
+city_1453,بدائع مريفق,BADAI' MURAYFIQ,region_12
+city_1454,الصليعاء,AS SULAY'A,region_12
+city_1455,الصبيحية,AS SUBAYHIYAH,region_12
+city_1456,الأثلة,AL ATHLAH,region_12
+city_1457,حويان,HUWAYYAN,region_12
+city_1458,المبيدع,AL MUBAYDI',region_12
+city_1459,المبدع,AL MABDA',region_12
+city_1463,المسلسل,AL MUSALSAL,region_12
+city_1464,سبطر,SIBUTAR,region_12
+city_1465,الحفيرة,AL HUFAYRAH,region_12
+city_1466,غرمول العويد,GHURMUL AL UWAYD,region_12
+city_1467,الحامرية,AL HAMIRIYAH,region_12
+city_1468,الخبة,AL KHABBAH,region_12
+city_1469,الحطي,AL HATI,region_12
+city_1470,الصنينا,AS SUNAYNA',region_12
+city_1471,دليهان,DULAYHAN,region_12
+city_1472,الشقيق,ASH SHUQAYQ,region_12
+city_1473,ابا الحيران,ABA AL HIRAN,region_12
+city_1474,قليب الاطرم,QALIB AL ATRAM,region_12
+city_1475,بيضاء نثيل,BAYDA' NATHIL,region_12
+city_1476,قناء,QINA',region_12
+city_1477,المشيطية,AL MUSHAYTIYAH,region_12
+city_1478,التربية,AT TURBIYAH,region_12
+city_1480,جبه,JUBBAH,region_12
+city_1482,عقلة بن جبرين,UQLAT BIN JABRIN,region_12
+city_1483,ام القلبان,UMM AL QULBAN,region_12
+city_1484,مزارع السحل,MAZARI' AS SIHHAL,region_12
+city_1485,مزارع الرغلية,MAZARI AR RIGHLIYAH,region_12
+city_1486,الطليحة,AT TULAYHAH,region_12
+city_1487,مزارع الصفيا,MAZARI' AS SAFYA,region_12
+city_1489,المهينية,AL MIHAYNIYAH,region_12
+city_1490,الوعيلي,AL WU'AYLI,region_12
+city_1491,مزارع الرخيصية,MAZARI' AR RIKHAYSIYAH,region_12
+city_1492,مزارع بيط,MAZARI' BAYT,region_12
+city_1493,الجثياثة,AL JITHYATHAH,region_12
+city_1494,القصعاء,AL QAS'A,region_12
+city_1495,اللويبدة,AL LUWAYBIDAH,region_12
+city_1496,الجثامية,AL JITHAMIYYAH,region_12
+city_1497,السويفلة,AS SUWAYFILAH,region_12
+city_1498,الاجفر,AL AJFAR,region_12
+city_1499,ضبيعة,DUBAY'AH,region_12
+city_1500,الشيحية,ASH SHIHIYAH,region_12
+city_1501,الشعيبة,ASH SHU'AYBAH,region_12
+city_1502,بقعاء الشرقية,BAQ'A' ASH SHARQIYAH,region_12
+city_1503,الثنيان,ATH THINAYYAN,region_12
+city_1505,الشعلانية,ASH SHA'LANIYAH,region_12
+city_1506,طلحاء,TALHA',region_12
+city_1507,العمود,AL 'AMUD,region_11
+city_1508,الحميرة,AL HUMAYRAH,region_11
+city_1509,الغال,AL GHAL,region_11
+city_1511,الحشا,AL HASHA,region_11
+city_1512,عينونة,'AYNUNAH,region_11
+city_1513,بئر عودة,BIR 'AUDAH,region_11
+city_1514,الجدة,AL JIDDAH,region_11
+city_1515,القائم,AL QAIM,region_14
+city_1516,المحصام,AL MUHSAM,region_14
+city_1517,الحجاجة,AL HAJAJAH,region_14
+city_1518,الجربة,AL JIRBAH,region_14
+city_1519,السادلية,AS SADILIYAH,region_14
+city_1520,مريخية,MURAYKHIYAH,region_14
+city_1521,العروس,AL 'ARUS,region_14
+city_1522,الخزنة,AL KHUZNAH,region_14
+city_1523,العسيلة,AL 'USAYLAH,region_14
+city_1524,سد ملاكي,SADD MALAKI,region_14
+city_1525,الكتيفة,AL KUTAYFAH,region_14
+city_1526,السيبة,AS SYABAH,region_14
+city_1527,المرزوق,AL MARZUQ,region_14
+city_1528,الحريقة,AL HARIQAH,region_14
+city_1529,الرد,AR RADD,region_14
+city_1530,دودة,DUDAH,region_14
+city_1531,الدوشية,AD DAWSHIYAH,region_14
+city_1533,المقيدر,AL MUQAYDIR,region_14
+city_1534,السلامة,AS SALAMAH,region_14
+city_1535,الحميرة,AL HUMAYRAH,region_14
+city_1536,فلس,FALAS,region_14
+city_1538,الصيابة,AS SAYYABAH,region_14
+city_1539,العباسية,AL 'ABBASIYAH,region_14
+city_1540,الكروس,AL KURUS,region_14
+city_1541,المبيت,AL MUBAYYAT,region_14
+city_1542,السرداح,AS SIRDAH,region_14
+city_1543,المعزاب,AL MI'ZAB,region_14
+city_1544,السودي,AS SUDY,region_14
+city_1545,الحلحلة,AL HALHALAH,region_14
+city_1546,وعلان,WA'LAN,region_14
+city_1547,البيسري,AL BAYSURI,region_14
+city_1548,ديحمة,DAYHAMAH,region_14
+city_1549,الخلايف,AL KHALAYIF,region_14
+city_1550,الشنامرة,AL SHANAMIRAH,region_14
+city_1551,الجرادية,AL JURADIYAH,region_14
+city_1552,ابو حجر الاسفل,ABU HAJAR AL ASFAL,region_14
+city_1553,الدغارير,AD DAGHARIR,region_14
+city_1555,حاكمة الدغارير,HAKIMAT AD DAGHARIR,region_14
+city_1556,القفل,AL QUFL,region_14
+city_1558,اللقية,AL LAQYAH,region_14
+city_1559,ابو حجر الأعلى,ABU HAJAR AL A'LA,region_14
+city_1560,النجامية,AN NUJAMIYAH,region_14
+city_1561,شعب الذئب,SHI'B ADH DHIB,region_14
+city_1562,الخوجرة,AL KHAWJARAH,region_14
+city_1563,المجنة,AL MIJANNAH,region_14
+city_1564,عنطوطة,ANTUTAH,region_14
+city_1565,الجاظع,AL JADHI',region_14
+city_1566,الركوبة,AR RUKUBAH,region_14
+city_1567,مجعر,MUJ'UR,region_14
+city_1569,أبو طوق,ABU TAWQ,region_14
+city_1570,العقيل,AL 'UQAIL,region_14
+city_1571,ختب,KHATB,region_14
+city_1572,صير,SIR,region_14
+city_1573,القصار,AL QSAR,region_14
+city_1574,المحرق,AL MUHARQ,region_14
+city_1575,جنابه,GNABA,region_14
+city_1576,الميناء الجديد,NEW PORT,region_14
+city_1577,أم صمدين,UMM SUMDAYN,region_8
+city_1578,المشران,AL MISHRAN,region_8
+city_1579,راس ام قصبة,RAS UMM QUSBAH,region_2
+city_1580,خبت البقر,KHABT AL BAQAR,region_14
+city_1581,الحنبة,AL HANABAH,region_14
+city_1582,عرق,IRQ,region_14
+city_1583,أبو العشرة,ABU AL 'USHARAH,region_14
+city_1584,جرار,JARRAR,region_14
+city_1585,العيشة,AL 'AYSHAH,region_14
+city_1586,جبل عبادل,JABAL 'ABADIL,region_14
+city_1587,البحثة,AL BIHTHAH,region_14
+city_1588,المجازيع,AL MIJAZI,region_14
+city_1589,المسكية,AL MASKIYAH,region_14
+city_1590,حمية,HAMAYAH,region_14
+city_1591,السحار,AS SAHHAR,region_14
+city_1592,القصبة,AL QASABAH,region_14
+city_1594,سنابس,SANABIS,region_2
+city_1595,قيس,QAYS,region_14
+city_1596,الوحلة,AL WAHLAH,region_14
+city_1597,العشوة,AL 'ISHWAH,region_14
+city_1598,الفقهاء,AL FUQHA,region_14
+city_1599,دحيقة,DUHAYQAH,region_14
+city_1600,الشواجرة,ASH SHAWAJIRAH,region_14
+city_1601,بخشة,BAKHSHAH,region_14
+city_1602,الاساملة,AL ASAMILAH,region_14
+city_1603,الخلفة,AL KHALFAH,region_14
+city_1604,جاضع المحاضين,JADI' AL MAHADIN,region_14
+city_1605,الخمس,AL KHUMS,region_14
+city_1606,مستورة,MASTURAH,region_14
+city_1607,السداد,AS SUDAD,region_14
+city_1608,الزهبين,AZ ZAHABAYN,region_14
+city_1609,صنبة,SANBAH,region_14
+city_1610,المعبوج,AL MA'BUJ,region_14
+city_1611,الخصاوية,AL KHASAWIYAH,region_14
+city_1612,المضاية,AL MADAYAH,region_14
+city_1613,البديع والقرفي,AL BADI' WAL QARAFI,region_14
+city_1614,مزهرة,MIZHIRAH,region_14
+city_1615,الكربوص,AL KARBUS,region_14
+city_1616,الواصلي,AL WASILI,region_14
+city_1618,قامزة,QAMIZAH,region_14
+city_1619,شهرين,SHAHRAYN,region_14
+city_1620,المروة,AL MARWAH,region_14
+city_1621,الظهر,ADH DHAHAR,region_14
+city_1622,العقم,AL 'AQUM,region_14
+city_1623,الصبخاية,AS SUBKHAYAH,region_14
+city_1624,جلاح,JILAH,region_14
+city_1625,الراحة,AR RAHAH,region_14
+city_1626,المهدف,AL MIHDAF,region_14
+city_1627,مخشوش,MAKHSHUSH,region_14
+city_1628,القحمة,AL QAHMAH,region_14
+city_1630,الجابري,AL JABIRI,region_14
+city_1631,جحا,JUHA,region_14
+city_1632,السر,AS SIRR,region_14
+city_1633,هجرة شهيل,HIJRAT SHUHAYL,region_2
+city_1634,البرزة,AL BARZAH,region_1
+city_1636,مشذوبة,MASHDHUBAH,region_1
+city_1637,وادي الحياة,WADI AL HAYAT,region_10
+city_1638,تندحة,TENDAHA,region_10
+city_1639,السليمانية,as sulaimaniyah,region_17
+city_1640,بعيثران,BU'AYTHIRAN,region_1
+city_1641,أم قصور,UMM QUSUR,region_1
+city_1642,عبدة,'ABDAH,region_1
+city_1643,خريصة,KHURAYSAH,region_1
+city_1644,عجابة,'AJABAH,region_1
+city_1645,المديفع,AL MUDAYFI',region_1
+city_1646,القدراوية,AL QIDRAWIYAH,region_1
+city_1648,أم أثلة,UMM ATHLAH,region_1
+city_1649,الأخضر,AL AKHDAR,region_1
+city_1650,مطيعة,MUTI'AH,region_1
+city_1651,المدارة,AL MADARAH,region_1
+city_1654,الدبيجة,AD DUBAYJAH,region_1
+city_1655,الروبضة / رغبة,AR RAWBIDAH / RAGHABAH,region_1
+city_1656,رويضة السهول,RAWDAT AS SUHUL,region_1
+city_1657,مشاش السهول,MISHASH AS SUHUL,region_1
+city_1658,الحسي,AL HISI,region_1
+city_1659,الصفرات,AS SUFARAT,region_1
+city_1660,البير,AL BIR,region_1
+city_1661,رويغب,RUWAYGHIB,region_1
+city_1662,النجف,AN NAJF,region_8
+city_1663,السطيح,AS SUTAYH,region_8
+city_1664,الخيمة,AL KHAYMAH,region_8
+city_1665,الفرش,AL FARSH,region_8
+city_1666,تفيدة,TAFIDAH,region_8
+city_1667,العصيلي,AL 'USAYLI,region_8
+city_1668,ندياء,NADYA,region_8
+city_1669,مشرفة,MISHRIFAH,region_8
+city_1670,دوينه,DUWAYYINAH,region_8
+city_1671,عدن,'ADAN,region_8
+city_1672,الأحمر,AL AHMAR,region_8
+city_1674,الكلبة,AL KALBAH,region_8
+city_1675,البقاع,AL BIQA',region_8
+city_1676,العضيانية,AL 'IDAYYANIYAH,region_1
+city_1677,عجلة,'AJLAH,region_1
+city_1678,سعدة,SA'DAH,region_1
+city_1679,جفن ضب,JAFN DABB,region_1
+city_1680,دلقان,DALQAN,region_1
+city_1681,أم السباع,UMM AS SIBA',region_1
+city_1682,الجله الأعلى,AL JILH AL A'LA,region_1
+city_1683,الخفق الجنوبي,AL KHAFAQ AL JANUBI,region_1
+city_1684,الدحوة,AD DIHWAH,region_1
+city_1685,الخفق القديم,AL KHAFAQ AL QADIM,region_1
+city_1686,الشرمية,ASH SHARMIYAH,region_1
+city_1687,مراغان,MARAGHAN,region_1
+city_1689,الجروية,AL JARWIYAH,region_1
+city_1690,العوشزية,AL 'AWSHAZIYAH,region_1
+city_1692,القلتة,AL QALTAH,region_1
+city_1693,لعلع,LI'LI',region_1
+city_1694,الغريري,AL GHURAYRI,region_1
+city_1695,الخنقة,AL KHUNQAH,region_1
+city_1696,النسق القديم,AN NASAQ AL QADIM,region_1
+city_1698,بيضاء نثيل,BAYDA NTHAYL,region_1
+city_1699,أم الدباء,UMM AD DIBA,region_1
+city_1700,الأمار,AL AMAR,region_1
+city_1701,عسيلان,'USAYLAN,region_1
+city_1702,السدرية,AS SIDRIYAH,region_1
+city_1703,أم الشبرم,UMM ASH SHUBRUM,region_1
+city_1704,الحجاجي,AL HIJJAJI,region_1
+city_1705,الغبياء,AL GHUBAYYA,region_1
+city_1707,أبو حميض,ABU HUMAYD,region_1
+city_1708,النبيبيع,AN NUBAYBI',region_1
+city_1709,النباع,AN NABA',region_1
+city_1710,الملقى,AL MALQA,region_1
+city_1711,حجيلاء,HUJAYLA,region_1
+city_1712,العبد,AL 'ABD,region_1
+city_1713,أم الجثجاث,UMM AL JITHJATH,region_1
+city_1714,أم جفر,UMM JAFR,region_1
+city_1715,الخلفية,AL KHALFIYAH,region_1
+city_1716,المشاش,AL MISHASH,region_1
+city_1717,الصوح,AS SUH,region_1
+city_1718,اشيقر,USHAYQIR,region_1
+city_1719,ام طليحة,UMM TULAIHAH,region_1
+city_1720,الداهنة,AD DAHINAH,region_1
+city_1721,الجريفة,AL JURAIFAH,region_1
+city_1722,الوقف,AL WAQF,region_1
+city_1723,العلوة,AL 'ULUWAH,region_1
+city_1724,فرحة,FARHAH,region_1
+city_1725,عروى,'ARAWA,region_1
+city_1726,فردة,FARDAH,region_1
+city_1727,مويسل,MUWAYSIL,region_1
+city_1728,الشاة,ASH SHAT,region_1
+city_1730,مشرف,MUSHRIF,region_1
+city_1731,بدائع سويقة,BIDAI SUWAYQAH,region_1
+city_1732,الصلبية,AS SULUBIYAH,region_1
+city_1734,مزارع الروضة,MAZARI' AR RAWDAH,region_1
+city_1735,هرمولة,HURMULAH,region_1
+city_1739,رغلة,RAGHLAH,region_1
+city_1741,ضبة,DABBAH,region_1
+city_1742,العطاوي,AL 'ATAWI,region_1
+city_1743,الحفائر,AL HAFAIR,region_1
+city_1744,مزارع طينان,MAZARI' TINAN,region_1
+city_1745,منيفة,MUNIFAH,region_1
+city_1746,قويعان,QUWAY'AN,region_1
+city_1747,الحنابج,AL HANABIJ,region_1
+city_1748,الشفلحية,ASH SHIFALLAHIYAH,region_1
+city_1749,روضة وثيلان,RAWDAT WUTHAYLAN,region_1
+city_1750,ابو ركب,ABU RUKAB,region_1
+city_1753,أبو عرينة,ABU URAYNAH,region_1
+city_1755,بحار الجديد,BIHAR AL JADID,region_1
+city_1758,العقلة,AL 'UQLAH,region_1
+city_1759,الحفنة,AL HIFNAH,region_1
+city_1760,الدهاسية,AD DAHASIYAH,region_1
+city_1761,المصلوم,AL MASLUM,region_1
+city_1763,أم رضمة,UMM RUDMAH,region_1
+city_1764,السنارية,AS SINNARIYAH,region_1
+city_1765,الديرية,AD DIRIRAH,region_1
+city_1766,المغزل,AL MIGHZAL,region_1
+city_1767,جوباح,JUBAH,region_1
+city_1768,القرنة,AL QURNAH,region_1
+city_1769,وثيلان,WUTHAYLAN,region_1
+city_1770,عين الصوينع,'AYN AS SUWAYNI',region_1
+city_1771,الأرطاوي,AL ARTAWI,region_1
+city_1772,الثندوة,ATH THIDUWAH,region_1
+city_1774,جنوب البرود,JANUB AL BURUD,region_1
+city_1775,غرب البرود,GHARB AL BURUD,region_1
+city_1776,الريشية,AR RISHIYAH,region_1
+city_1778,مزرعة البيضة,MAZRA'AT AL BIDAH,region_1
+city_1779,السليسية,AS SULAYSIYAH,region_1
+city_1780,مزرعة سليسان,MAZRA'AT SULAYSAN,region_1
+city_1781,العويجاء,AL 'UWAYJA,region_1
+city_1782,العدوة,AL 'UDWAH,region_1
+city_1784,بدائع الهمجة,BADA'I AL HAMJAH,region_1
+city_1785,فيضة القوازين,FAYDAT AL QUWAZIN,region_1
+city_1786,مزارع مصيقرة,MAZARI' MUSAYQIRAT,region_1
+city_1787,الفيحاء,AL FAYHA,region_1
+city_1788,الدسمة,AD DASMAH,region_1
+city_1789,صفاقة,SAFFAQAH,region_1
+city_1790,قبيعة,QUBAY'AH,region_1
+city_1791,الشبرمية,ASH SHUBRUMIYAH,region_1
+city_1792,كويكبة,KUWAYKIBAH,region_1
+city_1793,أم طليحة,UMM TULAYHAH,region_1
+city_1794,الرقيبة,AR RAQIBAH,region_1
+city_1795,بدع الصعكي,BID' AS SI'AKI,region_1
+city_1796,سلطانة,SULTANAH,region_1
+city_1798,الملينية,AL MILAYYINIYAH,region_1
+city_1799,البديعة,AL BIDI'AH,region_1
+city_1800,روضة جهام,RAWDAT JAHAM,region_1
+city_1801,مزارع الجديدة,MAZARI' AL JADIDAH,region_1
+city_1802,منيفة المغايرة,MUNIFAT AL MAGHAYIRAH,region_1
+city_1803,الرميحة,AR RUMAYHAH,region_1
+city_1804,حسو الحيد,HASU AL HAYD,region_1
+city_1806,الدارة,AD DARAH,region_1
+city_1807,الدمثي,AD DAMTHI,region_1
+city_1809,كبشان,KABSHAN,region_1
+city_1810,حديجة,HUDAYJAH,region_1
+city_1813,الجمش,AL JIMSH,region_1
+city_1814,الكنهبلة,AL KANAHBILAH,region_10
+city_1815,السهوة,AS SAHWAH,region_10
+city_1816,يانف,YANIF,region_10
+city_1817,حلباء,HALABA,region_10
+city_1818,العدوة,AL 'IDWAH,region_10
+city_1820,حمراء نثيل / ابو شداد,HAMRAH NITHIL (ABU SHADAD),region_15
+city_1821,خجيم,KHAJIM,region_15
+city_1822,ابا الرخم,ABA AR RAKHAM,region_15
+city_1823,مركز الوجيد,MARKAZ AL WUJID,region_15
+city_1824,ظلماء,DHALMA',region_15
+city_1825,تباشعة,TUBASH'AH,region_10
+city_1826,أم خيسة,UMM KHISAH,region_10
+city_1827,صلحلح,SALAHLAH,region_10
+city_1829,النقرة,AN NUQRAH,region_12
+city_1830,كمب الضلوع,KAMP AD DULU',region_12
+city_1831,الحفير,AL HUFAYR,region_12
+city_1832,الودي,AL WUDAYY,region_12
+city_1833,قصر العشروات,QASR AL ISHRUWAT,region_12
+city_1834,سراء,SARA',region_12
+city_1835,فيضة بن سويلم,FAYDAT IBN SUWAYLIM,region_12
+city_1836,النيصية,AN NISIYAH,region_12
+city_1837,مريفق,MURAYFIQ,region_12
+city_1838,قفار,QUFAR,region_12
+city_1839,توارين,TUWARIN,region_12
+city_1840,عقدة,'IQDAH,region_12
+city_1841,المحفر,AL MUHAFFAR,region_12
+city_1842,المختلف,AL MUKHTALIF,region_12
+city_1843,الصهوة,AS SAHWAH,region_12
+city_1844,اللويمي,AL LUWAYMI,region_12
+city_1845,المستجدة,AL MUSTAJIDDAH,region_12
+city_1846,العجاجة,AL 'AJAJAH,region_12
+city_1847,الرقب,AR RAQAB,region_12
+city_1848,النمارة,AN NIMARAH,region_12
+city_1849,العيثمة,AL 'AYTHAMAH,region_12
+city_1850,لبدة,LIBDAH,region_12
+city_1851,ضرغط,DARGHAT,region_12
+city_1852,ضريغط,DURAIGHAT,region_12
+city_1853,الحميمة,AL HUMAIMAH,region_12
+city_1854,بدائع اول,BADAI' AWL,region_12
+city_1855,الثمامية,ATH THIMAMIYAH,region_12
+city_1856,الحليفة العليا,AL HULAYFAH AL 'ULYA,region_12
+city_1857,مرحب الشمالي,MARHAB ASH SHAMALI,region_12
+city_1858,العرادية,AL 'ARADIYAH,region_12
+city_1859,فيضة اثقب,FAYDAT ATHQAB,region_12
+city_1860,روض ابن هادي,RAWD IBN HADI,region_12
+city_1861,الوسعة,AL WAS'AH,region_12
+city_1862,الشويمس,ASH SHIWAYMIS,region_12
+city_1863,البرقة,AL BARQAH,region_12
+city_1864,قريضة,QURAYDAH,region_8
+city_1866,بيار علي,BIYAR 'ALI,region_8
+city_1868,الدويخلة,AD DUWAYKHILAH,region_8
+city_1869,الوعيرة,AL WU'AYRAH,region_8
+city_1870,الجرف,AL JURF,region_8
+city_1871,العيون,AL 'AYUN,region_8
+city_1872,الخليل,AL KHULAYL,region_8
+city_1873,نعامين,NA'AMIN,region_8
+city_1874,مليحة,MULAYHAH,region_8
+city_1875,نجخ,NAJKH,region_1
+city_1876,جريسة,JURAYSAH,region_1
+city_1877,ام العثاكل,UMM AL 'ATHAKIL,region_1
+city_1878,عرجاء,ARJA',region_1
+city_1881,نفي,NIFI,region_1
+city_1882,مصدة,MUSIDDAH,region_1
+city_1883,الخفيفية,AL KHUFAYFIYAH,region_1
+city_1885,أرطاوي الرقاص,ARTAWI AR RAQQAS,region_1
+city_1887,مزرعة الخفيسة,MAZRA'AT AL KHUFAYSAH,region_1
+city_1888,عين القنور,'AYN AL QANNUR,region_1
+city_1889,التسرير,AT TASRIR,region_1
+city_1890,الاثلة,AL ATHLAH,region_1
+city_1891,عريفيجان,'URAYFIJAN,region_1
+city_1892,السكران,AS SAKRAN,region_1
+city_1893,جفن,JIFIN,region_1
+city_1894,البرود,AL BURUD,region_1
+city_1895,جفنا,JIFANA,region_1
+city_1896,الصالحية,AS SALHIYAH,region_1
+city_1897,العاذرية,AL 'ADHIRIYAH,region_1
+city_1900,جهام ابو عشر,JAHAM ABU 'ISHAR,region_1
+city_1901,مشرفة,MUSHRIFAH,region_1
+city_1902,الحزيمية,AL HUZAYMIYAH,region_1
+city_1903,خف,KHUFF,region_1
+city_1904,المحمدية,AL MUHAMMADIYAH,region_1
+city_1905,الحفيرة,AL HUFAYYIRAH,region_1
+city_1906,ماسل,MASAL,region_1
+city_1909,رضوى,RADWA,region_1
+city_1910,ارطاوي حليت,ARTAWI HILLIT,region_1
+city_1911,عواضة,'AWWADAH,region_1
+city_1912,شرارة,SHARARAH,region_1
+city_1913,صقرة,SAQRAH,region_1
+city_1914,العقيشية,AL UQAYSHIYAH,region_1
+city_1915,القرين,AL QURAYN,region_1
+city_1916,عقلة الغويري,UQLAT AL UWAYRI,region_1
+city_1917,ام زموع,UMM ZUMU',region_1
+city_1918,عين البراحة,'AYN AL BARAHAH,region_1
+city_1919,مغيراء,MUGHAYRA',region_1
+city_1920,الضحوي,AD DAHAWI,region_1
+city_1922,المغيب,AL MAGHIB,region_1
+city_1923,فيضة المفص,FAYDAT AL MAFASS,region_1
+city_1924,عريدة,'URAYYIDAH,region_1
+city_1925,العازمية,AL 'AZIMIYAH,region_1
+city_1926,المحوي,AL MAHAWI,region_1
+city_1927,المدرع,AL MUDARRI',region_1
+city_1928,سرورة,SURURAH,region_1
+city_1929,عصماء,ASMA',region_1
+city_1932,مساوي,MUSAWI,region_1
+city_1933,المحفر,AL MAHAFFAR,region_8
+city_1934,النخيل,AN NAKHYIL,region_8
+city_1935,الصمد,AS SAMD,region_8
+city_1936,الضميرية,AD DUMAYRIYAH,region_8
+city_1937,المحامة,AL MAHAMAH,region_8
+city_1938,الحسو,AL HISU,region_8
+city_1939,الهميج,AL HUMAYJ,region_8
+city_1940,صخيبرة,SUKHAYBIRAH,region_8
+city_1941,هدبان,HADBAN,region_8
+city_1942,بلغة,BILGHAH,region_8
+city_1943,الماوية,AL MAWIYAH,region_8
+city_1944,قصيرة,QUSAYRAH,region_8
+city_1945,العوشزي,AL AWSHAZI,region_8
+city_1946,عرجاء,'ARJA,region_8
+city_1947,طلال,TALAL,region_8
+city_1948,الطوقي,AT TAWQI,region_1
+city_1949,سدوس,SUDUS,region_1
+city_1950,حزوى,HIZWA,region_1
+city_1951,دقلة,DIQALAH,region_1
+city_1952,حليفة,HULAYFAH,region_1
+city_1953,صلبوخ,SULBUKH,region_1
+city_1955,العويند,AL UWAYNID,region_1
+city_1956,البويب,AL BUWAYB,region_1
+city_1958,الغنامية,AL GHANAMIYAH,region_1
+city_1959,العماج,AL 'AMMAJ,region_1
+city_1960,هيت,HIT,region_1
+city_1962,كهف برمة,KAHF BARMAH,region_1
+city_1963,بنبان,BANBAN,region_1
+city_1964,الثمامة,ATH THUMAMAH,region_1
+city_1965,لبن,LABAN,region_1
+city_1966,العريدية,AL 'URAYDIYAH,region_1
+city_1967,العباسية,AL 'ABBASIYAH,region_1
+city_1970,ثرمداء,THARMADA',region_1
+city_1972,أثيثية,UTHAYTHIYAH,region_1
+city_1973,لبخة,LABKHAH,region_1
+city_1974,روضة الفرس,RAWDAT AL FARAS,region_1
+city_1975,ام طلحة,UMM TALHAH,region_1
+city_1976,حويتة,HUWAYTAH,region_1
+city_1977,الطويلة,AT TAWILAH,region_1
+city_1978,أوبير,UBAYR,region_1
+city_1980,العيينة,AL UYAINAH,region_1
+city_1981,الوصيل,AL WUSAYL,region_1
+city_1982,أبا الكباش,ABA AL KIBASH,region_1
+city_1983,الجبيلة,AL JUBAYLAH,region_1
+city_1984,العمارية,AL 'AMMARIYAH,region_1
+city_1985,بوضة,BAWDAH,region_1
+city_1987,قصر القرينة,QASR AL QURAYNAH,region_1
+city_1988,قصر فيهق,QASR FAYHAQ,region_1
+city_1989,قصور المقبل,QUSUR AL MUQBIL,region_1
+city_1990,الغطغط,AL GHUTGHUT,region_1
+city_1991,قصر ابن شهيل,QASR IBN SHUHAYL,region_1
+city_1992,المغرفية,AL MAGHRAFIYAH,region_1
+city_1993,جو,JAWW,region_1
+city_1994,الغزيز,AL GHUZAYZ,region_1
+city_1995,الثمامي,ATH THUMAMY,region_1
+city_1996,وعلة,WA'ALAH,region_1
+city_1997,الشامانية,ASH SHAMANIYAH,region_1
+city_1998,القصورية,AL QUSURIYAH,region_1
+city_1999,مزلة,MAZALLAH,region_1
+city_2001,الشواة,ASH SHAWAH,region_1
+city_2002,عليان,'ILAYYAN,region_1
+city_2003,عيدان,IDAN,region_1
+city_2004,سيح الدبول,SAYH AD DUBUL,region_1
+city_2005,الهمجة,AL HAMJAH,region_1
+city_2006,الرفيعة,AR RAFI'AH,region_1
+city_2007,الكدرة,AL KADRAH,region_1
+city_2009,الخيس,AL KHIS,region_1
+city_2010,الدويرة,AD DUWAYRAH,region_1
+city_2012,سماح,SAMAH,region_1
+city_2014,داحس,DAHIS,region_1
+city_2015,دسمان,DASMAN,region_1
+city_2016,العويسية,AL 'UWAYSIYAH,region_1
+city_2017,العلياء,AL 'ULAYYA,region_1
+city_2018,مزرعة مزعلة,MAZRA'AT MIZ'ILAH,region_1
+city_2019,القوسة,AL QAWSAH,region_1
+city_2020,الروغ,AR RAWGH,region_1
+city_2021,الوسيطاء,AL WUSAYTA,region_1
+city_2022,البعيثية,AL BU'AYTHIYAH,region_1
+city_2023,الشتلانية,ASH SHATLANIYAH,region_1
+city_2024,جدالة,JADDALAH,region_1
+city_2025,قفرة,QAFARAH,region_1
+city_2026,أجزالا,AJZALA,region_1
+city_2027,الجفارة,AL JAFARAH,region_1
+city_2028,غودة,GHAWDAH,region_1
+city_2029,حلبان,HALABAN,region_1
+city_2030,سنام,SANAM,region_1
+city_2031,الرجع,AR RAJ',region_1
+city_2032,طحي,TUHAYY,region_1
+city_2034,الخنيقية,AL KHUNAYQIYAH,region_1
+city_2035,المثناة,AL MATHNAH,region_1
+city_2036,الجله,AL JILH,region_1
+city_2037,الربواء,AR RABWA,region_1
+city_2038,لجعة,LAJ'AH,region_1
+city_2039,نخيلان,NUKHAYLAN,region_1
+city_2040,عنان,'INAN,region_1
+city_2042,صبحاء,SABHA,region_1
+city_2043,العاقول,AL 'AQUL,region_8
+city_2044,الحار السفلى,AL HAR AS SUFLA,region_8
+city_2045,مفرحات,MUFARRIHAT,region_8
+city_2046,القطيعاء,AL QUTAY'A,region_8
+city_2047,الفرع,AL FARA',region_8
+city_2048,الفقارة,AL FUQARAH,region_8
+city_2049,أرباق,ARBAQ,region_8
+city_2051,المغرة,AL MAGHARAH,region_8
+city_2052,أبو نمصات,ABU NUMASAT,region_8
+city_2053,دثير,DITHIR,region_8
+city_2055,العوينة,AL 'UWAYNAH,region_8
+city_2056,الخضراء,AL KHADRA,region_8
+city_2057,الثعلة,ATH THA'ALAH,region_8
+city_2058,الحار العليا,AL HAR AL 'ULYA,region_8
+city_2059,المضيبعة,AL MUDAYBI'AH,region_8
+city_2060,السوسي,AS SUSI,region_8
+city_2061,الشلايل,ASH SHALAYIL,region_8
+city_2062,أويدك,UWAYDIK,region_8
+city_2063,الغريض,AL GHARID,region_8
+city_2064,الصيفي,AS SAYFI,region_8
+city_2065,الغصن,AL GHUSAN,region_8
+city_2066,الظمو,ADH DHAMU,region_8
+city_2067,الطرقية,AL TARQIYAH,region_8
+city_2068,أم العيال,UMM AL 'IYAL,region_8
+city_2069,الملبنة,AL MALBANAH,region_8
+city_2070,حنذ,HANADH,region_8
+city_2071,الهندية,AL HINDIYAH,region_8
+city_2072,المرير,AL MURAYR,region_8
+city_2073,الدحو,AD DUHU,region_8
+city_2074,النقيعاء,AN NUQAY'A,region_8
+city_2075,المشينية,AL MUSHAYNIYAH,region_8
+city_2076,القافلة,AL QAFILAH,region_8
+city_2077,اللثامة,AL LITHAMAH,region_8
+city_2078,الملحة,AL MILHAH,region_8
+city_2079,العيزاء,AL 'AYZA,region_8
+city_2080,النقرة,AN NUQRAH,region_8
+city_2081,البردية,AL BARDIYAH,region_8
+city_2082,العشيرة,AL 'USHAYRAH,region_8
+city_2083,القصيبة,AL QISAYYIBAH,region_8
+city_2084,الشوامين,ASH SHUWAMIN,region_8
+city_2086,تيتد,TAYTAD,region_8
+city_2087,البييرات,AL BUYAYRAT,region_8
+city_2088,هرمة,HURUMAH,region_8
+city_2089,العثيا,AL 'UTHAYYA,region_8
+city_2090,شجوى,SHAJWA,region_8
+city_2091,البوير,AL BUWAIR,region_8
+city_2092,الشقرة,ASH SHUQRAH,region_8
+city_2093,الصويدرة,AS SUWAYDIRAH,region_8
+city_2094,الفريش,AL FURAYSH,region_8
+city_2095,الريان,AR RAYYAN,region_8
+city_2096,المليليح,AL MULAYLIH,region_8
+city_2097,الرصيعة,AR RASI'AH,region_8
+city_2098,ابار الماشي,ABAR AL MASHI,region_8
+city_2099,رواوة,RUWAWAH,region_8
+city_2100,الجفر,AL JAFUR,region_8
+city_2101,ابو ضباع,ABU DIBA',region_8
+city_2102,المضيق,AL MADIQ,region_8
+city_2103,الاكحل,AL AKHAL,region_8
+city_2104,اليتمة,AL YITIMAH,region_8
+city_2105,المندسة,AL MANDASSAH,region_8
+city_2106,بواط,BUWAT,region_8
+city_2107,العصيلب,AL 'USAYLIB,region_8
+city_2108,الجفدور,AL JIFDUR,region_8
+city_2109,حوطة الحلوة,HUTAT AL HILWAH,region_1
+city_2110,اسفل الباطن,ASFAL AL BATIN,region_1
+city_2111,الفرعة,AL FAR'AH,region_1
+city_2112,المثعب,AL MITH'AB,region_1
+city_2113,الحلوة,AL HILWAH,region_1
+city_2114,الحيطان,AL HAYTAN,region_1
+city_2115,وادي البرك,WADI AL BARK,region_1
+city_2116,الشكرة,ASH SHUKRAH,region_1
+city_2117,الفيصلية,AL FAYSALIYAH,region_1
+city_2118,النايفية,AN NAIFIYAH,region_1
+city_2119,القطين,AL QATIN,region_1
+city_2120,الخرفة,AL KHARFAH,region_1
+city_2121,الروضة,AR RAWDAH,region_1
+city_2122,سويدانا,SWIDANA,region_1
+city_2123,مروان,MARWAN,region_1
+city_2124,واسط,WASIT,region_1
+city_2125,الحمر,AL HAMR,region_1
+city_2126,البديع الجنوبى,AL BADI' AL JANUBI,region_1
+city_2127,البديع الشمالي,AL BADI' ASH SHAMALI,region_1
+city_2128,الهدار,AL HADDAR,region_1
+city_2129,ساقي الناهض,SAQI AN NAHID,region_1
+city_2130,الغيل,AL GHAYL,region_1
+city_2131,ستارة,SITARAH,region_1
+city_2132,حراضة,HARADAH,region_1
+city_2133,إبن غوف,IBN GHUF,region_16
+city_2134,الميفا,AL MIFA,region_16
+city_2135,القرن,AL QARN,region_16
+city_2136,الامرة,AL UMRAH,region_16
+city_2137,النجيل,AN NIJIL,region_16
+city_2138,الطيف,AT TAYF,region_16
+city_2139,السمعة,AS SAMA'AH,region_16
+city_2140,نابر,NABIR,region_16
+city_2141,الضاحي,AD DAHI,region_16
+city_2142,الزرعة,AZ ZIRA'AH,region_16
+city_2143,الاشيرة,AL ISHAYRAH,region_16
+city_2144,الصور,AS SUR,region_16
+city_2145,فرعة العطاردة,FARA'T AL 'ATARDAH,region_16
+city_2146,القهب,AL QAHAB,region_16
+city_2147,الحصحص,AL HASHAS,region_16
+city_2148,الهجنبة,AL HIJANBAH,region_14
+city_2149,الشطيفية,ASH SHUTAYFIYAH,region_14
+city_2150,الحصامة,AL HASSAMAH,region_14
+city_2151,الخضراء الشمالية,AL KHADRA ASH SHAMALIYAH,region_14
+city_2152,السويدية,AL SUWAYDIYAH,region_14
+city_2153,رعشة,RASHAH,region_14
+city_2154,المجامة,AL MUJAMMAH,region_14
+city_2155,المخشلية,AL MUKHASHSHALIYAH,region_14
+city_2156,الحامضة,AL HAMIDAH,region_14
+city_2157,الجعدية,AL JA'DIYAH,region_14
+city_2158,المحامل,AL MAHAMIL,region_14
+city_2159,حاكمة,HAKIMAH,region_14
+city_2160,الحجفار,AL HIJFAR,region_14
+city_2161,الطاهرية,AT TAHIRIYAH,region_14
+city_2162,الحضرور,AL HADRUR,region_14
+city_2163,الدريعية,AD DURAY'IYAH,region_14
+city_2164,البدوي,AL BADAWI,region_14
+city_2165,الهلية,AL HALLIYAH,region_14
+city_2166,الحنيني,AL HANINI,region_14
+city_2167,قمعة,QAMA'AH,region_14
+city_2170,المحطة,AL MAHATTAH,region_14
+city_2171,الحقلة,AL HAQLAH,region_14
+city_2172,أبو الرديف,ABU AR RADIF,region_14
+city_2173,أم سريحة,UMM SURAYHAH,region_1
+city_2174,الخروعية,AL KHARWA'IYAH,region_1
+city_2175,المجذمية,AL MAJDHAMIYAH,region_1
+city_2176,الحفيرة / حصاة قحطان,AL HUFAYYIRAH (HASAT QAHTAN),region_1
+city_2177,الحرملية,AL HARMALIYAH,region_1
+city_2178,خبراء الثوير,KHABRA ATH THAWIR,region_1
+city_2180,محيرقة,MUHAIRIQAH,region_1
+city_2181,مرقان,MARQAN,region_1
+city_2182,ام نخيلة,UMM NAKHILAH,region_1
+city_2183,ام الدبي,UMM AD DIBAY,region_1
+city_2184,خبراء حلوة,KHABRA HALWAH,region_1
+city_2185,حجيلا,HUJAILA,region_1
+city_2186,الفويلق,AL FUWAYLIQ,region_1
+city_2187,القويع,AL QUWAY',region_1
+city_2188,مزعل,MIZ'IL,region_1
+city_2189,بدائع المشاعلة,BADAI' AL MASHA'ILAH,region_1
+city_2190,خبراء فاران,KHABRA FARAN,region_1
+city_2191,خبيب الريم,KHUBAYB AR RIM,region_1
+city_2193,أم طليح,UMM TULAYH,region_1
+city_2194,المانعية,AL MANI'IYAH,region_1
+city_2195,الجديدة,AL JADIDAH,region_1
+city_2197,الذيبية,ADH DHIBIYAH,region_1
+city_2198,الصدر,AS SADR,region_1
+city_2199,أبرقية,ABRAQIYAH,region_1
+city_2200,حجرفة,HAJRUFAH,region_1
+city_2201,معانيق,MA'ANIQ,region_1
+city_2202,الصيهد,AS SAYHAD,region_1
+city_2203,اللغفة,AL LAGHFAH,region_1
+city_2204,الخفق الجديد,AL KHAFAQ AL JADID,region_1
+city_2205,ظلماء,DHALMA,region_1
+city_2206,الخلائق الشرقية,AL KHALAIQ ASH SHARQIYAH,region_1
+city_2207,تبراك,TIBRAK,region_1
+city_2209,الاوسط,AL AWSAT,region_1
+city_2210,الحويرة,AL HUWAYRRAH,region_1
+city_2211,خشم معضد,KHASHM MI'DAD,region_1
+city_2212,البخرا,AL BAKHRA,region_1
+city_2213,اللغفية,AL LUGHFIYAH,region_1
+city_2214,المسبر,AL MASBAR,region_1
+city_2215,النظيم,AN NADHIM,region_1
+city_2216,حفرة نساح,HAFIRAT NISAH,region_1
+city_2217,عجاج,'AJAJ,region_1
+city_2218,المشاعلة,AL MASHA'ILAH,region_1
+city_2219,قنيفذة,QUNAYFIDHAH,region_1
+city_2220,عفرية,IFRIYAH,region_1
+city_2221,الخلائق الغربية,AL KHALAIQ AL GHARBIYAH,region_1
+city_2222,الجفير,AL JUFAYR,region_1
+city_2223,الأسطح,AL ASTAH,region_8
+city_2224,الرجع,AR RAJ',region_8
+city_2225,دمان,DUMAN,region_8
+city_2227,الغزلان,AL GHUZLAN,region_8
+city_2228,الجديد,AL JADID,region_8
+city_2229,وجمة,WAJMAH,region_8
+city_2230,عرقوص,ARQUS,region_8
+city_2231,العنيق,AL 'UNAYQ,region_8
+city_2232,مرتجة,MURATTIJAH,region_8
+city_2233,الفقرة,AL FAQRAH,region_8
+city_2234,خلص,KHALS,region_8
+city_2235,القفاف,AL QIFAF,region_8
+city_2237,مريخة,MURAYKHAH,region_8
+city_2238,العبلا,AL 'ABLA,region_8
+city_2239,مرموماء,MARMUMA,region_8
+city_2240,قرظة,QURUDHAH,region_8
+city_2243,الهدى,AL HADA,region_8
+city_2244,الغور,AL GHUR,region_8
+city_2245,مثعر,MATH'AR,region_8
+city_2246,الحسينية,AL HUSAYNIYAH,region_8
+city_2247,الشفية,ASH SHUFAYYAH,region_8
+city_2249,أبو قرن,ABU QARN,region_8
+city_2250,المسجد,AL MASJID,region_8
+city_2251,اللهبان,AL LAHBAN,region_8
+city_2252,الجوابرة,AL JAWABIRAT,region_8
+city_2253,خرص,KHURUSS,region_8
+city_2254,عاصر,ASIR,region_8
+city_2255,الأثود,AL ATHUD,region_8
+city_2256,ترجم,TARJIM,region_8
+city_2257,كتيدة,KITAYDAH,region_8
+city_2258,سفاء,SAFA,region_8
+city_2259,رحقان,RAHQAN,region_8
+city_2260,ثعيل,THU'AYYIL,region_8
+city_2261,المفرق,AL MAFRAQ,region_8
+city_2262,الميث,AL MAYTH,region_8
+city_2263,بئر الغنم,BIR AL GHANAM,region_8
+city_2264,المرتجة,AL MURTAJJAH,region_8
+city_2265,المعيزلة,AL MA'AYZILAH,region_8
+city_2266,الحار,AL HAR,region_8
+city_2267,الصديرة,AS SUDAYYIRAH,region_8
+city_2268,دريبس,DIRAYBIS,region_8
+city_2269,بئر قيضي,BI'R QAYDI,region_8
+city_2270,الواسطة,AL WASITHAH,region_8
+city_2271,الرايس,AR RAYIS,region_8
+city_2272,المسيجيد,AL MUSAYJID,region_8
+city_2273,العين,AL 'AYN,region_1
+city_2274,خفس دغرة,KHAFS DAGHRAH,region_1
+city_2275,البياض,AL BIYAD,region_1
+city_2276,اليمامة,AL YAMAMAH,region_1
+city_2277,الرفاع,AR RUFA',region_1
+city_2278,البرة,AL BARRAH,region_1
+city_2279,فرزان,FARZAN,region_1
+city_2281,الرفائع,AR RUFAI',region_1
+city_2282,العذار,AL 'ADHAR,region_1
+city_2283,زميقة,ZUMAYQAH,region_1
+city_2284,البدع القديم,AL BADA' AL QADIM,region_1
+city_2285,الضبعية,AD DUBAY'AH,region_1
+city_2286,حي القطار,HAI AL QITAR,region_1
+city_2287,السلمية,AS SILIMIYAH,region_1
+city_2288,البدع,AL BADA',region_1
+city_2289,السهباء,AS SAHBA',region_1
+city_2290,الثليما,ATH THALIMA,region_1
+city_2291,التوضيحية,AT TAWDIHIYYAH,region_1
+city_2292,المحطة,AL MAHATTAH,region_1
+city_2293,الرغيب,AR RUGHAYB,region_1
+city_2294,المحمدي,AL MUHAMMADI,region_1
+city_2295,الصحنة,AS SAHANAH,region_1
+city_2296,الجريسية,AL JURAYSIYAH,region_8
+city_2297,الغمر,AL GHAMR,region_8
+city_2298,المزرع,AL MAZRI',region_8
+city_2299,هبا,HABA,region_8
+city_2300,الصحن,AS SAHAN,region_8
+city_2301,مشوقة,MASHUQAH,region_8
+city_2302,أم العراد,UMM AL 'ARAD,region_8
+city_2303,الهرارة,AL HARRARAH,region_8
+city_2304,السدرة,AS SIDRAH,region_8
+city_2305,الجصة,AL JISSA,region_8
+city_2306,الحويمضة,AL HUWAYMIDAH,region_8
+city_2307,قران,QARAN,region_8
+city_2308,الخفيق,AL KHUFAYQ,region_8
+city_2309,الهميجة,AL HUMAYJAH,region_8
+city_2310,الصالحية,AS SALHIYAH,region_8
+city_2311,مريغان,MURAYGHAN,region_8
+city_2312,العشاي,AL 'ASHSHAY,region_8
+city_2313,التهيمية,AT TUHAYMIYAH,region_2
+city_2314,المقدام,AL MIQDAM,region_2
+city_2315,السبايرة,AS SABAYIRAH,region_2
+city_2316,السباط,AS SABAT,region_2
+city_2317,الجرن,AL JARN,region_2
+city_2318,برقاء  الركبان,BARQA AL RUKBAN,region_2
+city_2319,البطالية,AL BATALIYAH,region_2
+city_2320,بطحاء,BATHA,region_2
+city_2321,عردة,'ARDAH,region_2
+city_2322,ذعبلوتن,DHA'BLUTIN,region_2
+city_2323,الجديدة,AL JADIDAH,region_2
+city_2324,نعلة شدقم,NA'LAT SHADQAM,region_2
+city_2325,الخويس,AL KHUWAYS,region_2
+city_2326,شدقم,SHADQAM,region_2
+city_2327,ابرقية,ABRAQIYAH,region_2
+city_2328,الفوارة,AL FAWWARAH,region_2
+city_2329,ابن سرحان,IBN SIRHAN,region_2
+city_2330,المرضف,AL MURADDAF,region_2
+city_2331,الحوية,AL HAWIYAH,region_2
+city_2333,العثمانية,AL UTHMANIYAH,region_2
+city_2335,العيون,AL UYUN,region_2
+city_2336,الربيعية,AR RABI'IYAH,region_2
+city_2337,القديح,AL QUDAYH,region_2
+city_2338,الخويلدية,AL KHUWILDIYAH,region_2
+city_2339,الدريدي,AD DURAIDY,region_2
+city_2340,الخترشية,AL KHATRASHIYAH,region_2
+city_2341,ابو معن,ABU MA'AN,region_2
+city_2342,حزم ام الساهك,HAZAM UMM AS SAHIK,region_2
+city_2343,الجش,AL JISH,region_2
+city_2344,حلة محيش,HILAT MUHISH,region_2
+city_2345,التوبي,AT TUBI,region_2
+city_2346,الملاحة,AL MILAHAH,region_2
+city_2347,دارين,DARIN,region_2
+city_2348,العوامية,AL 'AWWAMIYAH,region_2
+city_2349,النابية,AN NABIYAH,region_2
+city_2350,الزور,AZ ZAWR,region_2
+city_2351,الفريع,AL FURAY',region_2
+city_2352,الجراني,AL JIRANI,region_13
+city_2353,الحماد,AL HAMAD,region_13
+city_2354,نعيج,NU'AYJ,region_13
+city_2355,قاع الحنو,QA' AL HINU,region_13
+city_2356,مركز الصحن,MARKAZ AS SAHAN,region_13
+city_2358,أبا الرواث,ABA AR RAWATH,region_13
+city_2359,أم خنصر,UMM KHUNSUR,region_13
+city_2360,حزم الجلاميد,HAZM AL JALAMID,region_13
+city_2361,الدويد,AD DUWAYD,region_13
+city_2363,البثنة,AL BATHNAH,region_8
+city_2364,خيف حسين,KHAYF HUSAYN,region_8
+city_2365,البقارية,AL BAQQARIYAH,region_8
+city_2366,المشريف,AL MUSHAYRIF,region_8
+city_2367,أم المسن,UMM AL MISIN,region_8
+city_2368,البديع,AL BUDAYYI',region_8
+city_2369,الدارة,AD DARAH,region_8
+city_2370,القري,AL QURAY,region_8
+city_2371,السليم,AS SULAYM,region_8
+city_2373,المقنع,AL MUQANNA',region_8
+city_2374,ضفيان,DUFYAN,region_8
+city_2375,عضاد,'ADAD,region_8
+city_2376,العدوة,AL 'IDWAH,region_8
+city_2377,النباة,AN NABAH,region_8
+city_2378,القراصة,AL QARRASAH,region_8
+city_2379,جراجر,JARAJIR,region_8
+city_2380,نبط,NABT,region_8
+city_2381,السليلة,AS SULAYYILAH,region_8
+city_2382,الشكيرة,ASH SHUKAYYRAH,region_1
+city_2383,هجرة المغر,HIJRAT AL MUGHUR,region_1
+city_2384,مزارع المحتجبة,MAZARI' AL MUHTAJIBAH,region_1
+city_2385,الغرابة,AL GHURABAH,region_1
+city_2386,القاعية,AL QA'IYAH,region_1
+city_2387,غسلة,GHUSLAH,region_1
+city_2388,حلوان,HALWAN,region_1
+city_2389,حصرة,HASARAH,region_1
+city_2390,الثمامية,ATH THUMAMIYAH,region_1
+city_2391,لبيدة,LUBAYDAH,region_1
+city_2392,النقعة,AN NIQ'AH,region_1
+city_2393,افقرا,AFQIRAH,region_1
+city_2395,الفقارة,AL FUQARAH,region_1
+city_2396,الودي,AL WUDAY,region_1
+city_2398,الخبة,AL KHUBBAH,region_1
+city_2399,النبوان,AN NABUWAN,region_1
+city_2400,الرديفة,AR RUDIFAH,region_1
+city_2401,الرشاوية,AR RISHAWIYAH,region_1
+city_2402,مطربة,MUTRIBAH,region_1
+city_2403,المستجدة,AL MUSTAJIDDAH,region_1
+city_2404,العامرية,AL AMIRIYAH,region_1
+city_2405,الفيضة,AL FAYDAH,region_1
+city_2406,الظلماوي,ADH DHALMAWI,region_1
+city_2407,شبيرمة,SHUBAYRIMAH,region_1
+city_2408,عصام,ISAM,region_1
+city_2409,عبادة,ABBADAH,region_1
+city_2410,الحيد,AL HAYD,region_1
+city_2411,العبل,AL 'ABAL,region_1
+city_2412,ارطاوي الحماميد,ARTAWI AL HAMAMID,region_1
+city_2413,بدائع ابن نجم,BADAI' IBN NAJIM,region_1
+city_2414,المرية,AL MARRIYAH,region_8
+city_2415,الشقران,ASH SHUQRAN,region_8
+city_2417,ذارة,DHARAH,region_8
+city_2418,قصيباء,QUSAYBA,region_8
+city_2419,رحبة علوش,RAHBAT 'ALLUSH,region_8
+city_2420,الكريزية,AL KURAYZIYAH,region_8
+city_2421,البديعة,AL BIDAYYI'AH,region_8
+city_2422,صبحا,SABHA,region_8
+city_2423,حزرة,HAZRAH,region_8
+city_2424,غراب,GHURAB,region_8
+city_2425,الحجرية,AL HIJRIYAH,region_8
+city_2426,أبو مغير,ABU MUGHAYR,region_8
+city_2427,العد,AL 'IDD,region_8
+city_2428,الربثة,AR RABTAH,region_8
+city_2429,البركة,AL BIRKAH,region_8
+city_2430,النفازي,AN NAFAZI,region_8
+city_2431,المويلح,AL MUWAYLIH,region_11
+city_2432,الديسة,AD DISAH,region_11
+city_2433,فيد,FAYD,region_12
+city_2434,طابة,TABAH,region_12
+city_2435,الكهفة,AL KAHAFAH,region_12
+city_2436,عقلة بن داني,UQLAT IBN DANI,region_12
+city_2437,عقلة اللبن,UQLAT AL LABAN,region_12
+city_2438,الصفراء,AS SAFRA',region_12
+city_2439,البير,AL BIR,region_12
+city_2440,عقلة ابن كليب,'UQLAT IBN KULAYB,region_12
+city_2441,عريجاء,URAIJA',region_12
+city_2442,المطرفية,AL MATRAFIYAH,region_12
+city_2443,المضيح,AL MUDAYYIH,region_12
+city_2444,غمرة,GHAMRAH,region_12
+city_2445,النعي,AN NI'AYY,region_12
+city_2446,الجحفة,AL JUHFAH,region_12
+city_2447,العش,AL 'ISHSH,region_12
+city_2448,السبعان,AS SAB'AN,region_12
+city_2449,الشهارين,ASH SHAHARIN,region_2
+city_2451,هجرة أم العراد,HIJRAT UMM AL 'IRAD,region_2
+city_2452,العبيلة,AL 'UBAYLAH,region_2
+city_2453,شبيطة,SHUBAYTAH,region_2
+city_2454,شوالة,SHAWWALAH,region_2
+city_2455,مركز الشيبة,MARKAZ ASH SHAYBAH,region_2
+city_2456,مركز الخيران,MARKAZ AL KHIRAN,region_2
+city_2457,هجرة الطويلة,HIJRAT AT TAWILAH,region_2
+city_2458,عجائب,AJAIB,region_2
+city_2459,الطربيل,AT TARBIL,region_2
+city_2460,الخريمي,AL KHURAYMI,region_12
+city_2461,مزارع الدوية,MAZARI' AD DAWAYYAH,region_12
+city_2462,جديدة عرعر,JADIDAT 'AR'AR,region_13
+city_2463,كاف,KAF,region_17
+city_2464,القرقر,AL QARQAR,region_17
+city_2465,إثرة,ITHRAH,region_17
+city_2466,غطي,GHUTAYY,region_17
+city_2467,عين الحواسي,'AYN AL HAWASI,region_17
+city_2468,قليب خضر,QULAYYIB KHUDR,region_17
+city_2469,الحديثة,AL HADITHAH,region_17
+city_2470,الشقيق,ASH SAQAYQ,region_17
+city_2471,الحوي,AL HAWI,region_17
+city_2473,حدرج,HIDRIJ,region_17
+city_2474,ام طليحة,UMM TULAYHAH,region_17
+city_2475,اللقايط,AL LAQAYIT,region_17
+city_2476,صبيحة,SUBAYHAH,region_17
+city_2478,الفياض,AL FIYAD,region_17
+city_2480,الثنية,ATH THANIYAH,region_17
+city_2481,ام نخيلة,UMM NUKHAYLAH,region_17
+city_2482,المرير,AL MURAYR,region_17
+city_2484,النبك ابو قصر,AN NABK ABU QASR,region_17
+city_2485,طلعة عمار,TAL'AT 'AMMAR,region_17
+city_2486,عذفاء,'ADHFA,region_17
+city_2487,خوعاء,KHAW'A',region_17
+city_2488,الشويحطية,ASH SHUWAYHITIYAH,region_17
+city_2489,مركز أم الحيران,MARKAZ UMM AL HIRAN,region_13
+city_2490,مركز سماح الجديد,MARKAZ SAMAH AL JADID,region_13
+city_2491,مركز الظهرة,MARKAZ ADH DHAHRAH,region_13
+city_2492,إبن سوقي,IBN SUQI,region_13
+city_2493,نصاب,NISAB,region_13
+city_2494,سماح,SAMAH,region_13
+city_2496,ام رضمة,UMM RUDMAH,region_13
+city_2497,ابن لغيصم,IBN LUGHAISIM,region_13
+city_2498,روضة هباس,RAWDAT HABBAS,region_13
+city_2500,إبن شريم,IBN SHURAYM,region_13
+city_2501,الشعبة,ASH SHU'ABAH,region_13
+city_2503,المركوز,AL MARKUZ,region_13
+city_2504,ميقوع,MAYQU',region_17
+city_2505,الأضارع,AL ADARI',region_17
+city_2506,صفان,SAFAN,region_17
+city_2507,الرديفة,AR RADIFAH,region_17
+city_2508,ابو عجرم,ABU 'AJRAM,region_17
+city_2509,الطوير,AT TUWAYR,region_17
+city_2510,صديان,SADYAN,region_12
+city_2511,الوسيطاء,AL WASAYTA,region_12
+city_2513,البويطن,AL BUWAYTIN,region_12
+city_2514,بدائع العش,BADAI' AL 'ISHSH,region_12
+city_2515,صحي,SAHAYY,region_12
+city_2516,الوبيرية,AL WUBAYRIYAH,region_12
+city_2517,قصيريات,QUSAYRIYAT,region_12
+city_2518,سعيدان,SU'AYDAN,region_12
+city_2519,جفيفاء,JUFAYFA,region_12
+city_2520,الغمياء,AL GHAMYA,region_12
+city_2521,الفرحانية,AL FARHANIYAH,region_12
+city_2522,المليح,AL MULAYH,region_12
+city_2523,حفيرة الشقيق,HAFIRAT ASH SHAQAYQ,region_12
+city_2524,جرمة,JURUMAH,region_12
+city_2525,السفن,AS SUFUN,region_12
+city_2526,منيفة القاعد,MUNIFAT AL QA'ID,region_12
+city_2527,القاعد,AL QA'ID,region_12
+city_2528,الشعفة,ASH SHA'AFAH,region_12
+city_2529,الدابية,AD DABIYAH,region_12
+city_2530,الحويط,AL HUWAYYIT,region_12
+city_2532,عمائر المرير,AMA'IR AL MURAYR,region_12
+city_2533,بدع ابن خلف,BID' IBN KHALAF,region_12
+city_2534,المرير,AL MURAYR,region_12
+city_2535,ام روشن,UMM RAWSHAN,region_12
+city_2536,صفيط,SUFAYT,region_12
+city_2537,النحيتية,AN NUHAYTIYAH,region_12
+city_2538,مبرز,MIBARRIZ,region_12
+city_2539,المعرش,AL MA'ARRASH,region_12
+city_2540,العوشزية,AL 'AWSHAZIYAH,region_12
+city_2541,وسيطاء الحفن,WUSAYTA' AL HAFAN,region_12
+city_2542,البعايث,AL BA'AYITH,region_12
+city_2543,الزغيبية,AZ ZUGHAIBIYAH,region_12
+city_2544,رحيمة,RAHIMAH,region_2
+city_2545,بدائع الصفران,BADAI' AS SUFRAN,region_12
+city_2546,حمر القعساء,HUMR AL QA'ASA,region_12
+city_2547,حريد,HURAYD,region_12
+city_2548,الديماسة,AD DIMASAH,region_12
+city_2549,القعساء,AL QA'ASA,region_12
+city_2550,وتدة,WUTIDAH,region_12
+city_2551,عقيلة اللبن,'UQAYLAT AL LABAN,region_12
+city_2552,البلازية,AL BALLAZIYAH,region_12
+city_2553,خنقة الرماحي,KHANQAT AR RIMAHI,region_12
+city_2554,غسل,GHISIL,region_12
+city_2556,الرفايع,AR RUFAYI',region_12
+city_2557,قصير متروك,QUSAYR MATRUK,region_12
+city_2558,كتيفة,KUTAIFAH,region_12
+city_2559,وسيط,WUSAYT,region_12
+city_2560,المراح,AL MARAH,region_2
+city_2561,جودة,JUDAH,region_2
+city_2563,العقير,AL UQAYR,region_2
+city_2564,يبرين,YABRIN / JABRIN,region_2
+city_2566,الشقيق,ASH SHAQIQ,region_2
+city_2567,القرين,AL QARIN,region_2
+city_2568,الوزية,AL WIZYAH,region_2
+city_2569,القرن,AL QARN,region_2
+city_2570,الخرس,AL KHARS,region_2
+city_2571,الغويبة,AL GHUWAYBAH,region_2
+city_2572,مريطبة,MURAYTIBAH,region_2
+city_2573,سوده,SUDAH,region_2
+city_2574,العمران,AL UMRAN,region_2
+city_2577,آل الصعدي,AL AS SA'DI,region_10
+city_2578,الشعف,ASH SHA'F,region_10
+city_2579,لربوعة,LARBU'AH,region_10
+city_2580,قريش,QIRAYSH,region_10
+city_2581,آل دحمان,AL DAHMAN,region_10
+city_2582,الجفر,AL JAFR,region_10
+city_2583,شوحطة,SHUHITAH,region_10
+city_2585,قاها,QAHA,region_10
+city_2586,آل عزة,AL 'AZZAH,region_10
+city_2587,بيحان,BIHAN,region_10
+city_2588,قرآنية,QURANIYAH,region_10
+city_2589,العطوف,AL 'UTUF,region_10
+city_2590,القصير,AL QUSAYR,region_12
+city_2591,المهاش,AL MAHASH,region_12
+city_2592,القاعية,AL QA'IYAH,region_12
+city_2593,بدائع قني,BADAI' QUNAY,region_12
+city_2594,مغيضة,MUGHAYDAH,region_12
+city_2595,بطيحان,BUTAYHAN,region_12
+city_2596,القحصية,AL QAHSIYAH,region_12
+city_2597,البنانة,AL BANANAH,region_12
+city_2598,الركية,AR RUKAYYAH,region_12
+city_2599,مرموثة العلم,MARMUTHAT AL 'ALAM,region_12
+city_2600,نخلة,NAKHLAH,region_12
+city_2601,النميرة,AN NUMAYYIRAH,region_12
+city_2602,قصيباء,QUSAYBA,region_12
+city_2603,ملحاء,MALHA,region_12
+city_2604,الطرفاوي,AT TARFAWI,region_12
+city_2605,الشقة,ASH SHIQQAH,region_12
+city_2606,الشعيلاء,ASH SHU'AYLA,region_12
+city_2607,الحجرة,AL HAJRAH,region_16
+city_2608,السفح,AS SAFAH,region_10
+city_2609,حزم مفتاح,HAZM MIFTAH,region_10
+city_2610,جاش,JASH,region_10
+city_2611,روضة جاش,RUDAT JASH,region_10
+city_2612,الحرفين,AL HARFAYN,region_10
+city_2613,لاعس,LA'IS,region_10
+city_2614,مريغان,MURAYGHAN,region_10
+city_2615,الدريب,AD DIRAYB,region_10
+city_2616,الجازع,AL JAZI',region_10
+city_2617,الفاخرية,AL FAKHRIYAH,region_10
+city_2618,كتنة,KUTNAH,region_10
+city_2619,الجزيرة,AL JAZIRAH,region_10
+city_2620,الرهوة,AR RAHAWAH,region_10
+city_2621,مريخة,MURAYKHAH,region_10
+city_2622,ال سويدان,AL SUWAYDAN,region_10
+city_2623,ال عيفان,AL AYFAN,region_10
+city_2624,ال خميسة,AL KHUMAYSAH,region_10
+city_2625,القيرة,AL QIRAH,region_10
+city_2626,الحمضة,AL HAMDAH,region_10
+city_2627,الزرق,AZ ZURQ,region_10
+city_2628,حبية,HABIYAH,region_10
+city_2629,رغوان,RUGHWAN,region_10
+city_2631,الامواه,AL AMWAH,region_10
+city_2632,الصبيخة,AS SUBAYKHAH,region_10
+city_2633,الإشتاء,AL ISHTA,region_16
+city_2634,المكاتيم,AL MAKATIM,region_16
+city_2635,الحكمان,AL HUKMAN,region_16
+city_2636,الكلبة,AL KALIBAH,region_16
+city_2637,الثراوين,ATH THARAWIN,region_16
+city_2638,قريش الحسن,QURAYSH AL HASAN,region_16
+city_2639,الضبيعات,AD DUBAY'AT,region_16
+city_2640,وادي بطحان,WADI BATHAN,region_16
+city_2641,الكرادسة,AL KARADISAH,region_16
+city_2642,سبيحة العليا,SABIHAH AL 'ULYA,region_16
+city_2644,الاطاولة,AL ATAWLAH,region_16
+city_2645,بيدة,BAYDAH,region_16
+city_2646,القسمة,AL QISAMAH,region_16
+city_2647,نخال,NIKHAL,region_16
+city_2648,الخليج,AL KHALIJ,region_10
+city_2649,الصبيحي,AS SABIHI,region_10
+city_2650,المدراء,AL MADRA,region_10
+city_2651,الباقرة,AL BAQIRAH,region_10
+city_2652,نمران,NAMRAN,region_10
+city_2653,شديق,SHUDAYQ,region_10
+city_2654,الحرف,AL HARF,region_10
+city_2655,العطف,AL 'ATF,region_10
+city_2656,الدحو,AD DIHU,region_10
+city_2657,الحريرة,AL HURAYRAH,region_10
+city_2658,الشقيقة,ASH SHAQIQAH,region_10
+city_2659,الرفائع,AR RAFAI',region_10
+city_2660,الجنينة,AL JUNAYNAH,region_10
+city_2661,عيدان,IDAN,region_10
+city_2663,عقيلية,'AQILIYAH,region_10
+city_2664,بينة,BAYNAH,region_10
+city_2665,عرمان,'ARMAN,region_10
+city_2666,القديح,AL QIDAYH,region_10
+city_2667,واعر,WA'IR,region_10
+city_2668,الشط,ASH SHATT,region_10
+city_2669,المروة,AL MARWAH,region_10
+city_2670,المهامل,AL MAHAMIL,region_10
+city_2672,مهر,MUHR,region_10
+city_2673,البهيم,AL BAHIM,region_10
+city_2674,الغفرات,AL GHAFRAT,region_10
+city_2675,المعدن,AL MA'DIN,region_10
+city_2678,القاع,AL QA',region_10
+city_2680,مجحم,MUJAHHIM,region_10
+city_2681,الحجون,AL HAJUN,region_10
+city_2682,الهجرة,AL HIJRAH,region_10
+city_2683,الثنية,ATH THINIYAH,region_10
+city_2684,القوزية,AL QAWZIYAH,region_10
+city_2685,القوباء,AL QAWBA,region_10
+city_2686,قطبة,QUTBAH,region_10
+city_2687,دفرخرشان,DAFIR KHARSHAN,region_10
+city_2688,جلال,JALLAL,region_10
+city_2689,الديلمي,AD DAILAMI,region_10
+city_2690,الرقيطاء,AR RUQAITA',region_10
+city_2691,تبالة,TABALAH,region_10
+city_2692,الحازمي,AL HAZMI,region_10
+city_2694,الهضبة,AL HADABAH,region_16
+city_2695,الأبناء,AL ABNA,region_16
+city_2696,بني جرة,BANI JARRAH,region_16
+city_2697,آل مرزوق,AL MARZUQ,region_16
+city_2699,جبر,JABR,region_16
+city_2700,حوالة,HAWALAH,region_16
+city_2701,الأزاهرة,AL AZAHIRAH,region_16
+city_2702,دارالسوق,DAR AS SUQ,region_16
+city_2703,الحمران,AL HUMRAN,region_16
+city_2704,الرهوة,AR RAHWAH,region_16
+city_2705,بالشهم,BAL SHAHAM,region_16
+city_2706,بادية بني كبير,BADIYAT BANI KABIR,region_16
+city_2707,بلعلاء,BAL'ALA,region_16
+city_2708,العفوص,AL 'UFUS,region_16
+city_2709,خيرة,KHIRAH,region_16
+city_2710,قرن ظبي,QARN DHABI,region_16
+city_2711,شبرقة,SHIBRIQAH,region_16
+city_2712,الغشامرة,AL GHASHAMRAH,region_16
+city_2713,العباس,AL 'ABBAS,region_16
+city_2714,رغدان,RAGHDAN,region_16
+city_2715,الظفير,ADH DHAFIR,region_16
+city_2716,بيضان,BAYDAN,region_16
+city_2717,الصغرة,AS SAGHRAH,region_16
+city_2718,الشقيق,ASH SHAQIQ,region_10
+city_2719,البظاظة,AL BADHDHADHAH,region_10
+city_2723,الفرع,AL FAR',region_10
+city_2724,البلس,AL BALAS,region_10
+city_2725,العظة,AL 'IDHAH,region_10
+city_2726,الصرف,AS SURUF,region_10
+city_2727,ثما,THAMMA,region_10
+city_2728,العاسرة,AL 'ASIRAH,region_10
+city_2729,حجاب,HIJAB,region_10
+city_2730,الحصنة,AL HUSANAH,region_10
+city_2732,الحصباء,AL HASBA,region_10
+city_2733,آل سلمة,AL SALAMAH,region_10
+city_2734,ال الشيخ,AL ASH SHAYKH,region_10
+city_2735,عمق,'AMAQ,region_10
+city_2736,الحظيرة,AL HADHIRAH,region_10
+city_2738,آل يوسف,AL YUSUF,region_10
+city_2739,البدلة,AL BADLAH,region_10
+city_2740,لولاة,LAWLAH,region_10
+city_2741,نجد قرض,NAJD QARAD,region_10
+city_2742,جمان,JUMMAN,region_10
+city_2743,كثم,KATHM,region_10
+city_2744,السلامة,AS SALAMAH,region_10
+city_2745,المثناة,AL MATHNAH,region_10
+city_2747,لعصان,LI'SAN,region_10
+city_2748,المحالة,AL MAHALAH,region_10
+city_2749,الشرف,ASH SHARAF,region_10
+city_2750,سر آل السريع,SIRR AL AS SIRI',region_10
+city_2751,العبب,AL 'ABAB,region_10
+city_2752,الدارة,AD DARAH,region_10
+city_2753,الجرجر,AL JARJAR,region_10
+city_2754,عدوان,'ADWAN,region_10
+city_2755,العين,AL 'AYN,region_10
+city_2756,الجعجاع,AL JA'JA',region_10
+city_2757,الموسطة,AL MAWSATAH,region_10
+city_2758,آل جمعة,AL JUM'AH,region_10
+city_2759,العزيزة,AL 'AZIZAH,region_10
+city_2760,الهرير الغربي,AL HIRAYR AL GHARBI,region_10
+city_2761,إيتارة,ITARAH,region_10
+city_2762,أبو نخلة,ABU NAKHLAH,region_10
+city_2763,القرح,AL QURH,region_10
+city_2765,أبو جرشة,ABU JARSHAH,region_10
+city_2766,الخشم,AL KHASHM,region_10
+city_2767,روغ العاند,RUGH AL 'ANID,region_10
+city_2768,آل بالفلاح,AL BALFALAH,region_10
+city_2769,حجلا,HAJLA,region_10
+city_2771,تانة,TANAH,region_10
+city_2773,حبيب,HUBAYYIB,region_10
+city_2774,رغفة,RUGHFAH,region_10
+city_2775,عضاضة,'ADADAH,region_10
+city_2777,القعرة,AL QU'RAH,region_10
+city_2780,الصيحاني,AS SAYHANI,region_10
+city_2781,البهيمة,AL BIHAYMAH,region_10
+city_2782,القرعاء,AL QAR'A,region_10
+city_2783,الجر الصغير,AL JARR AS SAGHIR,region_10
+city_2785,تمنية,TAMNIYAH,region_10
+city_2787,آل علي,AL 'ALI,region_10
+city_2788,عين الذيبة,'AYN ADH DHIBAH,region_10
+city_2789,البارك,AL BARIK,region_10
+city_2790,قرضة,QARADAH,region_10
+city_2792,حصن الجرين,HUSN AL JARIN,region_10
+city_2793,آل عاصم,AL 'ASIM,region_10
+city_2794,الجنفور,AL JANFUR,region_10
+city_2795,عرايس,'ARAYIS,region_10
+city_2796,عمام,'UMAM,region_10
+city_2798,شوحط,SHUHAT,region_10
+city_2799,منادرالعين,MANADIR AL 'AYN,region_10
+city_2800,بني رزام,BANI RIZAM,region_10
+city_2801,الملاحة,AL MALAHAH,region_10
+city_2802,الطلحة,AT TALHAH,region_10
+city_2803,شرمة,SHARMAH,region_10
+city_2804,الحنق,AL HANAQ,region_10
+city_2805,القرين,AL QURAYN,region_10
+city_2806,آل مجمل,AL MUJAMMAL,region_10
+city_2807,طبب,TABAB,region_10
+city_2808,الشطاط,AL SHUTAT,region_10
+city_2809,العبيدية,AL 'ABIDIYAH,region_10
+city_2810,السبت,AS SABT,region_10
+city_2811,حمالة,HIMALAH,region_10
+city_2813,آل بسام,AL BASSAM,region_10
+city_2814,آل دكين,AL DUKAYN,region_10
+city_2815,آل مهدي,AL MAHADI,region_10
+city_2816,المصياد,AL MISYAD,region_10
+city_2817,الجزعة,AL JUZ'AH,region_10
+city_2818,آل مشدود,AL MASHDUD,region_10
+city_2819,الجهمة,AL JIHMAH,region_10
+city_2820,العسران,AL 'USRAN,region_10
+city_2821,آل بحبيب,AL BIHABIB,region_10
+city_2822,آل قوشع,AL QAWSHA',region_10
+city_2824,قراما,QURAMA,region_16
+city_2825,العياش,AL 'AYYASH,region_16
+city_2826,آل سعيد,AL SA'ID,region_16
+city_2827,الغصنة,AL GHASANAH,region_16
+city_2829,نيرا,NIRA,region_16
+city_2830,الجوة,AL JIWAH,region_16
+city_2831,الفرع,AL FAR',region_16
+city_2832,الهتافرة,AL HATAFIRAH,region_16
+city_2833,القريع,AL QARI',region_16
+city_2834,المسودة,AL MASWADAH,region_16
+city_2835,الحشو,AL HASHU,region_16
+city_2836,فرعة بني سهيم,FARA'T BANI SUHAYM,region_16
+city_2837,العقدة,AL 'UQDAH,region_16
+city_2838,العواصية,AL 'AWASIYAH,region_16
+city_2839,القصيباء,AL QUSAYBA,region_16
+city_2841,الحصن,AL HUSN,region_16
+city_2842,نصبة,NUSUBAH,region_16
+city_2843,ناوان,NAWAN,region_16
+city_2844,العرق,AL 'IRQ,region_10
+city_2845,كعب,KA'B,region_10
+city_2846,الخاضرة,AL KHADIRAH,region_10
+city_2847,القرن الأبيض,AL QARN AL ABYAD,region_10
+city_2848,الدحض,AD DAHID,region_10
+city_2849,الظهارة,ADH DHAHARAH,region_10
+city_2850,مخدرة,MAKHDARAH,region_10
+city_2852,القرية,AL QARYAH,region_10
+city_2853,بني مليح,BANY MULAYH,region_10
+city_2854,وادي الغيل,WADI AL GHAYL,region_10
+city_2855,مليح,MILAYYAH,region_10
+city_2856,ربوع السرو,RUBU' AS SARW,region_10
+city_2857,آل بو خشيف,AL BUKHISHAYF,region_10
+city_2858,بهوان,BAHWAN,region_10
+city_2859,الضاربين,AD DARIBAYN,region_10
+city_2860,آل مخلد,AL MAKHLAD,region_10
+city_2861,آل عباس,AL 'ABBAS,region_10
+city_2862,آل مضرة,AL MIDRAH,region_10
+city_2863,غاشرة,GHASHIRAH,region_10
+city_2864,ذبوب,DHABUB,region_10
+city_2865,مجالد,MIJALID,region_10
+city_2866,آل سخيطة,AL SAKHAYTAH,region_10
+city_2867,عبالة,'ABALLAH,region_10
+city_2868,آل عبيد,AL 'UBAYD,region_10
+city_2869,آل مشاعر,AL MISHA'IR,region_10
+city_2870,مسفرة,MISFIRAH,region_10
+city_2872,الحفاة,AL HUFAH,region_10
+city_2873,الصرة,AS SURRAH,region_10
+city_2874,حوراء,HAWRA,region_10
+city_2876,كبدة,KUBADAH,region_10
+city_2877,العينين,AL 'AYNAYN,region_10
+city_2879,الواديين,AL WADIYAYN,region_10
+city_2880,آل لجم,AL LAJAM,region_10
+city_2881,الاثنين,AL ITHNAYN,region_10
+city_2883,سحيبان,SUHAYBAN,region_10
+city_2884,العمارة,AL 'AMMARAH,region_10
+city_2885,قيان,QIYAN,region_10
+city_2886,الغرس,AL GHARS,region_10
+city_2887,الحكيمة,AL HAKIMAH,region_10
+city_2888,الرقوة,AR RAQWAH,region_10
+city_2889,آل الجلدة,AL AL JILDAH,region_10
+city_2890,مشروفة,MASHRUFAH,region_10
+city_2891,لاهمة,LAHMAH,region_10
+city_2892,آل فهيد,AL FUHAYD,region_10
+city_2894,آل صنيج,AL SUNAYJ,region_10
+city_2896,آل كشيم,AL KUSHAYM,region_10
+city_2897,الحذيان,AL HADHYAN,region_10
+city_2898,الخرائق,al kharaiq,region_2
+city_2899,السريح,as sirayh,region_3
+city_2900,الفعور,AL FU'UR,region_3
+city_2901,القهيب,AL QUHAYB,region_3
+city_2902,المويه القديم,AL MUWAYH AL QADIM,region_3
+city_2903,المويه الجديد,AL MUWAYH AL JADID,region_3
+city_2904,الصفة,AS SUFFAH,region_3
+city_2905,نمرة,NUMARAH,region_3
+city_2906,صعبر,SA'BAR,region_3
+city_2907,أبانات,ABANAT,region_9
+city_2908,المرشدية,AL MURSHIDIYAH,region_3
+city_2909,الملعب,AL MAL'AB,region_3
+city_2910,الاخاضر,AL AKHADIR,region_3
+city_2911,صبيح,SUBAYH,region_9
+city_2912,ثريبان,thurayban,region_3
+city_2914,المطيوي,al mutaywi,region_9
+city_2915,الاضارع,al adari,region_13
+city_2917,قرية البطين,qaryah al butain,region_12
+city_2918,الخلصة,AL Khlusah,region_12
+city_2919,أشقر النومانيات,ashqar an numaniyat,region_9
+city_2920,أم الخراسع,umm al kharasi,region_9
+city_2921,أم حزم,umm hazm,region_9
+city_2922,أم خطوط,umm khutut,region_9
+city_2923,ابا الدود,aba ad dud,region_9
+city_2924,ابو عرداء,abu arda,region_9
+city_2925,الإفيهد,al ifayhid,region_9
+city_2926,الاساس,al asas,region_9
+city_2928,البتراء,al batra,region_9
+city_2929,البرجسية,al barjasiyah,region_9
+city_2930,البكرة,al bakrah,region_9
+city_2931,البندرية,al bandariyah,region_9
+city_2932,التنومة,at tannumah,region_9
+city_2933,الثابتية,al thabitiyah,region_9
+city_2934,الثامرية,ath thamiriyah,region_9
+city_2935,الجرارية,al jarrariyah,region_9
+city_2936,الجرير,al jurayyir,region_9
+city_2937,الجعلة,al jaalah,region_9
+city_2938,الجفن,al jifn,region_9
+city_2939,الحجازية,al hajjaziyah,region_9
+city_2940,الحديدية,al hadidiyah,region_9
+city_2941,الحيسونية,al haysuniyah,region_9
+city_2942,الخرماء الجنوبية,al kharma al janubiyah,region_9
+city_2943,الخشيبي,al khishaybi,region_9
+city_2944,الداث,ad dath,region_9
+city_2945,الدحلة,ad dahalah,region_9
+city_2947,الدعثة,ad daathah,region_9
+city_2948,الدليمية,ad dilaymiyah,region_9
+city_2949,الرحيمية,ar ruhaymiyah,region_9
+city_2950,الركنة,ar ruknah,region_9
+city_2951,الزبيرة,az zubayrah,region_9
+city_2952,الزهيرية,az zihayriyah,region_9
+city_2953,السيح,as sayh,region_9
+city_2954,الشباكية,ash shabbakiyah,region_9
+city_2955,الشبيكية,ash shubaykiyah,region_9
+city_2956,الشعيفانية,ash shifaniyah,region_9
+city_2957,الشنانة,ash shananah,region_9
+city_2959,الصريف,as sarif,region_9
+city_2960,الصغيرية,as sughayriyah,region_9
+city_2961,الصليبي,as sulaybi,region_9
+city_2962,الصمعورية,as sumuriyah,region_9
+city_2963,الضلعة,ad dalah,region_9
+city_2964,الضلفعة,ad dalfaah,region_9
+city_2965,الطراق,at tiraq,region_9
+city_2966,الطرفية,at turfiyah,region_9
+city_2967,الظاهرية,adh dhahiriyah,region_9
+city_2968,الظاهرية الشمالية,adh dhahiriyah ash shamaliyah,region_9
+city_2969,الظبة,adh dhabah,region_9
+city_2970,العابر,al abir,region_9
+city_2972,العاقر,al aqir,region_9
+city_2973,العمودة,al 'amudah,region_9
+city_2974,العمودة الشمالية,al 'amudah ash shamaliyah,region_9
+city_2975,الغضياء,al ghadya,region_9
+city_2976,الغيدانية,al ghaydaniyah,region_9
+city_2977,القعير,al quayyir,region_9
+city_2979,القهيبية,al qihabiyah,region_9
+city_2980,القوارة,al quwarah,region_9
+city_2981,القوعي,al qawi,region_9
+city_2983,الكفية,al kuffiyah,region_9
+city_2984,المحلاني,al mahalani,region_9
+city_2985,المصك,al masak,region_9
+city_2986,المعدا,al maada,region_9
+city_2988,الملقاء,al malqa,region_9
+city_2989,النبقية,an nubqiyah,region_9
+city_2990,النعايم,an naayim,region_9
+city_2992,النمرية,an nimriyah,region_9
+city_2993,النومانية,an numaniyah,region_9
+city_2994,النويبات,an nuwaybat,region_9
+city_2995,الهبيرية,al hubayriyah,region_9
+city_2996,الوسيطة,al wasitah,region_9
+city_2997,الوطاة,al wutah,region_9
+city_2998,ام الخراسع,umm al kharasi,region_9
+city_3000,ام قدة,umm qiddah,region_9
+city_3001,بئر زهيميلة,bir zuhaymilah,region_9
+city_3002,بدائع الضبطان,badai ad dubtan,region_9
+city_3003,بدائع ريمان,badai riman,region_9
+city_3005,بدائع هويشلة,badai' huwayshilah,region_9
+city_3006,بقيعاء الجنوبية,buqay'a al janubiyah,region_9
+city_3007,ثادج,thadij,region_9
+city_3008,حليوة,hulaywah,region_9
+city_3009,حنيظل,hunaydhil,region_9
+city_3010,خريمان,khurayman,region_9
+city_3011,خصيبة,khusayyibah,region_9
+city_3012,دريميحة,diraymihah,region_9
+city_3013,دهيماء,duhayma,region_9
+city_3014,ديم,daym,region_9
+city_3015,ذوقان الركايا,dhawqan ar rakaya,region_9
+city_3016,ربيق,rubayq,region_9
+city_3017,رغابية,raghabiyah,region_9
+city_3018,رفائع اللهيب,rufai' al luhayb,region_9
+city_3019,روض الجواء,rawd al jiwa,region_9
+city_3020,روضة الحسو,rawdat al hisu,region_9
+city_3021,روضة قرادان,rawdat qiradan,region_9
+city_3022,رياض الرماح,riyad ar rimah,region_9
+city_3023,زهلولة,zihlulah,region_9
+city_3024,ساق,saq,region_9
+city_3025,سلام,salam,region_9
+city_3026,سمراء عيسى,samra isa,region_9
+city_3027,شري,shari,region_9
+city_3028,صعينين,suaynin,region_9
+city_3029,ضليع رشيد,dulay rashid,region_9
+city_3031,ضيدة,didah,region_9
+city_3032,طفيلة,tufaylah,region_9
+city_3033,طلحة,talhah,region_9
+city_3034,عبل عبلا,abal abla,region_9
+city_3035,عريفجان ساحوق,'urayfjan sahuq,region_9
+city_3036,عطا,ata,region_9
+city_3038,عطي,utayy,region_9
+city_3040,عقلة الصقور,uqlat as suqur,region_9
+city_3041,عماير سعيدة,amayir saidah,region_9
+city_3043,عيدة,idah,region_9
+city_3044,فياضة,fayyadah,region_9
+city_3045,فيضة سلام,faydat salam,region_9
+city_3046,فيضة يكلب,faydat yaklib,region_9
+city_3047,قصر العبدالله,qasr al abdallah,region_9
+city_3048,قطن,qitan,region_9
+city_3049,قليب الرجيمية,qalib ar rujaymiyah,region_9
+city_3050,قليب خنيفسة,qalib khunayfisah,region_9
+city_3051,كحلة,kahlah,region_9
+city_3053,مباري,mibari,region_9
+city_3054,محير الترمس,mihir at turmus,region_9
+city_3055,مدرج,mudarraj,region_9
+city_3056,مزارع الحفيرات,mazari al hufayrat,region_9
+city_3057,مزارع الحقباء,mazari al haqba,region_9
+city_3058,مزارع الشيحية,mazari ash shihiyah,region_9
+city_3059,مزارع القرائن,mazari al qarain,region_9
+city_3060,مزارع الوسيطاء,mazari' al wusayta,region_9
+city_3061,مزارع خريمان,mazari khurayman,region_9
+city_3063,مزرعة الزرقاء,mazraat az zarqa,region_9
+city_3064,مسكة,miskah,region_9
+city_3065,مظيفيرة,mudhayfirah,region_9
+city_3066,مهدومة,mahdumah,region_9
+city_3067,نبيها,nubayha,region_9
+city_3068,نجخ الشمالي,najikh al shamali,region_9
+city_3069,نفجة,nafjah,region_9
+city_3070,هرمول,hurmul,region_9
+city_3071,آل سرحان,al sirhan,region_10
+city_3072,ابن غنام,ibn ghannam,region_1
+city_3073,ابو العشرة,abu al usharah,region_14
+city_3074,ابو جلال,abu jilal,region_1
+city_3075,ابو حجر الاعلى,abu hajar al ala,region_14
+city_3076,ابو حصانية,abu hasaniyah,region_3
+city_3077,ابو حليفاء,abu hulayfa,region_3
+city_3078,ابو راكة,abu rakah,region_3
+city_3079,ابو رجوم,abu rijum,region_1
+city_3080,ابو طاقة,abu taqah,region_8
+city_3081,ابو عشرة,abu isharah,region_1
+city_3082,ابو كبير,abu kabir,region_8
+city_3083,ابو مراغة,abu maraghah,region_3
+city_3084,ابو مروة,abu marwah,region_1
+city_3085,اثيثية,uthaythiyah,region_1
+city_3086,احد بني زيد,ahd bani zayd,region_3
+city_3087,ارطاوي الرقاص,artawi ar raqqas,region_1
+city_3088,ال اثيبة,al ithibah,region_10
+city_3089,ال التوم,al at tum,region_10
+city_3090,ال الجلدة,al al jildah,region_10
+city_3091,ال الداحس,al ad dahis,region_10
+city_3092,ال الذيب,al adh dhib,region_10
+city_3093,ال الزارية,al az zariyah,region_10
+city_3094,ال الصعدي,al as sadi,region_10
+city_3096,ال جلال,al jallal,region_10
+city_3097,ال جمعة,al jumah,region_10
+city_3098,ال حديلة,al hidaylah,region_10
+city_3099,ال حميد,al himayd,region_16
+city_3100,ال خضاري,al khidari,region_10
+city_3101,ال دحمان,al dahman,region_10
+city_3102,ال دلهم,al dalham,region_10
+city_3104,ال زيدي,al zaydi,region_10
+city_3106,ال سفيان,al sufyan,region_10
+city_3107,ال سلمة,al salamah,region_10
+city_3108,ال شدادي,al shaddadi,region_10
+city_3109,ال صقاعة,al suqaah,region_16
+city_3110,ال عاصم,al asim,region_10
+city_3111,ال عاصمي,al asimi,region_10
+city_3114,ال عزة,al azzah,region_10
+city_3115,ال علي,al ali,region_10
+city_3116,ال عمرة,al amrah,region_10
+city_3117,ال غلفق,al ghalfaq,region_10
+city_3118,آل فرش,al farsh,region_10
+city_3119,ال قنبة,al qunbah,region_10
+city_3120,ال لغر,al laghir,region_10
+city_3122,ال مانع,al mani,region_10
+city_3124,ال محصن,al muhsun,region_10
+city_3125,ال مخلد,al makhlad,region_10
+city_3126,ال مشاعر,al mishair,region_10
+city_3127,ال معدي,al maaddi,region_10
+city_3128,ال معلوي,al malawi,region_10
+city_3129,ال مكر,al makir,region_10
+city_3130,ال يزيد,al yazid,region_10
+city_3131,الأنفة,al anafah,region_3
+city_3132,الابواء,al abwa,region_3
+city_3133,الاجرع الشمالي,al ajra ash shamali,region_10
+city_3134,الاحمر,al ahmar,region_8
+city_3135,الارطاوي,al artawi,region_1
+city_3136,الاشتاء,al ishta,region_16
+city_3137,الاملح,al amlah,region_3
+city_3138,الانفة,al anafah,region_3
+city_3139,البحول,al bahawal,region_3
+city_3140,البرابير,al brabir,region_3
+city_3141,البريكة,al buraykah,region_3
+city_3142,البورة,al burah,region_3
+city_3143,البيار,al biyar,region_3
+city_3144,التنضبية,at tandabiyah,region_3
+city_3145,الثلوث,ath thuluth,region_3
+city_3146,الجائزة,al jaizah,region_3
+city_3147,الجدعان,al jidh'an,region_3
+city_3148,الجذية,al judhayyah,region_3
+city_3149,الجرين,al jarin,region_3
+city_3150,الجضع,al jid,region_3
+city_3151,الجعلان,al jilan,region_3
+city_3152,الجمدة,al jimdah,region_3
+city_3153,الجيشي,al jayshi,region_3
+city_3154,الحدبة,al hadabah,region_3
+city_3155,الحذيفة,al hudhayfah,region_3
+city_3156,الحذيفة القالة,al hudhayfat al qalah,region_3
+city_3157,الحرش,al harsh,region_3
+city_3158,الحطامية,al hatamiyah,region_3
+city_3159,الحلقة,al halaqah,region_3
+city_3160,الحلي,al hulay,region_3
+city_3161,الخصرة,al khasirah,region_3
+city_3162,الخفاشة,al khafashah,region_3
+city_3163,الخيف,al khayf,region_3
+city_3164,الدار الحمراء,al dar al hamra,region_3
+city_3165,الدبانية,ad dubaniyah,region_3
+city_3166,الدف,ad daff,region_3
+city_3167,الدفينة,ad difinah,region_3
+city_3168,الدهناء,ad dahna,region_14
+city_3169,الدوارة,ad duwwarah,region_3
+city_3170,الذيابات,adh dhiyabat,region_3
+city_3171,الرخيلة,ar rikhaylah,region_3
+city_3172,الرميدة,ar rumaydah,region_3
+city_3173,الرويغة,ar ruwayghag,region_3
+city_3174,الريقة,ar riqah,region_3
+city_3175,الساعي,as sai,region_3
+city_3176,السايلة,as sayilah,region_3
+city_3177,السبطة,as sabatah,region_10
+city_3178,السديرة,as sudayrah,region_3
+city_3179,السعدية,as sadiyah,region_3
+city_3180,السلاقا,as salaqa,region_3
+city_3181,السلمة,as salamah,region_3
+city_3182,السوارفية,as sawarqiyah,region_3
+city_3183,السوحة,as siwahah,region_3
+city_3184,الشاقة / الصهوة,al shaqqah (as shwah),region_3
+city_3185,الشرائع,ash sharai,region_3
+city_3186,الشرى,ASH SHARA,region_3
+city_3187,الشصرة,ash shasarah,region_3
+city_3188,الشعاعيب,ash shaaib,region_3
+city_3189,الشغز,ash shaghaz,region_3
+city_3190,الشميسي,ash shumaysi,region_3
+city_3191,الصبخة,as sabkhah,region_3
+city_3192,الصرح,as sarh,region_3
+city_3193,الصعيب,as saayb,region_3
+city_3194,الصفي,as sufay,region_3
+city_3195,الصلب,as sulb,region_3
+city_3196,الصواملة,as suwamilah,region_3
+city_3197,الضبية,ad dubayyah,region_3
+city_3198,الضحياء,ad dahya,region_3
+city_3199,الضرم,ad duram,region_3
+city_3200,الظليم,ad dhalim,region_3
+city_3201,العثيثي,al uthaythi,region_3
+city_3202,العرفاء,al arfa,region_3
+city_3203,العصب,al asb,region_3
+city_3204,العصمان,al usman,region_3
+city_3205,العطيف,al atif,region_3
+city_3207,العفيرية,al ufayriyah,region_3
+city_3208,العلبة,al 'ilabah,region_3
+city_3209,العماير,al amayir,region_3
+city_3211,العمشان,al umshan,region_3
+city_3212,العمودية,al amudiyah,region_3
+city_3213,العويلة,al uwaylah,region_3
+city_3214,العيش,al aish,region_10
+city_3215,العينة,al aynah,region_3
+city_3216,الغافة,al ghafah,region_3
+city_3217,الغالة,al ghallah,region_3
+city_3218,الغبة,al ghubbah,region_3
+city_3219,الغرات,al ghurrat,region_3
+city_3220,الغريف,al gharif,region_3
+city_3221,الغمير,al ghimayr,region_3
+city_3222,الغنم,al ghunnam,region_3
+city_3223,الغولاء,al ghawla,region_3
+city_3224,الفايجة,al fayijah,region_3
+city_3225,الفراع,al fira,region_3
+city_3226,الفز,al fazz,region_3
+city_3227,القحب,al qahb,region_3
+city_3228,القحمان,al quhman,region_3
+city_3229,القرشيات,al qurrashiyat,region_3
+city_3231,القرينة / هداة الشام,al qurainah / hadat ash sham,region_3
+city_3232,القصر,al qasr,region_3
+city_3233,القضب,al qadab,region_3
+city_3234,القضيفة,al qudaifah,region_3
+city_3235,القضيمة,al qadimah,region_3
+city_3236,القعضبة,al qi'dubah,region_3
+city_3237,القعور,al qu'ur,region_3
+city_3238,الكدسة,al kidsah,region_3
+city_3239,الكويسية,al kuwaysiyah,region_3
+city_3240,المبنى,al mabna,region_3
+city_3241,المبيرز,al mubayriz,region_3
+city_3242,المثان,mithan,region_3
+city_3243,المجاريش,al majarish,region_3
+city_3244,المجيرمة,al mijayrimah,region_3
+city_3245,المحاميد,al mahamid,region_3
+city_3246,المحاني,al mahani,region_3
+city_3247,المسماة,al masammah,region_3
+city_3248,المسيليم,al musaylim,region_3
+city_3249,المضحاة,al madhah,region_3
+city_3250,المظيلف,al mudhaylif,region_3
+city_3252,المعقص,al muaqas,region_3
+city_3254,المقايتة,al maqaytah,region_3
+city_3255,النبيعة,an nubayah,region_3
+city_3256,النجمة,an najmah,region_3
+city_3257,النويبع,al nuwaybi,region_3
+city_3258,الهدارة,al haddarah,region_3
+city_3259,الوزير,al wazir,region_3
+city_3260,الوسقة,al wasqah,region_3
+city_3261,الوهط,al wahat,region_3
+city_3262,ام البرك,umm al birak,region_8
+city_3264,ام الدوم,umm ad dawm,region_3
+city_3265,ام الراكة,umm ar rakah,region_3
+city_3266,ام الزلة,umm al zillah,region_3
+city_3267,ام السباع,umm as siba,region_1
+city_3268,ام السلم,umm as salam,region_3
+city_3269,ام العيال,umm al iyal,region_8
+city_3271,ام النخلة,umm an nakhlah,region_3
+city_3272,ام سدرة,umm sidrah,region_1
+city_3274,ام سليم,umm sulaym,region_1
+city_3275,ام شعبين,umm shbayn,region_10
+city_3276,ام فحي,umm fahi,region_8
+city_3277,ام فرع,umm fura,region_10
+city_3278,اوضاخ,udakh,region_1
+city_3279,باشوت,bashut,region_3
+city_3280,برحرح,barahrah,region_3
+city_3281,ثلوث عمارة,thuluth imarah,region_3
+city_3282,ثمالة,thumalah,region_3
+city_3283,جليل,jalil,region_3
+city_3284,جمعة ربيعة,jumat at rabiah,region_3
+city_3286,حجر,hajur,region_3
+city_3288,حرة الجبل,harat al jabal,region_3
+city_3289,حرجل,harjal,region_3
+city_3290,حرف مبرة,harf mibrah,region_3
+city_3292,حشاش,hishash,region_3
+city_3293,حضن,hadan,region_3
+city_3294,حلمة,hilimah,region_3
+city_3295,خبت السبت,khabt as sabt,region_3
+city_3296,خبت مزقة,khabt mizqah,region_3
+city_3297,خميس حرب,khamis harb,region_3
+city_3299,دغيبجة,dughaybjah,region_3
+city_3300,دف زيني,daff zayni,region_3
+city_3301,دوقة,dawqah,region_3
+city_3302,رأس تنورة,ras tannurah,region_2
+city_3303,ربوع العين,rubu al ayn,region_3
+city_3304,رضوان,radwan,region_3
+city_3305,ريحة,rayhah,region_3
+city_3306,ريشان,rishan,region_3
+city_3307,زنقاحة,zinqahah,region_3
+city_3308,سبت الجارة,sabt al jarah,region_3
+city_3309,سبت شمران,sabt shumran,region_3
+city_3310,سلم الزواهرة,salam az zuwahirah,region_3
+city_3311,سوق الجمعة,suq al jum'ah,region_3
+city_3312,سوق بني يزيد,suq bani yazid,region_3
+city_3313,شداد,shadad,region_3
+city_3314,شعر,shiir,region_3
+city_3315,شقصان,shaqasan,region_3
+city_3316,شلوة,shuluwah,region_3
+city_3317,شويحط,shuwayhit,region_3
+city_3318,شيباي,shaybay,region_3
+city_3319,صبح,sabah,region_3
+city_3320,صيادة,sayyadah,region_3
+city_3321,طيب الاسم,tayyib al ism,region_10
+city_3322,ظلم,dhalam,region_3
+city_3323,عباسة,abbasah,region_3
+city_3324,عجلان,ajlan,region_3
+city_3325,عشيرة الجديدة,ushayrah al jadidah,region_3
+city_3326,عشيرة مكتن,'ishayra maktan,region_3
+city_3327,عنيكر,unaykir,region_3
+city_3328,عيون حارة,uyun harrah,region_3
+city_3329,غثاة,ghithah,region_3
+city_3330,غرابة,ghirabah,region_3
+city_3331,غزال,ghazal,region_3
+city_3332,غزايل,ghazayil,region_3
+city_3333,غصين,ghusayyin,region_3
+city_3334,غميقة,ghumayqah,region_3
+city_3335,قرن بن ساهر,qarn bin sahir,region_3
+city_3336,قفيلان,qufaylan,region_3
+city_3337,قويزة,quwayzah,region_3
+city_3338,قيا,qiya,region_3
+city_3339,كدوة الأعوج,kidwat al awaj,region_3
+city_3341,كلية,kilayyah,region_3
+city_3342,لملم,lamlam,region_3
+city_3343,مدركة,madrakah,region_3
+city_3344,مران,marran,region_3
+city_3345,مشجي,mushaji,region_3
+city_3346,مشرق,mashriq,region_3
+city_3347,مظللة,mudallilah,region_3
+city_3348,ملح,malah,region_3
+city_3349,مهايع,al mahaya,region_3
+city_3350,ميسان,maysan,region_3
+city_3351,ناخسة,nakhusah,region_3
+city_3352,هجرة ام العراد,hijrat umm al irad,region_2
+city_3353,هشيمة,hishaymah,region_3
+city_3355,أم الدوم,UMM AD DAWM,region_15
+city_3356,أم الحجل,UMM AL HAJAL,region_14
+city_3357,أم الفروغ,UMM AL FURUGH,region_10
+city_3358,حقال,HAQAL,region_3
+city_3359,بحر ابو سكينة,BAHR ABU SUKAYNAH,region_10
+city_3361,اللغيسيم,AL LUGHAYSIM,region_3
+city_3362,صبياء,SABYA',region_3
+city_3363,ليم,ليم,region_9
+city_3364,صميعر,صميعر,region_9
+city_3365,المناضح,المناضح,region_3
+city_3366,ختبة,KHATBAH,region_10
+city_3367,الحبقة,AL HABQAH,region_3
+city_3368,أم سديرة,UMM SUDAYRAH,region_1
+city_3369,آل زهير,AL ZUHAYR,region_10
+city_3370,عوية,'UWAYYAH,region_3
+city_3371,آل لوط,AL LUT,region_10
+city_3372,آل مجادب,AL MIJADIB,region_10
+city_3373,الجرذاوية,AL JARDHAWIYAH,region_9
+city_3374,لغب,LAGHAB,region_3
+city_3375,الصدية,AS SADIYAH,region_3
+city_3376,السادة,AS SADAH,region_3
+city_3377,الميثاء,AL MAYTHA,region_3
+city_3378,البجيدي,AL BIJAYDI,region_3
+city_3379,الأسامر,AL ASAMIR,region_9
+city_3380,مزارع ثويدج,MAZARI' THUWAYDIJ,region_9
+city_3381,الحليفة,AL HULAYFAH,region_3
+city_3382,الزبيري,AZ ZUBAYRI,region_3
+city_3383,آل إثيبة,AL ITHIBAH,region_10
+city_3384,مزرعة عبلا,MAZRA'AT AT 'ABLA,region_9
+city_3385,مسعدة,MASA'DAH,region_3
+city_3386,ذهبان,DHAHBAN,region_3
+city_3387,القري,AL QURAY,region_3
+city_3388,السميراء,AS SUMAYRA,region_9
+city_3389,القريع,AL QARI',region_3
+city_3390,القويعية,AL QUWAYI'YAH,region_8
+city_3391,القويعية,AL QUWAY'IYAH,region_3
+city_3392,القويعية,AL QUWAY'IYAH,region_9
+city_3393,القيصومة,AL QAYSUMAH,region_9
+city_3399,قها,QAHA,region_3
+city_3400,ذنباء,DHANABA,region_3
+city_3401,النيلة,AN NILAH,region_3
+city_3402,الجابرية,AL JABIRIYAH,region_2
+city_3403,الجابرية,AL JABRIYAH,region_9
+city_3404,الجابرية,AL JABRIYAH,region_12
+city_3405,المقرقم,AL MAQARQAM,region_14
+city_3406,جواثا,JAWATHA,region_2
+city_3407,القوز,AL QAWZ,region_3
+city_3408,الحوطة,AL HAWTAH,region_3
+city_3409,الخليف,AL KHALIF,region_3
+city_3410,رأس الخير,Ras Al Khair,region_2
+city_3411,الرحبة,AR RAHBAH,region_3
+city_3412,القرن,AL QARN,region_16
+city_3413,القاع,AL QA',region_10
+city_3414,القاع,AL QA',region_9
+city_3415,القاع,AL QA',region_3
+city_3416,القاع,AL QA',region_3
+city_3417,القاع,AL QA',region_3
+city_3418,المثلث,AL MUTHALLATH,region_8
+city_3420,الشبان,ASH SHUBBAN,region_3
+city_3421,القعرة,AL QU'RAH,region_3
+city_3422,معشوقة,MA'SHUQAH,region_3
+city_3423,سبت العلاية,SABT AL 'ALAYAH,region_10
+city_3424,الشرى,ASH SHARA,region_3
+city_3425,السدين,AS SADDAIN,region_3
+city_3426,العطفة,AL 'UTFAH,region_10
+city_3427,العطفة,AL 'UTFAH,region_10
+city_3428,الحيد,AL HEED,region_1
+city_3429,الكدادية,AL KADADIYAH,region_12
+city_3430,القرينين,ALQARININ,region_12
+city_3431,الزبيرة,AL ZUBAIRAH,region_12
+city_3801,المليداء,AL MULAYDA',region_9

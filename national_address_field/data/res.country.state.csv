@@ -1,0 +1,14 @@
+id,name,code,country_id/id
+region_1,الرياض,1,base.sa
+region_2,المنطقة الشرقية,2,base.sa
+region_3,مكة المكرمة,3,base.sa
+region_8,المدينة المنورة,8,base.sa
+region_9,القصيم,9,base.sa
+region_10,عسير,10,base.sa
+region_11,تبوك,11,base.sa
+region_12,حائل,12,base.sa
+region_13,الحدود الشمالية,13,base.sa
+region_14,جازان,14,base.sa
+region_15,نجران,15,base.sa
+region_16,الباحة,16,base.sa
+region_17,الجوف,17,base.sa

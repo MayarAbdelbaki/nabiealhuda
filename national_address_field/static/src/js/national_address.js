@@ -23,6 +23,69 @@ patch(CustomerAddress.prototype, {
     async _onChangeCountry(init = false) {
         await super._onChangeCountry(init);
         this._toggleNationalAddress();
+        if (init) {
+            this._initKsaCityCascade();
+        }
+    },
+
+    /**
+     * Wire the "الحي" city <select> (see views/portal_templates.xml) to
+     * only list cities belonging to the region currently picked in
+     * "المدينة" (state_id), using the dataset embedded server-side by
+     * controllers/main.py. Runs once, on interaction setup.
+     */
+    _initKsaCityCascade() {
+        const citySelect = this.addressForm?.city;
+        const stateSelect = this.addressForm?.state_id;
+        const dataEl = document.getElementById("o_ksa_cities_data");
+        if (!citySelect || citySelect.tagName !== "SELECT" || !stateSelect || !dataEl) {
+            // City is still a plain text input, or the field/dataset isn't
+            // rendered on this form — nothing to wire up.
+            return;
+        }
+        try {
+            this._ksaCitiesByState = JSON.parse(dataEl.value);
+        } catch {
+            return;
+        }
+        this._ksaCitySelect = citySelect;
+        stateSelect.addEventListener("change", () => this._refreshKsaCityOptions());
+        this._refreshKsaCityOptions();
+    },
+
+    /**
+     * Rebuild the city <select>'s options for the currently selected
+     * region, keeping the current value selected if it's still valid.
+     */
+    _refreshKsaCityOptions() {
+        const citySelect = this._ksaCitySelect;
+        const stateSelect = this.addressForm?.state_id;
+        if (!citySelect || !stateSelect) {
+            return;
+        }
+        const currentValue = citySelect.value;
+        const cities = this._ksaCitiesByState[stateSelect.value] || [];
+
+        citySelect.replaceChildren();
+        const placeholder = document.createElement("option");
+        placeholder.value = "";
+        placeholder.textContent = "اختر الحي...";
+        citySelect.appendChild(placeholder);
+
+        let matched = false;
+        for (const name of cities) {
+            const option = document.createElement("option");
+            option.value = name;
+            option.textContent = name;
+            if (name === currentValue) {
+                option.selected = true;
+                matched = true;
+            }
+            citySelect.appendChild(option);
+        }
+        if (!matched) {
+            citySelect.value = "";
+        }
     },
 
     /**
