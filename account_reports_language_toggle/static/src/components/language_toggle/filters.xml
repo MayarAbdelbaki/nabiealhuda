@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <t t-name="account_reports_language_toggle.Filters" t-inherit="account_reports.AccountReportFiltersCustomizable">
+        <xpath expr="//div[@id='filter_rounding_unit']" position="before">
+            <div id="filter_report_language">
+                <t t-call="account_reports_language_toggle.FilterLanguage"/>
+            </div>
+        </xpath>
+    </t>
+</templates>
