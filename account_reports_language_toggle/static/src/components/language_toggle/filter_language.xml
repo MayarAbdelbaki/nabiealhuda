@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <t t-name="account_reports_language_toggle.FilterLanguage">
+        <Dropdown>
+            <button class="btn btn-secondary" title="Report language">
+                <i class="fa fa-language me-1" role="img"/><t t-out="reportLanguageName"/>
+            </button>
+
+            <t t-set-slot="content">
+                <t t-foreach="reportLanguages" t-as="lang" t-key="lang.value">
+                    <DropdownItem
+                        class="{ 'selected': controller.cachedFilterOptions.report_lang == lang.value }"
+                        onSelected="() => this.filterReportLanguage(lang.value)"
+                    >
+                        <t t-out="lang.name"/>
+                    </DropdownItem>
+                </t>
+            </t>
+        </Dropdown>
+    </t>
+</templates>

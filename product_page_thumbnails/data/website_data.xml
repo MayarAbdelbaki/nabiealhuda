@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--
+        Product page image display: Carousel instead of Grid — one large
+        image with prev/next arrows and thumbnail indicators to switch
+        between the product's other Media images, rather than showing every
+        image at once in a static grid.
+
+        Equivalent to opening a product page in the website builder, clicking
+        the main image block, and setting Images > Display to "Carousel" in
+        the sidebar.
+    -->
+    <record id="website.default_website" model="website">
+        <field name="product_page_image_layout">carousel</field>
+    </record>
+
+    <!--
+        Deactivate Odoo's own carousel thumbnail indicators (the small image
+        column next to the main image — on the right on this RTL site, since
+        the "left" in this view's name is a logical/LTR position that RTL
+        flips). The thumbnail strip this module adds under the Add to Cart
+        section replaces it, wired to the same carousel (see
+        product_page_templates.xml).
+    -->
+    <record id="website_sale.carousel_product_indicators_left" model="ir.ui.view">
+        <field name="active">False</field>
+    </record>
+
+</odoo>
