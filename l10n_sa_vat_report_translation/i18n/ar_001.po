@@ -1,0 +1,102 @@
+# Translation of Odoo Server.
+# This file contains the Arabic translations for l10n_sa VAT Report row
+# labels that ship untranslated (empty msgstr) in Odoo's own l10n_sa/i18n/ar.po.
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Language: ar_001\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+
+#. module: l10n_sa
+#: model:account.report.line,name:l10n_sa.tax_report_line_vat_on_sale
+msgid "VAT on Sales:"
+msgstr "ضريبة القيمة المضافة على المبيعات:"
+
+#. module: l10n_sa
+#: model:account.report.line,name:l10n_sa.tax_report_line_standard_rated_sale
+msgid "1. Standard rated sales"
+msgstr "1. المبيعات الخاضعة للنسبة الأساسية"
+
+#. module: l10n_sa
+#: model:account.report.line,name:l10n_sa.tax_report_line_ph_pe_fh
+msgid "2. Private Healthcare / Private Education / First house sales to citizens"
+msgstr "2. الرعاية الصحية الخاصة / التعليم الخاص / بيع أول منزل للمواطنين"
+
+#. module: l10n_sa
+#: model:account.report.line,name:l10n_sa.tax_report_line_zero_rated_domestic_sale
+msgid "3. Zero rated domestic sales"
+msgstr "3. المبيعات المحلية الخاضعة لنسبة صفر"
+
+#. module: l10n_sa
+#: model:account.report.line,name:l10n_sa.tax_report_line_exports
+msgid "4. Exports"
+msgstr "4. الصادرات"
+
+#. module: l10n_sa
+#: model:account.report.line,name:l10n_sa.tax_report_line_exempt_sale
+msgid "5. Exempt sales"
+msgstr "5. المبيعات المعفاة"
+
+#. module: l10n_sa
+#: model:account.report.line,name:l10n_sa.tax_report_line_total_sale
+msgid "6. Total Sales"
+msgstr "6. إجمالي المبيعات"
+
+#. module: l10n_sa
+#: model:account.report.line,name:l10n_sa.tax_report_line_vat_on_purchase
+msgid "VAT on Purchases:"
+msgstr "ضريبة القيمة المضافة على المشتريات:"
+
+#. module: l10n_sa
+#: model:account.report.line,name:l10n_sa.tax_report_line_standard_rated_domestic_purchase
+msgid "7. Standard rated domestic purchases"
+msgstr "7. المشتريات المحلية الخاضعة للنسبة الأساسية"
+
+#. module: l10n_sa
+#: model:account.report.line,name:l10n_sa.tax_report_line_imports_subject_to_vat_paid_at_customs
+msgid "8. Imports subject to VAT paid at customs"
+msgstr "8. الواردات الخاضعة لضريبة القيمة المضافة المسددة عند الجمارك"
+
+#. module: l10n_sa
+#: model:account.report.line,name:l10n_sa.tax_report_line_imports_subject_to_vat_reverse_charge
+msgid "9. Imports subject to VAT accounted for through reverse charge mechanism"
+msgstr "9. الواردات الخاضعة لضريبة القيمة المضافة المحتسبة عبر آلية الاحتساب العكسي"
+
+#. module: l10n_sa
+#: model:account.report.line,name:l10n_sa.tax_report_line_zero_rated_purchase
+msgid "10. Zero rated purchases"
+msgstr "10. المشتريات الخاضعة لنسبة صفر"
+
+#. module: l10n_sa
+#: model:account.report.line,name:l10n_sa.tax_report_line_exempt_purchase
+msgid "11. Exempt purchases"
+msgstr "11. المشتريات المعفاة"
+
+#. module: l10n_sa
+#: model:account.report.line,name:l10n_sa.tax_report_line_total_purchase
+msgid "12. Total Purchases"
+msgstr "12. إجمالي المشتريات"
+
+#. module: l10n_sa
+#: model:account.report.line,name:l10n_sa.tax_report_line_total_vat_due_for_current_period
+msgid "13. Total VAT due for current period"
+msgstr "13. إجمالي ضريبة القيمة المضافة المستحقة للفترة الحالية"
+
+#. module: l10n_sa
+#: model:account.report.line,name:l10n_sa.tax_report_line_corrections_from_previous_period
+msgid "14. Corrections from previous period (between +- SAR 5000)"
+msgstr "14. تصحيحات من الفترة السابقة (بين +- 5000 ريال سعودي)"
+
+#. module: l10n_sa
+#: model:account.report.line,name:l10n_sa.tax_report_line_vat_credit_carried_forward_from_previous_period
+msgid "15. VAT credit carried forward from previous period"
+msgstr "15. رصيد ضريبة القيمة المضافة المرحّل من الفترة السابقة"
+
+#. module: l10n_sa
+#: model:account.report.line,name:l10n_sa.tax_report_line_net_vat_due
+msgid "16. Net VAT due (or claim)"
+msgstr "16. صافي ضريبة القيمة المضافة المستحقة (أو المطالب باستردادها)"
