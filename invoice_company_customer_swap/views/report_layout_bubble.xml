@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--
+        Reusable "plain field" address block, used for every partner shown
+        on the header line below (company, invoice/billing partner, shipping
+        partner). Deliberately NOT the "contact" widget
+        (`t-options="{'widget': 'contact', ...}"`) used elsewhere for these
+        same partners: that widget renders its own internal block that
+        ignores ancestor alignment and always ends up on the right
+        regardless of which side it's placed on (verified by rendering
+        actual PDFs and measuring text coordinates). Plain fields respect
+        the ancestor's `text-align` correctly.
+
+        Expects `address_partner` (a res.partner) to be set by the caller.
+    -->
+    <template id="partner_address_fields">
+        <div t-field="address_partner.name"/>
+        <div t-if="address_partner.street" t-field="address_partner.street"/>
+        <div t-if="address_partner.street2" t-field="address_partner.street2"/>
+        <div t-if="address_partner.city or address_partner.zip">
+            <span t-if="address_partner.zip" t-field="address_partner.zip"/>
+            <span t-if="address_partner.city" t-field="address_partner.city"/>
+        </div>
+        <div t-if="address_partner.country_id" t-field="address_partner.country_id.name"/>
+        <div t-if="address_partner.vat">
+            <t t-esc="company.country_id.vat_label or 'Tax ID'"/>: <span t-field="address_partner.vat"/>
+        </div>
+    </template>
+
+    <!--
+        web.external_layout_bubble (the company's chosen "Bubble" report
+        theme) normally renders only the company's own info in the HEADER's
+        <td class="p-0 text-end">; the printed document's recipient
+        (customer) goes in the BODY table's first <td> further down the
+        page, via `web.address_layout`.
+
+        On invoices and sale orders, put both on the SAME line in the header
+        instead: company on the left, customer on the right (billing, plus
+        shipping stacked below it when the two differ — sale orders,
+        especially from eCommerce, often ship somewhere other than the
+        billing address). The body's address slot is simply left empty
+        there (hidden below) since both addresses are already shown in the
+        header.
+
+        This is shared by every document (quotations, invoices, ...), so it
+        can't be changed generically without affecting all of them. The
+        `o._name in ('account.move', 'sale.order')` checks below scope it to
+        invoices/credit notes and sale orders/quotations only; every other
+        document renders exactly as before.
+
+        Company/customer are placed with `float: left` / `float: right`
+        (physical, not `text-align: start/end` or flexbox) — same
+        verification as above: this is the only technique that reliably
+        lands on a specific side in this wkhtmltopdf-rendered output.
+        Reusing `company.company_details` for the company side doesn't work
+        either: it's rich-text content carrying its own hardcoded
+        `style="text-align: left"` from whenever the company's Document
+        Layout was configured, which no ancestor style can override.
+        Building it from plain fields (the same sub-template as the
+        customer side) sidesteps that.
+    -->
+
+    <template id="external_layout_bubble_header_swap" inherit_id="web.external_layout_bubble">
+        <!-- Header: on invoices/sale orders, replace the single company cell with a company (left) + customer (right) row. -->
+        <xpath expr="//td[hasclass('text-end')]" position="attributes">
+            <attribute name="t-if">not (o and o._name in ('account.move', 'sale.order'))</attribute>
+        </xpath>
+        <xpath expr="//td[hasclass('text-end')]" position="after">
+            <td class="p-0" t-elif="o and o._name in ('account.move', 'sale.order')">
+                <div style="overflow: hidden;">
+                    <div style="float: left; text-align: left;">
+                        <img t-if="company.logo" class="o_company_logo mb-2" t-att-src="image_data_uri(company.logo)" alt="Logo"/>
+                        <div name="company_address">
+                            <t t-set="address_partner" t-value="company.partner_id"/>
+                            <t t-call="invoice_company_customer_swap.partner_address_fields"/>
+                        </div>
+                    </div>
+                    <t t-if="o._name == 'account.move'">
+                        <div style="float: right; text-align: right;">
+                            <t t-set="address_partner" t-value="o.partner_id"/>
+                            <t t-call="invoice_company_customer_swap.partner_address_fields"/>
+                        </div>
+                    </t>
+                    <t t-elif="o._name == 'sale.order'">
+                        <!--
+                            Billing and shipping (when they differ) sit side
+                            by side rather than stacked: the PDF "header" is
+                            a fixed-height page-margin region in wkhtmltopdf,
+                            not normal flowing content, so a tall stacked
+                            block would silently overlap the order title
+                            below it instead of pushing it down. Multiple
+                            `float: right` siblings lay out right-to-left in
+                            DOM order, so Billing (listed first) lands
+                            furthest right, Shipping to its left — matching
+                            company's own single-block height instead of
+                            doubling it.
+                        -->
+                        <div style="float: right; text-align: right; margin-left: 14px;">
+                            <strong>Invoicing Address</strong>
+                            <t t-set="address_partner" t-value="o.partner_invoice_id"/>
+                            <t t-call="invoice_company_customer_swap.partner_address_fields"/>
+                        </div>
+                        <div t-if="o.partner_shipping_id != o.partner_invoice_id" style="float: right; text-align: right; margin-left: 14px;">
+                            <strong>Shipping Address</strong>
+                            <t t-set="address_partner" t-value="o.partner_shipping_id"/>
+                            <t t-call="invoice_company_customer_swap.partner_address_fields"/>
+                        </div>
+                    </t>
+                </div>
+            </td>
+        </xpath>
+
+        <!-- Body: on invoices/sale orders, leave the address slot empty — both addresses already shown in the header above. -->
+        <xpath expr="//t[@t-call='web.address_layout']" position="attributes">
+            <attribute name="t-if">not (o and o._name in ('account.move', 'sale.order'))</attribute>
+        </xpath>
+    </template>
+
+</odoo>
