@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_order_form_line_product_prices" model="ir.ui.view">
+        <field name="name">sale.order.form.line.product.prices</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <!-- There is exactly one <list> in this view (the form/kanban
+                 variants of the same order_line field use different tags),
+                 so this matches only the editable order lines table. -->
+            <xpath expr="//list/field[@name='price_unit']" position="before">
+                <field name="product_sales_price" optional="show" readonly="1" widget="monetary"/>
+                <field name="product_cost_price" optional="show" readonly="1" widget="monetary"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

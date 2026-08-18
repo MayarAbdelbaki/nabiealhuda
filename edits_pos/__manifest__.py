@@ -3,7 +3,7 @@
     'name': 'POS Receipt Edits',
     'version': '19.0.1.0.0',
     'category': 'Sales/Point of Sale',
-    'summary': "Customises the Point of Sale receipt: single QR code, no Odoo branding.",
+    'summary': "Point of Sale tweaks: customised receipt, and wider product tiles that show the full product name.",
     'description': " ",
     'depends': ['point_of_sale', 'l10n_sa_pos'],
     'assets': {
@@ -12,6 +12,7 @@
             'edits_pos/static/src/overrides/pos_receipt.css',
             'edits_pos/static/src/overrides/receipt_filename.js',
             'edits_pos/static/src/overrides/receipt_page_size.js',
+            'edits_pos/static/src/overrides/pos_product_card.css',
         ],
     },
     'author': 'Nabie Alhuda',
