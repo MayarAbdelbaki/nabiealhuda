@@ -1,6 +1,6 @@
-/* Bigger product tiles in the POS product grid, showing the whole product name.
+/* POS product-grid and category-selector sizing.
 
-   Two core rules make the tiles small and the names truncated:
+   Relevant core rules:
 
      point_of_sale/.../product_screen/product_screen.scss
          .product-list { grid-template-columns: repeat(auto-fill, minmax(115px, 1fr)) }
@@ -10,26 +10,41 @@
          .product-name { display: -webkit-box; -webkit-line-clamp: 2 }
          .product-name.no-image { -webkit-line-clamp: 7; aspect-ratio: 16 / 9 }
 
-   Everything below is scoped under `.rightpane` (the product-grid pane in
-   product_screen.xml). That is deliberate and does two jobs at once:
+     point_of_sale/.../components/category_selector/category_selector.scss
+         .category-button { height: 4rem }
+
+   Everything below is scoped under `.rightpane` (the pane holding the category strip
+   and the product grid in product_screen.xml). That is deliberate and does two jobs:
 
      1. It raises specificity above the core selectors, so these rules win in every
         breakpoint without having to restate the media queries or reach for !important.
      2. It keeps the receipt out of it. `.product-name` is also used by the printed
         receipt, which pos_receipt.css sizes for an 80mm roll -- widening tiles there
-        would break the print layout. */
+        would break the print layout.
+
+   Where !important does appear it is because the property is set by a Bootstrap
+   utility class on the element itself (`overflow-hidden`, `fs-5`, `p-1`), and those
+   are generated with !important. Specificity alone cannot beat them. */
+
+
+/* ----------------------------------------------------------------------------------
+   Product grid: bigger tiles, full product name
+   ---------------------------------------------------------------------------------- */
+
+/* NOTE the `.overflow-y-auto >` step. When `show_category_images` is off, the category
+   selector renders its own container with the SAME `product-list` class (see
+   category_selector.xml), so a bare `.product-list` here would resize the category
+   strip as well. Only the product grid sits inside the scrolling wrapper. */
 
 /* Only from the `sm` breakpoint up. Below it core switches to a single-column list
    for phones, which is still the right call on a narrow screen. */
 @media (min-width: 576px) {
-    .rightpane .product-list {
+    .rightpane .overflow-y-auto > .product-list {
         grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     }
 }
 
-/* Show the name in full instead of clipping it at 2 (or 7) lines.
-   `overflow` needs !important because it comes from Bootstrap's `overflow-hidden`
-   utility on the element itself, and those utilities are all !important. */
+/* Show the name in full instead of clipping it at 2 (or 7) lines. */
 .rightpane .product .product-name {
     -webkit-line-clamp: unset;
     overflow: visible !important;
@@ -50,4 +65,34 @@
    thin strips now that the names are free to wrap. */
 .rightpane .product {
     min-height: 7rem;
+}
+
+
+/* ----------------------------------------------------------------------------------
+   Category selector: smaller buttons
+   ---------------------------------------------------------------------------------- */
+
+/* Matches the strip in both configurations: `category-list` when category images are
+   enabled, `product-list` when they are not (hence the :has() to tell that container
+   apart from the product grid, which never contains a .category-button). */
+.rightpane .category-list,
+.rightpane .product-list:has(.category-button) {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+}
+
+/* Core pins the button to a fixed 4rem. Releasing the height lets the grid size each
+   row to its tallest label instead -- one text line collapses to ~1.6rem, two to
+   ~2.5rem, so the strip stops eating four rows' worth of vertical space.
+   Skipped when the button carries an image thumbnail: that <img> is sized with `h-100`
+   and would collapse to zero height without a resolved height on its parent. */
+.rightpane .category-button:not(:has(.category-img-thumb)) {
+    height: auto;
+    min-height: 2rem;
+    padding: 0.2rem 0.3rem !important;
+}
+
+/* The label is `fs-5` (1.25rem), oversized for a chip this small. */
+.rightpane .category-button span {
+    font-size: 0.8125rem !important;
+    line-height: 1.2;
 }
