@@ -126,6 +126,18 @@ class DeliveryCarrier(models.Model):
             return order.warehouse_id.partner_id
         return order.company_id.partner_id
 
+    def _distance_default_origin_partner(self):
+        """Origin to use when there is no sale order to read a warehouse from.
+
+        Callers outside the sale flow (the Point of Sale, for one) have no
+        ``warehouse_id``; they either pass their own origin to
+        :meth:`_distance_rate_for_partner` or fall back to this.
+        """
+        self.ensure_one()
+        if self.distance_origin_partner_id:
+            return self.distance_origin_partner_id
+        return self.company_id.partner_id or self.env.company.partner_id
+
     def _distance_partner_coords(self, partner):
         """Return ``(latitude, longitude)`` for a partner, or False.
 
@@ -262,22 +274,37 @@ class DeliveryCarrier(models.Model):
                 'price': self.distance_fallback_price,
                 'error_message': False,
                 'warning_message': message,
+                'distance_km': False,
             }
         return {
             'success': False,
             'price': 0.0,
             'error_message': message,
             'warning_message': False,
+            'distance_km': False,
         }
 
     # ------------------------------------------------------------------
     # Rate / shipment API
     # ------------------------------------------------------------------
-    def distance_based_rate_shipment(self, order):
+    def _distance_rate_for_partner(self, dest_partner, origin_partner=None):
+        """Rate a delivery to ``dest_partner``, independently of any document.
+
+        This is the single implementation of the distance pricing. The sale
+        flow reaches it through :meth:`distance_based_rate_shipment`; the Point
+        of Sale calls it directly (there is no ``sale.order`` to rate against),
+        so both channels always quote the same price for the same address.
+
+        ``origin_partner`` is optional: leave it out and the carrier's own
+        origin (or the company address) is used.
+
+        Returns the same dict shape as ``rate_shipment``: ``success``,
+        ``price``, ``error_message``, ``warning_message`` -- plus
+        ``distance_km``, which the caller may show to the user.
+        """
         self.ensure_one()
         # sudo so public website customers can read the rules.
         rules = self.sudo().rule_ids
-        dest_partner = order.partner_shipping_id
         country = dest_partner.country_id
 
         if not country:
@@ -297,7 +324,8 @@ class DeliveryCarrier(models.Model):
                 _("No pricing rule configured for %s.", country.name)
             )
 
-        origin_partner = self._distance_get_origin_partner(order)
+        if not origin_partner:
+            origin_partner = self._distance_default_origin_partner()
         distance = self.sudo()._distance_compute_km(
             origin_partner, dest_partner
         )
@@ -332,7 +360,15 @@ class DeliveryCarrier(models.Model):
             'price': price,
             'error_message': False,
             'warning_message': warning,
+            'distance_km': distance,
         }
+
+    def distance_based_rate_shipment(self, order):
+        self.ensure_one()
+        return self._distance_rate_for_partner(
+            order.partner_shipping_id,
+            self._distance_get_origin_partner(order),
+        )
 
     def distance_based_send_shipping(self, pickings):
         return [

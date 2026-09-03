@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_pos_pos_form_delivery" model="ir.ui.view">
+        <field name="name">pos.order.form.inherit.pos_delivery_distance</field>
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="partner_shipping_id" context="{'res_partner_search_mode': 'customer'}" readonly="account_move"/>
+            </field>
+        </field>
+    </record>
+</odoo>

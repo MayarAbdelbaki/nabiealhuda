@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="pos_delivery_distance.DeliveryAddressPopup">
+        <Dialog size="'md'" title.translate="Delivery Address">
+            <div class="d-flex flex-column gap-2">
+                <label class="form-label mb-0">Street</label>
+                <Input tModel="[state, 'street']" placeholder.translate="Street and Number"/>
+                <label class="form-label mb-0">Street 2</label>
+                <Input tModel="[state, 'street2']" placeholder.translate="Apartment, suite, etc."/>
+                <div class="d-flex gap-2">
+                    <div class="flex-grow-1">
+                        <label class="form-label mb-0">City</label>
+                        <Input tModel="[state, 'city']" placeholder.translate="City"/>
+                    </div>
+                    <div>
+                        <label class="form-label mb-0">Zip</label>
+                        <Input tModel="[state, 'zip']" placeholder.translate="Zip"/>
+                    </div>
+                </div>
+                <div class="d-flex gap-2">
+                    <div class="flex-grow-1">
+                        <label class="form-label mb-0">Country</label>
+                        <button class="btn btn-light w-100 text-start" t-on-click="selectCountry">
+                            <t t-if="state.countryName" t-esc="state.countryName"/>
+                            <t t-else="">Select a country</t>
+                        </button>
+                    </div>
+                    <div class="flex-grow-1" t-if="availableStates.length">
+                        <label class="form-label mb-0">State</label>
+                        <button class="btn btn-light w-100 text-start" t-on-click="selectState">
+                            <t t-if="state.stateName" t-esc="state.stateName"/>
+                            <t t-else="">Select a state</t>
+                        </button>
+                    </div>
+                </div>
+                <label class="form-label mb-0">Phone</label>
+                <Input tModel="[state, 'phone']" placeholder.translate="Phone"/>
+                <label class="form-label mb-0">National Address</label>
+                <Input tModel="[state, 'nationalAddress']" placeholder.translate="National Address"/>
+            </div>
+            <t t-set-slot="footer">
+                <button class="btn btn-primary" t-att-disabled="!isValid" t-on-click="confirm">
+                    Confirm
+                </button>
+                <button class="btn btn-secondary" t-on-click="() => props.close()">
+                    Cancel
+                </button>
+            </t>
+        </Dialog>
+    </t>
+
+</templates>
