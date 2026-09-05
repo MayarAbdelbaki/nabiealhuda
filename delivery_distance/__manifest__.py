@@ -35,6 +35,11 @@ per country using an optional maximum distance.
             'delivery_distance/static/src/js/osm_map_location.js',
             'delivery_distance/static/src/xml/osm_map_location.xml',
         ],
+        'point_of_sale._assets_pos': [
+            'delivery_distance/static/src/scss/osm_map_location.scss',
+            'delivery_distance/static/src/js/osm_map_location.js',
+            'delivery_distance/static/src/xml/osm_map_location.xml',
+        ],
         'web.assets_frontend': [
             'delivery_distance/static/src/scss/checkout_map.scss',
             'delivery_distance/static/src/js/checkout_map.js',

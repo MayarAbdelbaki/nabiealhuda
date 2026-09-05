@@ -28,6 +28,14 @@
                     <span class="edits-kv-label">Customer:</span>
                     <span t-out="order.partner_id.name"/>
                 </div>
+                <div class="edits-kv" t-if="order.partner_id?.city">
+                    <span class="edits-kv-label">City:</span>
+                    <span t-out="order.partner_id.city"/>
+                </div>
+                <div class="edits-kv" t-if="order.partner_id?.x_national_address">
+                    <span class="edits-kv-label">National Address:</span>
+                    <span t-out="order.partner_id.x_national_address"/>
+                </div>
             </div>
 
             <table class="edits-lines">

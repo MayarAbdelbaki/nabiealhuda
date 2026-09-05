@@ -9,5 +9,8 @@ class ResConfigSettings(models.TransientModel):
         related='pos_config_id.delivery_carrier_id', readonly=False,
     )
     pos_delivery_product_id = fields.Many2one(
-        related='pos_config_id.delivery_product_id', readonly=False,
+        related='pos_config_id.delivery_product_id',
+        help="Shown for confirmation only -- this is the Delivery Method's "
+             "own product. To change it, edit the product on the Delivery "
+             "Method record itself.",
     )

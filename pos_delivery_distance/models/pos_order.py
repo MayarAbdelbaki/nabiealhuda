@@ -16,21 +16,12 @@ class PosOrder(models.Model):
     @api.model
     def _load_pos_data_fields(self, config):
         fields_list = super()._load_pos_data_fields(config)
+        if not fields_list:
+            return fields_list
         return fields_list + ['partner_shipping_id']
 
     def _create_order_picking(self):
-        """Route the delivery picking to ``partner_shipping_id`` when set.
 
-        Core's ``_create_order_picking`` (point_of_sale/models/pos_order.py)
-        hard-codes ``self.partner_id`` as both the picking partner and the
-        source for the destination location, with no seam to swap in a
-        different address -- so the real-time branch is duplicated here with
-        ``partner_shipping_id`` substituted in. The scheduled-delivery branch
-        (``self.shipping_date`` set, which routes through a stock rule/MTO
-        instead of a plain picking) is untouched and still goes through core;
-        the POS 'Delivery' button in this module only targets the common
-        immediate-picking case.
-        """
         self.ensure_one()
         if self.shipping_date:
             return super()._create_order_picking()

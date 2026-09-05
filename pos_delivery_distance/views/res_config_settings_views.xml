@@ -6,16 +6,16 @@
         <field name="inherit_id" ref="point_of_sale.res_config_settings_view_form"/>
         <field name="arch" type="xml">
             <setting id="ship_later" position="after">
-                <setting id="pos_distance_delivery" string="Distance Delivery"
-                         help="Let the cashier pick a delivery address in the POS and charge the distance-based delivery price on the order.">
+                <setting id="pos_distance_delivery" string="POS Delivery"
+                         help="Let the cashier pick a delivery address in the POS and charge the delivery price on the order. Any Delivery Method can be used, not just distance-based ones.">
                     <div class="content-group mt16">
                         <div class="row">
                             <label for="pos_delivery_carrier_id" string="Delivery Method" class="col-lg-3 o_light_label"/>
-                            <field name="pos_delivery_carrier_id" domain="[('delivery_type', '=', 'distance_based')]"/>
+                            <field name="pos_delivery_carrier_id"/>
                         </div>
                         <div class="row">
                             <label for="pos_delivery_product_id" string="Delivery Product" class="col-lg-3 o_light_label"/>
-                            <field name="pos_delivery_product_id" required="pos_delivery_carrier_id"/>
+                            <field name="pos_delivery_product_id"/>
                         </div>
                     </div>
                 </setting>

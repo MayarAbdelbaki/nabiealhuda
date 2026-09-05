@@ -7,18 +7,22 @@ class PosConfig(models.Model):
 
     delivery_carrier_id = fields.Many2one(
         'delivery.carrier',
-        string='Distance Delivery Method',
-        domain=[('delivery_type', '=', 'distance_based')],
-        help="Distance-based carrier used to price the delivery line added "
-             "from the POS 'Delivery' button. Leave empty to hide that "
-             "button for this point of sale.",
+        string='Delivery Method',
+        help="Carrier used to price the delivery line added from the POS "
+             "'Delivery' button -- any Delivery Method works, not just "
+             "distance-based ones (see action_pos_rate_delivery on "
+             "delivery.carrier for how each type is rated). Leave empty to "
+             "hide that button for this point of sale.",
     )
     delivery_product_id = fields.Many2one(
         'product.product',
         string='Delivery Product',
-        domain=[('sale_ok', '=', True)],
+        related='delivery_carrier_id.product_id',
         help="Product used for the delivery line added when a delivery "
-             "address is picked in the POS.",
+             "address is picked in the POS. This is the Delivery Method's "
+             "own product (every delivery.carrier already has one) -- it "
+             "isn't set independently here, so it can't end up pointing at "
+             "an unrelated product.",
     )
 
     def _get_special_products(self):
