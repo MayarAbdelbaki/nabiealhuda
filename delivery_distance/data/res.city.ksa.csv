@@ -1,0 +1,328 @@
+id,name,state_id/id
+bh_city_manama,المنامة,bh_state_capital
+bh_city_juffair,الجفير,bh_state_capital
+bh_city_seef,السيف,bh_state_capital
+bh_city_qudaibiya,القضيبية,bh_state_capital
+bh_city_muharraq,المحرق,bh_state_muharraq
+bh_city_hidd,الحد,bh_state_muharraq
+bh_city_arad,عراد,bh_state_muharraq
+bh_city_murrahaw,المرر,bh_state_muharraq
+bh_city_dair,الدير,bh_state_muharraq
+bh_city_busaiteen,البسيتين,bh_state_muharraq
+bh_city_galali,قلالي,bh_state_muharraq
+bh_city_halat_bu_maher,هلة بوماهر,bh_state_muharraq
+bh_city_samaheej,سماهيج,bh_state_muharraq
+bh_city_hamad_town,مدينة حمد,bh_state_northern
+bh_city_northern_city,المدينة الشمالية,bh_state_northern
+bh_city_karana,كرانة,bh_state_northern
+bh_city_jannusan,جنوسان,bh_state_northern
+bh_city_barbar,بربار,bh_state_northern
+bh_city_diraz,الدراز,bh_state_northern
+bh_city_markh,المرخ,bh_state_northern
+bh_city_bani_jamra,بني جمرة,bh_state_northern
+bh_city_budaiya,البديع,bh_state_northern
+bh_city_janabiyah,الجنبية,bh_state_northern
+bh_city_jasra,الجسرة,bh_state_northern
+bh_city_hamala,حالة,bh_state_northern
+bh_city_jabalat_habshi,جبلة حبشي,bh_state_northern
+bh_city_riffa,الرفاع,bh_state_southern
+bh_city_isa_town,مدينة عيسى,bh_state_southern
+bh_city_awali,عوالي,bh_state_southern
+bh_city_zallaq,الزلاق,bh_state_southern
+kw_area_abdullah_salem,ضاحية عبد الله السالم,kw_state_asimah
+kw_area_adailiya,العديلية,kw_state_asimah
+kw_area_hadiya_sour,حدائق السور,kw_state_asimah
+kw_area_bneid_qar,بنيد القار,kw_state_asimah
+kw_area_daiya,الدعية,kw_state_asimah
+kw_area_dasma,الدسمة,kw_state_asimah
+kw_area_doha,الدوحة,kw_state_asimah
+kw_area_faiha,الفيحاء,kw_state_asimah
+kw_area_failaka,فيلكا,kw_state_asimah
+kw_area_granada,غرناطة,kw_state_asimah
+kw_area_qibla,القبلة,kw_state_asimah
+kw_area_kaifan,كيفان,kw_state_asimah
+kw_area_khaldiya,الخالدية,kw_state_asimah
+kw_area_mansouriya,المنصورية,kw_state_asimah
+kw_area_mirqab,المرقاب,kw_state_asimah
+kw_area_nahda,النهضة,kw_state_asimah
+kw_area_nw_sulaibikhat,شمال غرب الصليبيخات,kw_state_asimah
+kw_area_nuzha,النزهة,kw_state_asimah
+kw_area_qadisiya,القادسية,kw_state_asimah
+kw_area_qurtuba,قرطبة,kw_state_asimah
+kw_area_rawda,الروضة,kw_state_asimah
+kw_area_shamiya,الشامية,kw_state_asimah
+kw_area_sharq,شرق,kw_state_asimah
+kw_area_shuwaikh,الشويخ,kw_state_asimah
+kw_area_shuwaikh_industrial,الشويخ الصناعية,kw_state_asimah
+kw_area_sulaibikhat,الصليبخات,kw_state_asimah
+kw_area_qairawan,القيروان,kw_state_asimah
+kw_area_surra,السرة,kw_state_asimah
+kw_area_yarmouk,اليرموك,kw_state_asimah
+kw_area_fintas,الفنطاس,kw_state_ahmadi
+kw_area_uqaila,العقيلة,kw_state_ahmadi
+kw_area_dhaher,الظهر,kw_state_ahmadi
+kw_area_maqwa,المقوع,kw_state_ahmadi
+kw_area_mahboula,المهبولة,kw_state_ahmadi
+kw_area_riqqa,الرقة,kw_state_ahmadi
+kw_area_hadiya,هدية,kw_state_ahmadi
+kw_area_abu_halifa,أبو حليفة,kw_state_ahmadi
+kw_area_sabahiya,الصباحية,kw_state_ahmadi
+kw_area_mangaf,المنقف,kw_state_ahmadi
+kw_area_fahaheel,الفحيحيل,kw_state_ahmadi
+kw_area_ahmadi,الأحمدي,kw_state_ahmadi
+kw_area_wafra,الوفرة,kw_state_ahmadi
+kw_area_zour,الزور,kw_state_ahmadi
+kw_area_khiran,الخيران,kw_state_ahmadi
+kw_area_abdullah_port,ميناء عبد الله,kw_state_ahmadi
+kw_area_wafra_agricultural,الوفرة الزراعية,kw_state_ahmadi
+kw_area_bnaider,بنيدر,kw_state_ahmadi
+kw_area_julaiaa,الجليعة,kw_state_ahmadi
+kw_area_dubaiya,الضباعية,kw_state_ahmadi
+kw_area_jaber_ali,ضاحية جابر العلي,kw_state_ahmadi
+kw_area_fahad_ahmad,ضاحية فهد الأحمد,kw_state_ahmadi
+kw_area_shuaiba,الشعيبة,kw_state_ahmadi
+kw_area_wara,واره,kw_state_ahmadi
+kw_area_sabah_ahmad,مدينة صباح الأحمد,kw_state_ahmadi
+kw_area_nuwaiseeb,النويصيب,kw_state_ahmadi
+kw_area_khiran_city,مدينة الخيران,kw_state_ahmadi
+kw_area_ali_sabah_salem,ضاحية علي صباح السالم,kw_state_ahmadi
+kw_area_sabah_ahmad_marine,مدينة صباح الأحمد البحرية,kw_state_ahmadi
+kw_area_abraq_khaitan,أبرق خيطان,kw_state_farwaniyah
+kw_area_andalous,الأندلس,kw_state_farwaniyah
+kw_area_ishbiliya,اشبيلية,kw_state_farwaniyah
+kw_area_jleeb_shuyoukh,جليب الشيوخ,kw_state_farwaniyah
+kw_area_khaitan,خيطان,kw_state_farwaniyah
+kw_area_khaitan_new,خيطان الجديدة,kw_state_farwaniyah
+kw_area_omariya,العمرية,kw_state_farwaniyah
+kw_area_ardiya,العارضية,kw_state_farwaniyah
+kw_area_abbasiya,العباسية,kw_state_farwaniyah
+kw_area_ferdous,الفردوس,kw_state_farwaniyah
+kw_area_farwaniya,الفروانية,kw_state_farwaniyah
+kw_area_hassawi,الحساوي,kw_state_farwaniyah
+kw_area_shedadiya,الشدادية,kw_state_farwaniyah
+kw_area_rabiya,الرابية,kw_state_farwaniyah
+kw_area_rehab,الرحاب,kw_state_farwaniyah
+kw_area_riggae,الرقعي,kw_state_farwaniyah
+kw_area_rai_industrial,الري الصناعية,kw_state_farwaniyah
+kw_area_sabah_nasser,ضاحية صباح الناصر,kw_state_farwaniyah
+kw_area_abdullah_mubarak,ضاحية عبد الله المبارك,kw_state_farwaniyah
+kw_area_dajeej,الضجيج,kw_state_farwaniyah
+kw_area_nawaf_ahmad,مدينة نواف الأحمد,kw_state_jahra
+kw_area_sulaibiya,الصليبية,kw_state_jahra
+kw_area_amghara,أمغرة,kw_state_jahra
+kw_area_naeem,النعيم,kw_state_jahra
+kw_area_qasr,القصر,kw_state_jahra
+kw_area_waha,الواحة,kw_state_jahra
+kw_area_taima,تيماء,kw_state_jahra
+kw_area_naseem,النسيم,kw_state_jahra
+kw_area_oyoun,العيون,kw_state_jahra
+kw_area_qaisariya,القيصرية,kw_state_jahra
+kw_area_abdali,العبدلي,kw_state_jahra
+kw_area_jahra_old,الجهراء القديمة,kw_state_jahra
+kw_area_jahra_new,الجهراء الجديدة,kw_state_jahra
+kw_area_kazma,كاظمة,kw_state_jahra
+kw_area_saad_abdullah,مدينة سعد العبد الله,kw_state_jahra
+kw_area_salmi,السالمي,kw_state_jahra
+kw_area_mutlaa,المطلاع,kw_state_jahra
+kw_area_hareer_city,مدينة الحرير,kw_state_jahra
+kw_area_kabd,كبد,kw_state_jahra
+kw_area_rawdatain,الروضتين,kw_state_jahra
+kw_area_subiya,الصبية,kw_state_jahra
+kw_area_bayan,بيان,kw_state_hawalli
+kw_area_jabriya,الجابرية,kw_state_hawalli
+kw_area_rumaithiya,الرميثية,kw_state_hawalli
+kw_area_salam,السلام,kw_state_hawalli
+kw_area_salwa,سلوى,kw_state_hawalli
+kw_area_bidaa,البدع,kw_state_hawalli
+kw_area_anjafa,أنجفة,kw_state_hawalli
+kw_area_hawalli,حولي,kw_state_hawalli
+kw_area_hitteen,حطين,kw_state_hawalli
+kw_area_mishref,مشرف,kw_state_hawalli
+kw_area_mubarak_abdullah,ضاحية مبارك العبد الله الجابر,kw_state_hawalli
+kw_area_salmiya,السالمية,kw_state_hawalli
+kw_area_shaab,الشعب,kw_state_hawalli
+kw_area_shuhada,الشهداء,kw_state_hawalli
+kw_area_siddeeq,الصديق,kw_state_hawalli
+kw_area_wizarat,منطقة الوزارات,kw_state_hawalli
+kw_area_zahra,الزهراء,kw_state_hawalli
+kw_area_nuqra,النقرة,kw_state_hawalli
+kw_area_abu_hasaniya,أبو الحصانية,kw_state_mubarak
+kw_area_abu_fitaira,أبو فطيرة,kw_state_mubarak
+kw_area_adan,العدان,kw_state_mubarak
+kw_area_qurain,القرين,kw_state_mubarak
+kw_area_qusour,القصور,kw_state_mubarak
+kw_area_funaitees,الفنيطيس,kw_state_mubarak
+kw_area_masayel,المسايل,kw_state_mubarak
+kw_area_masila,المسيلة,kw_state_mubarak
+kw_area_mubarak_kabeer,مبارك الكبير,kw_state_mubarak
+kw_area_sabah_salem,صباح السالم,kw_state_mubarak
+kw_area_subhan_industrial,صبحان الصناعية,kw_state_mubarak
+kw_area_vista,ويستا,kw_state_mubarak
+kw_area_west_abu_fitaira,غرب أبو فطيرة الحرفية,kw_state_mubarak
+ae_city_abu_dhabi,أبوظبي,base.state_ae_az
+ae_city_al_ain,العين,base.state_ae_az
+ae_city_zayed_city,مدينة زايد,base.state_ae_az
+ae_city_dubai,دبي,base.state_ae_du
+ae_city_deira,ديرة,base.state_ae_du
+ae_city_jumeirah,جميرا,base.state_ae_du
+ae_city_sharjah,الشارقة,base.state_ae_sh
+ae_city_khorfakkan,خورفكان,base.state_ae_sh
+ae_city_kalba,كلباء,base.state_ae_sh
+ae_city_ajman,عجمان,base.state_ae_aj
+ae_city_masfout,مصفوت,base.state_ae_aj
+ae_city_umm_al_quwain,أم القيوين,base.state_ae_uq
+ae_city_ras_al_khaimah,رأس الخيمة,base.state_ae_rk
+ae_city_al_rams,الرمس,base.state_ae_rk
+ae_city_fujairah,الفجيرة,base.state_ae_fu
+ae_city_dibba_fujairah,دبا الفجيرة,base.state_ae_fu
+om_wilayat_seeb,السيب,om_state_muscat
+om_wilayat_bawshar,بوشر,om_state_muscat
+om_wilayat_muscat,مسقط,om_state_muscat
+om_wilayat_muttrah,مطرح,om_state_muscat
+om_wilayat_qurayyat,قريات,om_state_muscat
+om_wilayat_amrat,العامرات,om_state_muscat
+om_wilayat_salalah,صلالة,om_state_dhofar
+om_wilayat_mirbat,مرباط,om_state_dhofar
+om_wilayat_taqah,طاقة,om_state_dhofar
+om_wilayat_rakhyut,راخيوت,om_state_dhofar
+om_wilayat_sadah,سدح,om_state_dhofar
+om_wilayat_dalkut,ضلكوت,om_state_dhofar
+om_wilayat_shalim,شليم وجزر الحلانيات,om_state_dhofar
+om_wilayat_muqshin,مقشن,om_state_dhofar
+om_wilayat_khasab,خصب,om_state_musandam
+om_wilayat_bukha,بخا,om_state_musandam
+om_wilayat_daba,دباء,om_state_musandam
+om_wilayat_madha,مدحاء,om_state_musandam
+om_wilayat_buraimi,البريمي,om_state_buraimi
+om_wilayat_sunaynah,السنينة,om_state_buraimi
+om_wilayat_mahadah,محضة,om_state_buraimi
+om_wilayat_nizwa,نزوى,om_state_dakhiliyah
+om_wilayat_adam,عدم,om_state_dakhiliyah
+om_wilayat_izki,إزكي,om_state_dakhiliyah
+om_wilayat_manah,منح,om_state_dakhiliyah
+om_wilayat_bahla,بهلاء,om_state_dakhiliyah
+om_wilayat_bidbid,بدبد,om_state_dakhiliyah
+om_wilayat_hamra,الحمراء,om_state_dakhiliyah
+om_wilayat_samail,سمائل,om_state_dakhiliyah
+om_wilayat_sohar,صحار,om_state_north_batinah
+om_wilayat_shinas,شناص,om_state_north_batinah
+om_wilayat_liwa,لوى,om_state_north_batinah
+om_wilayat_suwayq,السويق,om_state_north_batinah
+om_wilayat_khaburah,الخابورة,om_state_north_batinah
+om_wilayat_saham,صحم,om_state_north_batinah
+om_wilayat_rustaq,الرستاق,om_state_south_batinah
+om_wilayat_musanaah,المصنعة,om_state_south_batinah
+om_wilayat_barka,بركاء,om_state_south_batinah
+om_wilayat_nakhal,نخل,om_state_south_batinah
+om_wilayat_awabi,العوابي,om_state_south_batinah
+om_wilayat_wadi_maawil,وادي المعاول,om_state_south_batinah
+om_wilayat_mudhaibi,المضيبي,om_state_north_sharqiyah
+om_wilayat_ibra,إبراء,om_state_north_sharqiyah
+om_wilayat_wadi_bani_khalid,وادي بني خالد,om_state_north_sharqiyah
+om_wilayat_dama_taiyyin,دماء والطائيين,om_state_north_sharqiyah
+om_wilayat_qabil,القابل,om_state_north_sharqiyah
+om_wilayat_bidiyah,بدية,om_state_north_sharqiyah
+om_wilayat_sur,صور,om_state_south_sharqiyah
+om_wilayat_jaalan_bu_ali,جعلان بني بو علي,om_state_south_sharqiyah
+om_wilayat_jaalan_bu_hasan,جعلان بني بو حسن,om_state_south_sharqiyah
+om_wilayat_masirah,مصيرة,om_state_south_sharqiyah
+om_wilayat_ibri,عبري,om_state_dhahirah
+om_wilayat_dank,ضنك,om_state_dhahirah
+om_wilayat_yanqul,ينقل,om_state_dhahirah
+om_wilayat_haima,هيماء,om_state_wusta
+om_wilayat_duqm,الدقم,om_state_wusta
+om_wilayat_jazer,الجازر,om_state_wusta
+om_wilayat_mahout,محوت,om_state_wusta
+qa_zone_jasrah,الجسرة,qa_state_doha
+qa_zone_bidda,البدع,qa_state_doha
+qa_zone_musheireb,مشيرب,qa_state_doha
+qa_zone_najada,النجادة,qa_state_doha
+qa_zone_ghanim_old,الغانم القديم,qa_state_doha
+qa_zone_souq,السوق,qa_state_doha
+qa_zone_wadi_sail,وادي السيل,qa_state_doha
+qa_zone_rumeilah,الرميلة,qa_state_doha
+qa_zone_abdulaziz,فريج عبد العزيز,qa_state_doha
+qa_zone_dawhah_jadidah,الدوحة الجديدة,qa_state_doha
+qa_zone_rufaa,الرفاع,qa_state_doha
+qa_zone_doha_port,ميناء الدوحة,qa_state_doha
+qa_zone_bin_mahmoud,فريج بن محمود,qa_state_doha
+qa_zone_rawdat_khail,روضة الخيل,qa_state_doha
+qa_zone_najma,نجمة,qa_state_doha
+qa_zone_umm_ghuwailina,أم غويلينة,qa_state_doha
+qa_zone_duhail,دحيل,qa_state_doha
+qa_zone_umm_lekhba,أم لخبا,qa_state_doha
+qa_zone_markhiya,المرخية,qa_state_doha
+qa_zone_khalifa_south,مدينة خليفة الجنوبية,qa_state_doha
+qa_zone_sadd,السد,qa_state_doha
+qa_zone_nuaija,النعيجة,qa_state_doha
+qa_zone_old_airport,المطار القديم,qa_state_doha
+qa_zone_thumama,الثمامة,qa_state_doha
+qa_zone_industrial_area,المنطقة الصناعية,qa_state_doha
+qa_zone_dafna,الدفنة,qa_state_doha
+qa_zone_onaiza,العنيزة,qa_state_doha
+qa_zone_gharrafa,الغرافة,qa_state_rayyan
+qa_zone_rayyan_old,الريان القديم,qa_state_rayyan
+qa_zone_rayyan_new,الريان الجديد,qa_state_rayyan
+qa_zone_wajbah,الوجبة,qa_state_rayyan
+qa_zone_waab,الوعب,qa_state_rayyan
+qa_zone_aziziya,العزيزية,qa_state_rayyan
+qa_zone_abu_hamour,أبو هامور,qa_state_rayyan
+qa_zone_mesaimeer,مسيمير,qa_state_rayyan
+qa_zone_mebaireek,مبيرك,qa_state_rayyan
+qa_zone_karaana,كرعانة,qa_state_rayyan
+qa_zone_abu_samra,أبو سمرة,qa_state_rayyan
+qa_zone_sawda_natheel,سعدة نثيل,qa_state_rayyan
+qa_zone_wakrah,الوكرة,qa_state_wakrah
+qa_zone_wukair,الوكير,qa_state_wakrah
+qa_zone_mashaf,المشاف,qa_state_wakrah
+qa_zone_mesaieed,مسيعيد,qa_state_wakrah
+qa_zone_shagra,شقرا,qa_state_wakrah
+qa_zone_kharrara,الخرارة,qa_state_wakrah
+qa_zone_khor_adaid,خور العديد,qa_state_wakrah
+qa_zone_simaisma,سميسمة,qa_state_khor
+qa_zone_khor_city,مدينة الخور,qa_state_khor
+qa_zone_thakhira,الذخيرة,qa_state_khor
+qa_zone_ras_laffan,رأس لفان,qa_state_khor
+qa_zone_ghuwariyah,الغويرية,qa_state_khor
+qa_zone_fuwayrit,فويرط,qa_state_shamal
+qa_zone_zubarah,الزبارة,qa_state_shamal
+qa_zone_madinat_shamal,مدينة الشمال,qa_state_shamal
+qa_zone_ruays,الرويس,qa_state_shamal
+qa_zone_shahaniya_city,مدينة الشحانية,qa_state_shahaniya
+qa_zone_umm_bab,أم باب,qa_state_shahaniya
+qa_zone_dukhan,دخان,qa_state_shahaniya
+qa_zone_nasraniya,النصرانية,qa_state_shahaniya
+qa_zone_rawdat_rashed,روضة راشد,qa_state_shahaniya
+qa_zone_umm_salal_ali,أم صلال علي,qa_state_umm_salal
+qa_zone_umm_salal_mohammed,أم صلال محمد,qa_state_umm_salal
+qa_zone_bu_faseela,بو فسيلة,qa_state_umm_salal
+qa_zone_kharaitiyat,الخريطيات,qa_state_umm_salal
+qa_zone_lusail,لوسيل,qa_state_daayen
+qa_zone_jabal_thuaileb,جبل ثعيلب,qa_state_daayen
+qa_zone_kharayej,الخرايج,qa_state_daayen
+qa_zone_leabaib,لعبيب,qa_state_daayen
+qa_zone_daayen_village,قرية الضعاين,qa_state_daayen
+qa_zone_kheesa,الخيسة,qa_state_daayen
+sd_city_khartoum,الخرطوم,sd_state_khartoum
+sd_city_omdurman,أم درمان,sd_state_khartoum
+sd_city_khartoum_north,الخرطوم بحري,sd_state_khartoum
+sd_city_wad_madani,ود مدني,sd_state_jazirah
+sd_city_rabak,ربك,sd_state_white_nile
+sd_city_kosti,كوستي,sd_state_white_nile
+sd_city_damazin,الدمازين,sd_state_blue_nile
+sd_city_atbara,عطبرة,sd_state_river_nile
+sd_city_dameer,الدامر,sd_state_river_nile
+sd_city_dongola,دنقلا,sd_state_northern
+sd_city_gedaref,القضارف,sd_state_qadarif
+sd_city_kassala,كسلا,sd_state_kassala
+sd_city_port_sudan,بورتسودان,sd_state_red_sea
+sd_city_sennar,سنار,sd_state_sennar
+sd_city_singa,سنجة,sd_state_sennar
+sd_city_el_obeid,الأبيض,sd_state_north_kordofan
+sd_city_kadugli,كادوقلي,sd_state_south_kordofan
+sd_city_el_fula,الفولة,sd_state_west_kordofan
+sd_city_el_fasher,الفاشر,sd_state_north_darfur
+sd_city_nyala,نيالا,sd_state_south_darfur
+sd_city_el_daein,الضعين,sd_state_east_darfur
+sd_city_el_geneina,الجنينة,sd_state_west_darfur
+sd_city_zalingei,زالنجي,sd_state_central_darfur

@@ -1,9 +1,17 @@
 # -*- coding: utf-8 -*-
-from odoo import _, api, models
+from odoo import _, api, fields, models
 
 
 class DeliveryCarrier(models.Model):
+    _name = 'delivery.carrier'
     _inherit = ['delivery.carrier', 'pos.load.mixin']
+
+    available_in_pos = fields.Boolean(
+        string='Point of Sale',
+        help="Make this Delivery Method selectable as the POS Delivery "
+             "Method (Point of Sale > Configuration > Settings > POS "
+             "Delivery).",
+    )
 
     @api.model
     def _load_pos_data_domain(self, data, config):

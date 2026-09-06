@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+        res.country.state.name is a plain Char field (no translate=True,
+        see base/models/res_country.py), so it holds exactly one value
+        regardless of the active language. Core ships it in English for
+        every country except the handful whose data file already used
+        Arabic (Saudi Arabia among them). Since every other bit of address
+        data on this site (countries, our own added regions/cities) reads
+        Arabic, the UAE and Egypt states, both in ALLOWED_COUNTRY_CODES,
+        stood out in English. These records already exist (owned by the
+        `base` module); referencing them by their existing external id here
+        updates them in place rather than creating new ones.
+    -->
+    <record id="base.state_ae_az" model="res.country.state">
+        <field name="name">أبوظبي</field>
+    </record>
+    <record id="base.state_ae_aj" model="res.country.state">
+        <field name="name">عجمان</field>
+    </record>
+    <record id="base.state_ae_du" model="res.country.state">
+        <field name="name">دبي</field>
+    </record>
+    <record id="base.state_ae_fu" model="res.country.state">
+        <field name="name">الفجيرة</field>
+    </record>
+    <record id="base.state_ae_rk" model="res.country.state">
+        <field name="name">رأس الخيمة</field>
+    </record>
+    <record id="base.state_ae_sh" model="res.country.state">
+        <field name="name">الشارقة</field>
+    </record>
+    <record id="base.state_ae_uq" model="res.country.state">
+        <field name="name">أم القيوين</field>
+    </record>
+
+    <record id="base.state_eg_dk" model="res.country.state">
+        <field name="name">الدقهلية</field>
+    </record>
+    <record id="base.state_eg_ba" model="res.country.state">
+        <field name="name">البحر الأحمر</field>
+    </record>
+    <record id="base.state_eg_bh" model="res.country.state">
+        <field name="name">البحيرة</field>
+    </record>
+    <record id="base.state_eg_fym" model="res.country.state">
+        <field name="name">الفيوم</field>
+    </record>
+    <record id="base.state_eg_gh" model="res.country.state">
+        <field name="name">الغربية</field>
+    </record>
+    <record id="base.state_eg_alx" model="res.country.state">
+        <field name="name">الإسكندرية</field>
+    </record>
+    <record id="base.state_eg_is" model="res.country.state">
+        <field name="name">الإسماعيلية</field>
+    </record>
+    <record id="base.state_eg_gz" model="res.country.state">
+        <field name="name">الجيزة</field>
+    </record>
+    <record id="base.state_eg_mnf" model="res.country.state">
+        <field name="name">المنوفية</field>
+    </record>
+    <record id="base.state_eg_mn" model="res.country.state">
+        <field name="name">المنيا</field>
+    </record>
+    <record id="base.state_eg_c" model="res.country.state">
+        <field name="name">القاهرة</field>
+    </record>
+    <record id="base.state_eg_kb" model="res.country.state">
+        <field name="name">القليوبية</field>
+    </record>
+    <record id="base.state_eg_lx" model="res.country.state">
+        <field name="name">الأقصر</field>
+    </record>
+    <record id="base.state_eg_wad" model="res.country.state">
+        <field name="name">الوادي الجديد</field>
+    </record>
+    <record id="base.state_eg_shr" model="res.country.state">
+        <field name="name">الشرقية</field>
+    </record>
+    <record id="base.state_eg_su" model="res.country.state">
+        <field name="name">6 أكتوبر</field>
+    </record>
+    <record id="base.state_eg_suz" model="res.country.state">
+        <field name="name">السويس</field>
+    </record>
+    <record id="base.state_eg_asn" model="res.country.state">
+        <field name="name">أسوان</field>
+    </record>
+    <record id="base.state_eg_ast" model="res.country.state">
+        <field name="name">أسيوط</field>
+    </record>
+    <record id="base.state_eg_bns" model="res.country.state">
+        <field name="name">بني سويف</field>
+    </record>
+    <record id="base.state_eg_pts" model="res.country.state">
+        <field name="name">بورسعيد</field>
+    </record>
+    <record id="base.state_eg_dt" model="res.country.state">
+        <field name="name">دمياط</field>
+    </record>
+    <record id="base.state_eg_hu" model="res.country.state">
+        <field name="name">حلوان</field>
+    </record>
+    <record id="base.state_eg_js" model="res.country.state">
+        <field name="name">جنوب سيناء</field>
+    </record>
+    <record id="base.state_eg_kfs" model="res.country.state">
+        <field name="name">كفر الشيخ</field>
+    </record>
+    <record id="base.state_eg_mt" model="res.country.state">
+        <field name="name">مطروح</field>
+    </record>
+    <record id="base.state_eg_kn" model="res.country.state">
+        <field name="name">قنا</field>
+    </record>
+    <record id="base.state_eg_sin" model="res.country.state">
+        <field name="name">شمال سيناء</field>
+    </record>
+    <record id="base.state_eg_shg" model="res.country.state">
+        <field name="name">سوهاج</field>
+    </record>
+</odoo>

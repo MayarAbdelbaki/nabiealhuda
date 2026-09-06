@@ -1,0 +1,48 @@
+id,name,code,country_id/id
+kw_state_asimah,محافظة العاصمة,AS,base.kw
+kw_state_hawalli,محافظة حولي,HA,base.kw
+kw_state_farwaniyah,محافظة الفروانية,FA,base.kw
+kw_state_mubarak,محافظة مبارك الكبير,MB,base.kw
+kw_state_ahmadi,محافظة الأحمدي,AH,base.kw
+kw_state_jahra,محافظة الجهراء,JA,base.kw
+bh_state_capital,محافظة العاصمة,CA,base.bh
+bh_state_muharraq,محافظة المحرق,MU,base.bh
+bh_state_northern,المحافظة الشمالية,NO,base.bh
+bh_state_southern,المحافظة الجنوبية,SO,base.bh
+om_state_muscat,محافظة مسقط,MS,base.om
+om_state_dhofar,محافظة ظفار,DH,base.om
+om_state_musandam,محافظة مسندم,MZ,base.om
+om_state_buraimi,محافظة البريمي,BU,base.om
+om_state_dakhiliyah,محافظة الداخلية,DA,base.om
+om_state_north_batinah,محافظة شمال الباطنة,NB,base.om
+om_state_south_batinah,محافظة جنوب الباطنة,SB,base.om
+om_state_south_sharqiyah,محافظة جنوب الشرقية,SS,base.om
+om_state_north_sharqiyah,محافظة شمال الشرقية,NS,base.om
+om_state_dhahirah,محافظة الظاهرة,DZ,base.om
+om_state_wusta,محافظة الوسطى,WU,base.om
+qa_state_doha,الدوحة,DO,base.qa
+qa_state_rayyan,الريان,RA,base.qa
+qa_state_wakrah,الوكرة,WA,base.qa
+qa_state_khor,الخور والذخيرة,KH,base.qa
+qa_state_shamal,الشمال,SH,base.qa
+qa_state_shahaniya,الشحانية,SN,base.qa
+qa_state_umm_salal,أم صلال,US,base.qa
+qa_state_daayen,الضعاين,DY,base.qa
+sd_state_khartoum,الخرطوم,KH,base.sd
+sd_state_jazirah,الجزيرة,JZ,base.sd
+sd_state_white_nile,النيل الأبيض,WN,base.sd
+sd_state_blue_nile,النيل الأزرق,BN,base.sd
+sd_state_river_nile,نهر النيل,RN,base.sd
+sd_state_northern,الشمالية,NO,base.sd
+sd_state_qadarif,القضارف,QD,base.sd
+sd_state_kassala,كسلا,KS,base.sd
+sd_state_red_sea,البحر الأحمر,RS,base.sd
+sd_state_sennar,سنار,SN,base.sd
+sd_state_north_kordofan,شمال كردفان,NK,base.sd
+sd_state_south_kordofan,جنوب كردفان,SK,base.sd
+sd_state_west_kordofan,غرب كردفان,WK,base.sd
+sd_state_north_darfur,شمال دارفور,ND,base.sd
+sd_state_south_darfur,جنوب دارفور,SF,base.sd
+sd_state_east_darfur,شرق دارفور,ED,base.sd
+sd_state_west_darfur,غرب دارفور,WD,base.sd
+sd_state_central_darfur,وسط دارفور,CD,base.sd

@@ -22,6 +22,9 @@ per country using an optional maximum distance.
     'depends': ['delivery', 'base_geolocalize', 'website_sale', 'sale', 'national_address_field'],
     'data': [
         'security/ir.model.access.csv',
+        'data/res.country.state.csv',
+        'data/res_country_state_arabic_names.xml',
+        'data/res.city.ksa.csv',
         'views/delivery_carrier_views.xml',
         'views/res_company_views.xml',
         'views/res_partner_views.xml',

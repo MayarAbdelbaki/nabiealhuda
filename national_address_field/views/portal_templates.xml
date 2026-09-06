@@ -32,14 +32,24 @@
 
     <!--
         Turn the "city" field (labeled "الحي" via a translation override on
-        the base view) into a dropdown of real Saudi cities, cascading from
-        the region picked in "state_id" (labeled "المدينة"). The dataset is
+        the base view) into a dropdown of real cities, cascading from the
+        region picked in "state_id" (labeled "المدينة"). The dataset is
         embedded as JSON so the JS side (national_address.js) can rebuild
         the option list on every state_id change without an RPC round trip.
 
         The submitted value stays a plain city-name string (option value =
         city name), so ``res.partner.city`` keeps working as the same plain
         Char field it always was — no controller whitelist change needed.
+
+        A free-text sibling input is included but hidden/nameless by default:
+        the curated dataset (delivery_distance's res.city.ksa rows) covers
+        Saudi Arabia, Bahrain, Kuwait, the UAE, Oman, Qatar and Sudan, but not
+        every allowed delivery country (Egypt has none yet). national_address.js
+        swaps which of the two carries ``name="city"`` depending on whether the
+        selected region has curated cities: a dropdown when it does, a plain
+        text field (the field's original behaviour, before this cascading
+        select existed) when it doesn't, rather than leaving the customer
+        stuck with a dropdown that has nothing in it.
     -->
     <template id="address_form_ksa_city_select"
               inherit_id="portal.address_form_fields"
@@ -53,6 +63,11 @@
                         selected="selected"
                         t-out="partner_sudo.city"/>
             </select>
+            <input type="text"
+                   id="o_city_text"
+                   class="form-control"
+                   style="display: none;"
+                   placeholder="الحي"/>
         </xpath>
         <xpath expr="//div[@id='div_city']" position="after">
             <!-- A plain <script> tag here gets stripped by the website

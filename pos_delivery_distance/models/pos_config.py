@@ -8,11 +8,13 @@ class PosConfig(models.Model):
     delivery_carrier_id = fields.Many2one(
         'delivery.carrier',
         string='Delivery Method',
+        domain=[('available_in_pos', '=', True)],
         help="Carrier used to price the delivery line added from the POS "
              "'Delivery' button -- any Delivery Method works, not just "
              "distance-based ones (see action_pos_rate_delivery on "
-             "delivery.carrier for how each type is rated). Leave empty to "
-             "hide that button for this point of sale.",
+             "delivery.carrier for how each type is rated). Only methods "
+             "with their 'Point of Sale' checkbox ticked are selectable "
+             "here. Leave empty to hide that button for this point of sale.",
     )
     delivery_product_id = fields.Many2one(
         'product.product',
@@ -26,10 +28,5 @@ class PosConfig(models.Model):
     )
 
     def _get_special_products(self):
-        # Force-load the delivery product into the POS session even though it
-        # is not meant to appear in the regular product grid (same mechanism
-        # pos_discount uses for its discount product): the 'Delivery' button
-        # adds it to the order by code, so the client needs the record without
-        # it being browsable/clickable in the catalog.
         res = super()._get_special_products()
         return res | self.env['pos.config'].search([]).mapped('delivery_product_id')

@@ -98,14 +98,25 @@ patch(CustomerAddress.prototype, {
         await this._loadCountryCodes();
         this._restrictCountryDropdown();
         this._bindDeliverySearch();
-        this._bindLocationValidation();
         this._bindAddressFields();
     },
 
-    /**
-     * Load the ISO-code <-> id mapping for countries so matching does not
-     * depend on the translated label. Degrades gracefully to name matching.
-     */
+    async saveAddress(ev) {
+        if (this._deliveryMap) {
+            const message = !this._hasLocation()
+                ? "حدد موقعك على الخريطة"
+                : this._checkAddressMatchesPin();
+            if (message) {
+                ev.preventDefault();
+                this._showLocationError(message);
+                return;
+            }
+            this._clearLocationError();
+        }
+        return super.saveAddress(ev);
+    },
+
+
     async _loadCountryCodes() {
         try {
             const countries = await rpc("/web/dataset/call_kw", {
@@ -169,9 +180,17 @@ patch(CustomerAddress.prototype, {
         const fields = [
             form.country_id,
             form.state_id,
-            form.city,
             form.zip,
             form.street,
+            // "الحي" is one of two elements (see national_address.js), only
+            // one of which carries `name="city"` at any given time -- the
+            // other takes over when the selected region has no curated
+            // cities. `form.city` only resolves the currently-active one,
+            // so bind both by id directly instead of relying on that single
+            // lookup: whichever becomes active later would otherwise end up
+            // with no listener at all.
+            this.el.querySelector("#o_city"),
+            this.el.querySelector("#o_city_text"),
         ];
         for (const field of fields) {
             if (field) {
@@ -199,39 +218,33 @@ patch(CustomerAddress.prototype, {
             return;
         }
         const form = this.addressForm;
-        const query = [
-            form.street ? form.street.value.trim() : "",
-            form.city ? form.city.value.trim() : "",
-            this._selectedText(form.state_id),
-            form.zip ? form.zip.value.trim() : "",
-            this._selectedText(form.country_id),
+        const street = form.street ? form.street.value.trim() : "";
+        const city = form.city ? form.city.value.trim() : ""; // "الحي"
+        const state = this._selectedText(form.state_id); // "المدينة"
+        const zip = form.zip ? form.zip.value.trim() : "";
+        const country = this._selectedText(form.country_id); // "الدولة"
+
+        const candidateQueries = [
+            [street, city, state, zip, country],
+            [city, state, country],
+            [state, country],
         ]
-            .filter(Boolean)
-            .join(", ");
-        if (!query) {
+            .map((parts) => parts.filter(Boolean).join(", "))
+            .filter((query, index, all) => query && all.indexOf(query) === index);
+        if (!candidateQueries.length) {
             return;
         }
+
+        const countryId = form.country_id ? form.country_id.value : "";
+        const countryCode =
+            (this._countryIdToCode && this._countryIdToCode[countryId]) || "";
+
         let result;
-        try {
-            let url =
-                NOMINATIM_URL +
-                "?format=jsonv2&limit=1&q=" +
-                encodeURIComponent(query);
-            // Restrict to the selected country by ISO code (language-safe),
-            // so "مصر"/"Egypt" both bias the search to Egypt.
-            const countryId = form.country_id ? form.country_id.value : "";
-            const code =
-                this._countryIdToCode && this._countryIdToCode[countryId];
-            if (code) {
-                url += "&countrycodes=" + code.toLowerCase();
+        for (const query of candidateQueries) {
+            result = await this._nominatimSearch(query, countryCode);
+            if (result) {
+                break;
             }
-            const response = await fetch(url, {
-                headers: { Accept: "application/json" },
-            });
-            const data = await response.json();
-            result = data && data[0];
-        } catch (error) {
-            return;
         }
         if (!result) {
             return;
@@ -242,13 +255,31 @@ patch(CustomerAddress.prototype, {
         this._deliveryMarker.setLatLng([lat, lng]);
         // The pin now matches the typed country/city: record it so the
         // submit-time consistency check passes.
-        const countryId = form.country_id ? form.country_id.value : "";
-        this._pinCountryCode =
-            (this._countryIdToCode && this._countryIdToCode[countryId]) ||
-            this._pinCountryCode;
-        this._pinCity = form.city ? form.city.value.trim() : this._pinCity;
+        this._pinCountryCode = countryCode || this._pinCountryCode;
+        this._pinCity = city || this._pinCity;
         // Fields already hold what the user typed; don't reverse back onto them.
         this._setCoords(lat, lng, false);
+    },
+
+
+    async _nominatimSearch(query, countryCode) {
+        if (!query) {
+            return null;
+        }
+        try {
+            let url =
+                NOMINATIM_URL + "?format=jsonv2&limit=1&q=" + encodeURIComponent(query);
+            if (countryCode) {
+                url += "&countrycodes=" + countryCode.toLowerCase();
+            }
+            const response = await fetch(url, {
+                headers: { Accept: "application/json" },
+            });
+            const data = await response.json();
+            return (data && data[0]) || null;
+        } catch (error) {
+            return null;
+        }
     },
 
     _selectedText(select) {
@@ -257,33 +288,6 @@ patch(CustomerAddress.prototype, {
         }
         const option = select.options[select.selectedIndex];
         return option ? option.textContent.trim() : "";
-    },
-
-    /**
-     * Block submitting the address form until a location is picked.
-     * Runs in the capture phase and stops propagation so Odoo's own submit
-     * handler does not fire when the location is missing.
-     */
-    _bindLocationValidation() {
-        this.addressForm.addEventListener(
-            "submit",
-            (ev) => {
-                let message = null;
-                if (!this._hasLocation()) {
-                    message = "حدد موقعك على الخريطة";
-                } else {
-                    message = this._checkAddressMatchesPin();
-                }
-                if (message) {
-                    ev.preventDefault();
-                    ev.stopImmediatePropagation();
-                    this._showLocationError(message);
-                } else {
-                    this._clearLocationError();
-                }
-            },
-            { capture: true }
-        );
     },
 
     /**
@@ -516,18 +520,28 @@ patch(CustomerAddress.prototype, {
 
         const applyTextFields = () => {
             this._fillInput(form.street, street);
-            this._fillInput(form.city, city);
-            this._fillInput(form.zip, address.postcode);
             if (address.state) {
                 this._selectByLabel(form.state_id, address.state);
             } else if (address.state_district) {
                 this._selectByLabel(form.state_id, address.state_district);
             }
+            if (form.city && form.city.tagName === "SELECT") {
+                this._selectCityByCandidates(form.city, [
+                    address.suburb,
+                    address.neighbourhood,
+                    address.quarter,
+                    address.city_district,
+                    address.city,
+                    address.town,
+                    address.village,
+                ]);
+            } else {
+                this._fillInput(form.city, city);
+            }
+            this._fillInput(form.zip, address.postcode);
             this._syncing = false;
         };
 
-        // Set the country first: changing it reloads the state list and may
-        // re-render dependent fields, so fill the rest once that settled.
         if (this._setCountryFromAddress(form, address)) {
             setTimeout(applyTextFields, 700);
         } else {
@@ -535,11 +549,7 @@ patch(CustomerAddress.prototype, {
         }
     },
 
-    /**
-     * Select the country from the reverse-geocode result. Prefers the ISO
-     * code (language-independent) and falls back to matching the label.
-     * Returns true when the selected country actually changed.
-     */
+
     _setCountryFromAddress(form, address) {
         if (!form.country_id) {
             return false;
@@ -571,10 +581,7 @@ patch(CustomerAddress.prototype, {
         }
     },
 
-    /**
-     * Select the <option> whose visible label best matches `text`.
-     * Returns true when the selection actually changed.
-     */
+
     _selectByLabel(select, text) {
         if (!select || !select.options || !text) {
             return false;
@@ -603,6 +610,50 @@ patch(CustomerAddress.prototype, {
             select.value = match.value;
             select.dispatchEvent(new Event("change", { bubbles: true }));
             return true;
+        }
+        return false;
+    },
+
+    /**
+     * Match "الحي" against several Nominatim candidates, most
+     * district-specific first, normalizing a leading "حي/قرية/بلدة/مدينة"
+     * prefix on both the candidate and the option labels before comparing
+     * (curated names and OSM tags disagree on that prefix as often as not).
+     * Stops at the first candidate that matches anything. Returns true on a
+     * change.
+     */
+    _selectCityByCandidates(select, candidates) {
+        if (!select || !select.options) {
+            return false;
+        }
+        const normalize = (text) =>
+            (text || "")
+                .trim()
+                .replace(/^(حي|حيّ|قرية|بلدة|مدينة)\s+/u, "")
+                .toLowerCase();
+        const options = Array.from(select.options).filter((option) => option.value);
+        for (const candidate of candidates) {
+            const wanted = normalize(candidate);
+            if (!wanted) {
+                continue;
+            }
+            let match = options.find((option) => normalize(option.textContent) === wanted);
+            if (!match) {
+                match = options.find((option) => {
+                    const label = normalize(option.textContent);
+                    return (
+                        label.length > 2 &&
+                        (label.includes(wanted) || wanted.includes(label))
+                    );
+                });
+            }
+            if (match) {
+                if (select.value !== match.value) {
+                    select.value = match.value;
+                    select.dispatchEvent(new Event("change", { bubbles: true }));
+                }
+                return true;
+            }
         }
         return false;
     },

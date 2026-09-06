@@ -37,6 +37,7 @@ Configure the Delivery Method under
     'license': 'LGPL-3',
     'depends': ['point_of_sale', 'delivery_distance', 'national_address_field', 'stock'],
     'data': [
+        'views/delivery_carrier_views.xml',
         'views/res_config_settings_views.xml',
         'views/pos_order_views.xml',
     ],

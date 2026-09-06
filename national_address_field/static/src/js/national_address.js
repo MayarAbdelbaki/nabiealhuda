@@ -25,6 +25,13 @@ patch(CustomerAddress.prototype, {
         this._toggleNationalAddress();
         if (init) {
             this._initKsaCityCascade();
+        } else if (this._ksaCitySelect) {
+            // Mutating state_id's <option> list (just done by super, above)
+            // does not itself fire a "change" event, so the state_id
+            // listener bound in _initKsaCityCascade would otherwise leave
+            // "الحي" showing the previous country's mode/options until the
+            // customer happens to also touch "المدينة" by hand.
+            this._refreshKsaCityOptions();
         }
     },
 
@@ -35,12 +42,13 @@ patch(CustomerAddress.prototype, {
      * controllers/main.py. Runs once, on interaction setup.
      */
     _initKsaCityCascade() {
-        const citySelect = this.addressForm?.city;
+        const citySelect = document.getElementById("o_city");
+        const cityText = document.getElementById("o_city_text");
         const stateSelect = this.addressForm?.state_id;
         const dataEl = document.getElementById("o_ksa_cities_data");
-        if (!citySelect || citySelect.tagName !== "SELECT" || !stateSelect || !dataEl) {
-            // City is still a plain text input, or the field/dataset isn't
-            // rendered on this form — nothing to wire up.
+        if (!citySelect || !stateSelect || !dataEl) {
+            // The field/dataset isn't rendered on this form — nothing to
+            // wire up (e.g. the portal/my-account form, which has no map).
             return;
         }
         try {
@@ -49,6 +57,7 @@ patch(CustomerAddress.prototype, {
             return;
         }
         this._ksaCitySelect = citySelect;
+        this._ksaCityText = cityText;
         stateSelect.addEventListener("change", () => this._refreshKsaCityOptions());
         this._refreshKsaCityOptions();
     },
@@ -56,15 +65,49 @@ patch(CustomerAddress.prototype, {
     /**
      * Rebuild the city <select>'s options for the currently selected
      * region, keeping the current value selected if it's still valid.
+     *
+     * The curated dataset covers Saudi Arabia, Bahrain, Kuwait, the UAE,
+     * Oman, Qatar and Sudan, but not every allowed delivery country (Egypt
+     * has none yet). Rather than leave the customer stuck with an empty,
+     * unusable dropdown in that case, swap "الحي" to a plain text field
+     * -- how it behaved before this cascading select existed -- by moving
+     * `name="city"` (and the required flag) onto whichever of the two is
+     * the active one.
      */
     _refreshKsaCityOptions() {
         const citySelect = this._ksaCitySelect;
+        const cityText = this._ksaCityText;
         const stateSelect = this.addressForm?.state_id;
         if (!citySelect || !stateSelect) {
             return;
         }
-        const currentValue = citySelect.value;
+        const currentValue = citySelect.value || (cityText && cityText.value) || "";
         const cities = this._ksaCitiesByState[stateSelect.value] || [];
+
+        if (!cities.length) {
+            // No curated data for this region/country: fall back to free text.
+            citySelect.style.display = "none";
+            if (cityText) {
+                if (!cityText.name) {
+                    cityText.value = currentValue;
+                }
+                cityText.name = "city";
+                cityText.required = citySelect.required;
+                cityText.style.display = "";
+            }
+            citySelect.removeAttribute("name");
+            return;
+        }
+
+        // Curated data available: show/rebuild the dropdown, retire the
+        // free-text input.
+        if (cityText) {
+            cityText.style.display = "none";
+            cityText.removeAttribute("name");
+        }
+        citySelect.name = "city";
+        citySelect.required = (cityText && cityText.required) || citySelect.required;
+        citySelect.style.display = "";
 
         citySelect.replaceChildren();
         const placeholder = document.createElement("option");

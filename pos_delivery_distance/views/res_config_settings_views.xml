@@ -11,7 +11,7 @@
                     <div class="content-group mt16">
                         <div class="row">
                             <label for="pos_delivery_carrier_id" string="Delivery Method" class="col-lg-3 o_light_label"/>
-                            <field name="pos_delivery_carrier_id"/>
+                            <field name="pos_delivery_carrier_id" domain="[('available_in_pos', '=', True)]"/>
                         </div>
                         <div class="row">
                             <label for="pos_delivery_product_id" string="Delivery Product" class="col-lg-3 o_light_label"/>
