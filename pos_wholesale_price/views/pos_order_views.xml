@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_pos_pos_form_wholesale_price" model="ir.ui.view">
+        <field name="name">pos.order.form.wholesale.price</field>
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//list/field[@name='discount']" position="after">
+                <field name="is_wholesale" string="سعر الجملة" optional="hide" readonly="1"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

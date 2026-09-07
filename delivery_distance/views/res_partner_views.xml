@@ -16,7 +16,7 @@
                         <group>
                             <button name="geo_localize"
                                     type="object"
-                                    string="Locate from Address"
+                                    string="حدد موقعي الآن"
                                     icon="fa-map-marker"
                                     class="btn-primary"/>
                         </group>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="pos_wholesale_price.ControlButtons" t-inherit="point_of_sale.ControlButtons" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('control-buttons-modal')]" position="inside">
+            <button t-if="displayWholesaleBtn()"
+                class="o_wholesale_price_button"
+                t-att-class="buttonClass"
+                t-on-click="() => this.clickWholesalePrice()">
+                <i class="fa fa-cubes me-1" role="img" aria-label="سعر الجملة" title="سعر الجملة"/>
+                <t t-if="wholesaleOrderline.is_wholesale">إلغاء سعر الجملة</t>
+                <t t-else="">سعر الجملة</t>
+            </button>
+        </xpath>
+    </t>
+</templates>

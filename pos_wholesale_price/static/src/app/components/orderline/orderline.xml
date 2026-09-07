@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="pos_wholesale_price.Orderline" t-inherit="point_of_sale.Orderline" t-inherit-mode="extension">
+        <xpath expr="//li[@t-if='vals.discount']" position="after">
+            <li t-if="line.is_wholesale" class="wholesale-note w-100 rounded text-break bg-opacity-25 bg-info text-info p-2">
+                <i class="fa fa-cubes me-1" role="img" aria-label="سعر الجملة" title="سعر الجملة"/>
+                سعر الجملة
+            </li>
+        </xpath>
+    </t>
+</templates>

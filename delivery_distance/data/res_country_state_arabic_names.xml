@@ -1,17 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!--
-        res.country.state.name is a plain Char field (no translate=True,
-        see base/models/res_country.py), so it holds exactly one value
-        regardless of the active language. Core ships it in English for
-        every country except the handful whose data file already used
-        Arabic (Saudi Arabia among them). Since every other bit of address
-        data on this site (countries, our own added regions/cities) reads
-        Arabic, the UAE and Egypt states, both in ALLOWED_COUNTRY_CODES,
-        stood out in English. These records already exist (owned by the
-        `base` module); referencing them by their existing external id here
-        updates them in place rather than creating new ones.
-    -->
     <record id="base.state_ae_az" model="res.country.state">
         <field name="name">أبوظبي</field>
     </record>
