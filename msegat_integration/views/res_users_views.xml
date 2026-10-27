@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_users_form" model="ir.ui.view">
+        <field name="name">res.users.form.inherit.msegat_integration</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <div name="auth" position="after">
+                <field name="share" invisible="1"/>
+                <div name="msegat_verify_phone" class="d-flex mt-3" invisible="not share">
+                    <div class="col-7 col-sm-6 col-lg-3 d-flex flex-column">
+                        <label for="msegat_verify_phone" class="o_form_label"/>
+                        <span class="text-muted">Asks for an SMS code at the next login.</span>
+                    </div>
+                    <field name="msegat_verify_phone" class="my-auto"/>
+                </div>
+            </div>
+        </field>
+    </record>
+</odoo>

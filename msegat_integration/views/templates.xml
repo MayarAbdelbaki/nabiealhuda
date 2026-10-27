@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="login_otp_form" name="Msegat Login Verification">
+        <t t-call="web.login_layout">
+            <t t-set="disable_footer">1</t>
+            <div class="oe_login_form">
+                <h5 class="card-title">Verify your mobile number</h5>
+                <form t-if="ask_number" method="POST" action="">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <input type="hidden" name="redirect" t-att-value="redirect"/>
+                    <div class="mb-2 mt-2 text-muted">
+                        To finish creating your account, enter your mobile number. We will send you a verification code by SMS.
+                    </div>
+                    <div class="mb-3">
+                        <label class="fw-bold" for="phone">Mobile Number</label>
+                        <input id="phone" name="phone" type="tel" class="form-control mb-2" dir="ltr"
+                               autocomplete="tel" autofocus="autofocus" required="required"
+                               placeholder="e.g. 05XXXXXXXX"/>
+                    </div>
+                    <p class="alert alert-danger" t-if="error" role="alert" t-out="error"/>
+                    <div class="clearfix oe_login_buttons text-center d-grid mb-1">
+                        <button type="submit" class="btn btn-primary">Send the code</button>
+                    </div>
+                </form>
+                <form t-else="" method="POST" action="">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <input type="hidden" name="redirect" t-att-value="redirect"/>
+                    <div class="mb-2 mt-2 text-muted" t-if="number">
+                        We sent a verification code by SMS to <span dir="ltr" t-out="number"/>.
+                    </div>
+                    <div class="mb-3">
+                        <label class="fw-bold" for="otp_code">Verification Code</label>
+                        <input id="otp_code" name="otp_code" class="form-control mb-2"
+                               autocomplete="one-time-code" inputmode="numeric" autofocus="autofocus"
+                               required="required" placeholder="e.g. 1234"/>
+                    </div>
+                    <p class="alert alert-danger" t-if="error" role="alert" t-out="error"/>
+                    <div class="clearfix oe_login_buttons text-center d-grid mb-1">
+                        <button type="submit" class="btn btn-primary">Verify</button>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" name="resend" value="1" formnovalidate="formnovalidate"
+                                class="btn btn-link btn-sm">Send a new code</button>
+                        <button type="submit" name="change_number" value="1"
+                                formnovalidate="formnovalidate" class="btn btn-link btn-sm">Use another number</button>
+                    </div>
+                </form>
+                <form method="POST" action="/web/session/logout">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <div class="w-100 text-center">
+                        <button type="submit" class="btn btn-link btn-sm mb-2">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </t>
+    </template>
+</odoo>

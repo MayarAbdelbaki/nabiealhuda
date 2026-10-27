@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.msegat_integration</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="90"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app data-string="Msegat" string="Msegat" name="msegat_integration" groups="base.group_system">
+                    <block title="Msegat Account" name="msegat_account_setting_container">
+                        <setting id="msegat_account" string="SMS Gateway" company_dependent="1"
+                                 help="Credentials from your account at msegat.com (Settings > API).">
+                            <div class="content-group">
+                                <div class="row mt16">
+                                    <label for="msegat_username" class="col-lg-4 o_light_label"/>
+                                    <field name="msegat_username"/>
+                                </div>
+                                <div class="row">
+                                    <label for="msegat_api_key" class="col-lg-4 o_light_label"/>
+                                    <field name="msegat_api_key" password="True"/>
+                                </div>
+                                <div class="row">
+                                    <label for="msegat_sender" class="col-lg-4 o_light_label"/>
+                                    <field name="msegat_sender" placeholder="auth-mseg"/>
+                                </div>
+                            </div>
+                            <button name="action_msegat_check_balance" type="object" string="Check Balance"
+                                    class="btn-link" icon="oi-arrow-right"/>
+                        </setting>
+                    </block>
+                    <block title="Phone Verification" name="msegat_otp_setting_container">
+                        <setting id="msegat_otp_login" company_dependent="1"
+                                 help="New website and portal users confirm their phone number by SMS once, at their first login.">
+                            <field name="msegat_otp_login"/>
+                            <div class="content-group" invisible="not msegat_otp_login">
+                                <div class="mt16">
+                                    <field name="msegat_otp_method" class="o_light_label" widget="radio"/>
+                                </div>
+                                <div class="row mt8" invisible="msegat_otp_method != 'api'">
+                                    <label for="msegat_otp_lang" class="col-lg-4 o_light_label"/>
+                                    <field name="msegat_otp_lang"/>
+                                </div>
+                                <div class="row mt8" invisible="msegat_otp_method != 'sms'">
+                                    <label for="msegat_otp_message" class="col-lg-4 o_light_label"/>
+                                    <field name="msegat_otp_message"/>
+                                </div>
+                            </div>
+                            <button name="%(msegat_integration.msegat_otp_action)d" type="action" string="Verification Codes"
+                                    class="btn-link" icon="oi-arrow-right" invisible="not msegat_otp_login"/>
+                        </setting>
+                    </block>
+                    <block title="WhatsApp Invoices" name="msegat_whatsapp_setting_container">
+                        <setting id="msegat_whatsapp_account" string="WhatsApp Account" company_dependent="1"
+                                 help="Login of your Msegat WhatsApp Business (T2 Communicate) account.">
+                            <div class="content-group">
+                                <div class="row mt16">
+                                    <label for="msegat_whatsapp_email" class="col-lg-4 o_light_label"/>
+                                    <field name="msegat_whatsapp_email"/>
+                                </div>
+                                <div class="row">
+                                    <label for="msegat_whatsapp_password" class="col-lg-4 o_light_label"/>
+                                    <field name="msegat_whatsapp_password" password="True"/>
+                                </div>
+                                <div class="row">
+                                    <label for="msegat_whatsapp_url" class="col-lg-4 o_light_label"/>
+                                    <field name="msegat_whatsapp_url"/>
+                                </div>
+                            </div>
+                            <button name="action_msegat_test_whatsapp" type="object" string="Test Connection"
+                                    class="btn-link" icon="oi-arrow-right"/>
+                        </setting>
+                        <setting id="msegat_whatsapp_message" string="Invoice Message" company_dependent="1"
+                                 help="WhatsApp only lets businesses start a conversation with an approved template.">
+                            <div class="content-group">
+                                <div class="mt16">
+                                    <field name="msegat_whatsapp_mode" class="o_light_label" widget="radio"/>
+                                </div>
+                                <div invisible="msegat_whatsapp_mode != 'template'">
+                                    <div class="row mt8">
+                                        <label for="msegat_whatsapp_template" class="col-lg-4 o_light_label"/>
+                                        <field name="msegat_whatsapp_template"/>
+                                    </div>
+                                    <div class="row">
+                                        <label for="msegat_whatsapp_template_params" class="col-lg-4 o_light_label"/>
+                                        <field name="msegat_whatsapp_template_params"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </setting>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+</odoo>
