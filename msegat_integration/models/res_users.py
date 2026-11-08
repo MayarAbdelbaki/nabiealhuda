@@ -51,6 +51,11 @@ class ResUsers(models.Model):
         user = self.sudo()
         return user.partner_id._msegat_number(user.company_id.country_id)
 
+    def _notify_security_new_connection(self, auth_info):
+        if self.env(user=auth_info['uid']).user._mfa_type() == 'msegat_otp':
+            return
+        super()._notify_security_new_connection(auth_info)
+
     def _rpc_api_keys_only(self):
         # The SMS code cannot be checked on RPC, so the password alone must not be enough.
         return self._mfa_type() == 'msegat_otp' or super()._rpc_api_keys_only()
