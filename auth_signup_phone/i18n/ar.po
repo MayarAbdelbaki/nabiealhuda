@@ -1,0 +1,17 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* auth_signup_phone
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+
+#. module: auth_signup_phone
+#. odoo-python
+#: code:addons/auth_signup_phone/controllers/main.py:0
+msgid "Please enter a valid Saudi mobile number, for example 05XXXXXXXX."
+msgstr "يرجى إدخال رقم جوال سعودي صحيح، مثال: 05XXXXXXXX"
